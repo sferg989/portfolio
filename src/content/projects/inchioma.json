@@ -1,0 +1,10 @@
+{
+  "title": "Inchioma",
+  "year": 2023,
+  "category": "creative & web",
+  "subtitle": "Explaining arboriculture through drawings",
+  "order": 99,
+  "cover": "../../assets/projects/inchioma/inchioma-cover.png",
+  "heroMesh": "/meshes/inchioma.obj",
+  "projectMesh": "/meshes/inchioma.obj"
+}

@@ -1,0 +1,59 @@
+---
+import Menu from "./Menu.astro";
+---
+
+<style>
+    nav {
+        position: sticky;
+        box-sizing: border-box;
+        top: var(--spacingMd);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-top: var(--spacingMd);
+        padding-bottom: var(--spacingMd);
+
+        border-radius: var(--radiusMd);
+        overflow: hidden;
+
+        height: var(--sizeNavbarY);
+
+        z-index: 2;
+
+        &:before {
+            position: absolute;
+            content: "";
+
+            width: 100%;
+            height: 100%;
+
+            background: var(--colorNavbarBg);
+
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(30px);
+
+            z-index: 0;
+        }
+    }
+
+    .logo {
+        all: unset;
+        cursor: pointer;
+
+        padding-left: var(--spacingMd);
+        padding-right: var(--spacingMd);
+
+        font-family: var(--fontMono);
+        font-weight: 600;
+
+        z-index: 1;
+    }
+</style>
+
+<nav>
+    <a class="logo" href="/">Ferguson</a>
+    <Menu />
+</nav>

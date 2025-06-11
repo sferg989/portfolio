@@ -1,0 +1,58 @@
+---
+import { Image as AstroImage } from "astro:assets";
+
+import { type LocalImageProps, type RemoteImageProps } from "astro:assets";
+
+type Props = (RemoteImageProps | LocalImageProps) & {
+    caption?: string;
+    blend?: boolean;
+    invertOnDark?: boolean;
+};
+
+const { src, width, height, caption, blend, invertOnDark, ...props } =
+    Astro.props;
+
+const vars = {
+    blend: blend ? "multiply" : "normal",
+    darkBlend: blend && invertOnDark ? "screen" : "normal",
+
+    filter: blend ? "none" : "drop-shadow(0 25px 25px rgb(0 0 0 / 0.05))",
+    darkFilter: invertOnDark ? "invert()" : "none",
+};
+---
+
+<style define:vars={vars}>
+    img {
+        height: auto;
+        width: auto;
+
+        max-height: 100%;
+        max-width: 100%;
+
+        border-radius: var(--radiusMd);
+
+        object-fit: contain;
+
+        filter: var(--filter);
+
+        mix-blend-mode: var(--blend);
+    }
+
+    .caption {
+        font-size: var(--fontSizeSm);
+        color: var(--colorTextSecondary);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        img {
+            filter: var(--darkFilter);
+            mix-blend-mode: var(--darkBlend);
+        }
+    }
+</style>
+
+<div>
+    <!-- @ts-ignore -->
+    <AstroImage alt="" src={src} width={width} height={height} {...props} />
+    {caption ? <span class="caption">{caption}</span> : null}
+</div>

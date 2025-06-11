@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+**Server Components:**
+- Always use server components is possible
+**Server Actions:**
+- Always use server actions if possible.

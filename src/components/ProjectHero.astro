@@ -1,0 +1,172 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+    category: string;
+    cover: LocalImageProps<any> | RemoteImageProps;
+    year?: number;
+}
+
+import { Image, type RemoteImageProps } from "astro:assets";
+import Row from "./rows/Row.astro";
+import SectionTitle from "./text/SectionTitle.astro";
+import type { LocalImageProps } from "astro/assets";
+
+const props = Astro.props;
+---
+
+<style>
+    .project-header-bg {
+        position: absolute;
+        inset: 0px;
+
+        background-color: var(--colorWhite);
+        z-index: 0;
+    }
+
+    h1.title {
+        all: unset;
+
+        font-family: var(--fontSerif);
+        font-weight: var(--fontWeightLg);
+        font-size: var(--fontSizeXxl);
+    }
+
+    h2.subtitle {
+        all: unset;
+
+        font-weight: var(--fontWeightSm);
+        font-size: var(--fontSizeLg);
+        color: var(--colorTextSecondary);
+    }
+
+    .project-hero-row {
+        padding-left: var(--spacingMd);
+        padding-right: var(--spacingMd);
+
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+
+        min-height: 33vh;
+    }
+
+    .project-title-container {
+        padding-left: var(--spacingMd);
+        padding-right: var(--spacingMd);
+
+        grid-column: 1 / 8;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        z-index: 1;
+    }
+
+    .project-subtitle-container {
+        padding-left: var(--spacingMd);
+        padding-right: var(--spacingMd);
+
+        grid-column: 2 / 8;
+
+        z-index: 1;
+    }
+
+    .project-category-container {
+        grid-column: 8 / -1;
+        grid-row: 1 / -1;
+
+        z-index: 1;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        max-height: 75vh;
+
+        grid-column: 1 / -1;
+        object-fit: cover;
+
+        border-radius: var(--radiusMd);
+
+        z-index: 1;
+    }
+
+    #bar {
+        display: inline-block;
+
+        transform: rotate(-30deg);
+        transform-origin: center center;
+
+        margin-right: var(--spacingSm);
+
+        animation: spin 1s ease-in-out 0.5s forwards;
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .project-header-bg {
+            display: none;
+        }
+
+        .project-title-container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .project-subtitle-container {
+            padding-left: 0;
+            padding-right: 0;
+
+            grid-column: 1 / -1;
+        }
+
+        .project-category-container {
+            padding-left: 0;
+            padding-right: 0;
+
+            grid-column: 1 / -1;
+        }
+
+        .project-hero-row {
+            padding-top: var(--spacingLg);
+            min-height: auto;
+        }
+    }
+</style>
+
+<section class="project-header-bg"></section>
+
+<Row class="project-hero-row">
+    <section class="project-title-container">
+        <span class="year">_ {props.year} _</span>
+        <h1 class="title">
+            {props.title}
+        </h1>
+    </section>
+
+    <section class="project-subtitle-container">
+        <h2 class="subtitle">
+            <span id="bar">/</span>
+            {props.subtitle}
+        </h2>
+    </section>
+
+    <section class="project-category-container">
+        <SectionTitle>{props.category}</SectionTitle>
+    </section>
+</Row>
+
+<Row>
+    <Image
+        class="project-image"
+        src={props.cover}
+        width={1920}
+        alt={`${props.title} cover image`}
+        quality="max"
+    />
+</Row>

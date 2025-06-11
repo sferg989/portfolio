@@ -1,0 +1,111 @@
+:root {
+  --fontSerif: "STIX Two Text Variable";
+  --fontMono: "archia";
+  --fontSans: "switzer";
+
+  --fontSizeSm: 0.833rem;
+  --fontSizeMd: 1rem;
+  --fontSizeLg: 1.618rem;
+  --fontSizeXl: 2.618rem;
+  --fontSizeXxl: 4.236rem;
+
+  --fontWeightSm: 200;
+  --fontWeightMd: 400;
+  --fontWeightLg: 600;
+
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+
+  --warmWhite: 244, 244, 244;
+  --almostBlack: 20, 20, 20;
+  --gray: 110, 110, 110;
+  --lightGray: 180, 180, 180;
+  --darkGray: 56, 57, 63;
+
+  --red: 252, 41, 71;
+  --orange: 255, 207, 150;
+  --purple: 5, 60, 94;
+
+  --spacingXs: 0.25em;
+  --spacingSm: 0.5em;
+  --spacingMd: 1em;
+  --spacingLg: 2em;
+  --spacingXl: 4em;
+
+  --radiusSm: 0.125em;
+  --radiusMd: 0.375em;
+  --radiusLg: 0.75em;
+
+  --transitionDuration: 0.25s;
+  --transitionTimingFunction: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --sizeNavbarY: 65px;
+  --stickyTopOffset: calc(var(--sizeNavbarY) + var(--spacingMd) * 2);
+
+  --opacityLight: 0.25;
+
+  --colorWhite: rgb(var(--white));
+
+  --colorBg: rgb(var(--warmWhite));
+  --colorBgSecondary: rgb(var(--almostBlack));
+
+  --colorText: rgb(var(--almostBlack));
+  --colorTextSecondary: rgb(var(--gray));
+
+  --colorLine: rgb(var(--almostBlack));
+  --colorHeroWireframe: rgb(var(--almostBlack));
+
+  --colorSelection: rgb(var(--warmWhite));
+  --colorSelectionBg: rgb(var(--red));
+
+  --colorHighlightBg: rgb(var(--almostBlack));
+  --colorHighlightText: rgb(var(--warmWhite));
+
+  --colorSectionTitle: rgb(var(--red));
+
+  --colorNavbarBg: rgba(var(--warmWhite), 0.55);
+
+  --colorProjectsCategory: rgb(var(--gray));
+
+  --colorLinkBg: rgb(var(--white));
+
+  --colorStrikethrough: rgb(var(--red));
+
+  --colorPrimaryModels: rgb(var(--darkGray));
+  --colorSecondaryModels: rgb(var(--warmWhite));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colorWhite: rgb(var(--darkGray));
+
+    --colorBg: rgb(var(--almostBlack));
+    --colorBgSecondary: rgb(var(--warmWhite));
+
+    --colorText: rgb(var(--warmWhite));
+    --colorTextSecondary: rgb(var(--lightGray));
+
+    --colorLine: rgb(var(--warmWhite));
+    --colorHeroWireframe: rgb(var(--warmWhite));
+
+    --colorHighlightBg: rgb(var(--warmWhite));
+    --colorHighlightText: rgb(var(--almostBlack));
+
+    --colorNavbarBg: rgba(var(--almostBlack), 0.55);
+
+    --colorLinkBg: rgb(var(--white));
+
+    --colorPrimaryModels: rgb(var(--warmWhite));
+    --colorSecondaryModels: rgb(var(--darkGray));
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --fontSizeSm: 0.875em;
+    --fontSizeMd: 1em;
+    --fontSizeLg: 1.25em;
+    --fontSizeXl: 2em;
+    --fontSizeXxl: 3em;
+  }
+}

@@ -1,0 +1,27 @@
+---
+const { class: cls, ...props } = Astro.props;
+---
+
+<style>
+    .row {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+
+        padding-top: var(--spacingXl);
+        padding-bottom: var(--spacingXl);
+
+        padding-left: var(--spacingMd);
+        padding-right: var(--spacingMd);
+    }
+
+    @media only screen and (max-width: 600px) {
+        .row {
+            padding-top: var(--spacingMd);
+            padding-bottom: var(--spacingMd);
+        }
+    }
+</style>
+
+<section class:list={["row", cls]} {...props}>
+    <slot />
+</section>

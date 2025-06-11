@@ -1,0 +1,45 @@
+---
+import Row from "../rows/Row.astro";
+
+const props = Astro.props;
+---
+
+<style>
+    .centered-text-container {
+        grid-column: 3 / 7;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        text-align: center;
+    }
+
+    .centered-text {
+        font-size: var(--fontSizeLg);
+        font-weight: var(--fontWeightSm);
+        font-family: var(--fontSans);
+
+        line-height: 150%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .centered-text-container {
+            text-align: left;
+
+            grid-column: 1 / -1;
+        }
+    }
+</style>
+
+<Row {...props}>
+    <section class="centered-text-container">
+        <slot name="pre" />
+
+        <section class="centered-text">
+            <slot />
+        </section>
+
+        <slot name="post" />
+    </section>
+</Row>

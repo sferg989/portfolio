@@ -1,0 +1,187 @@
+@font-face {
+    font-family: "switzer";
+    src: url("/fonts/switzer/Switzer-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "switzer";
+    src: url("/fonts/switzer/Switzer-VariableItalic.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: italic;
+}
+
+/* @font-face { */
+/*     font-family: "literata"; */
+/*     src: url("/fonts/literata/Literata-Variable.ttf") format("truetype"); */
+/*     font-weight: 100 900; */
+/*     font-display: swap; */
+/*     font-style: normal; */
+/* } */
+/**/
+/* @font-face { */
+/*     font-family: "literata"; */
+/*     src: url("/fonts/literata/Literata-VariableItalic.ttf") */
+/*         format("truetype"); */
+/*     font-weight: 100 900; */
+/*     font-display: swap; */
+/*     font-style: italic; */
+/* } */
+
+@font-face {
+    font-family: "archia";
+    src: url("/fonts/archia/archia-light-webfont.eot");
+    src:
+        url("/fonts/archia/archia-light-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/archia/archia-light-webfont.woff2") format("woff2"),
+        url("/fonts/archia/archia-light-webfont.woff") format("woff"),
+        url("/fonts/archia/archia-light-webfont.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "archia";
+    src: url("/fonts/archia/archia-regular-webfont.eot");
+    src:
+        url("/fonts/archia/archia-regular-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/archia/archia-regular-webfont.woff2") format("woff2"),
+        url("/fonts/archia/archia-regular-webfont.woff") format("woff"),
+        url("/fonts/archia/archia-regular-webfont.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "archia";
+    src: url("/fonts/archia/archia-semibold-webfont.eot");
+    src:
+        url("/fonts/archia/archia-semibold-webfont.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/archia/archia-semibold-webfont.woff2") format("woff2"),
+        url("/fonts/archia/archia-semibold-webfont.woff") format("woff"),
+        url("/fonts/archia/archia-semibold-webfont.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'archia';
+    src: url('/fonts/archia/archia-bold-webfont.eot');
+    src: url('/fonts/archia/archia-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/archia/archia-bold-webfont.woff2') format('woff2'),
+         url('/fonts/archia/archia-bold-webfont.woff') format('woff'),
+         url('/fonts/archia/archia-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* @font-face { */
+/*     font-family: 'butler'; */
+/*     src: url('/fonts/butler/butler-free-version-bold-webfont.woff2') format('woff2'), */
+/*          url('/fonts/butler/butler-free-version-bold-webfont.woff') format('woff'); */
+/*     font-weight: 700; */
+/*     font-style: normal; */
+/* } */
+/**/
+/* @font-face { */
+/*     font-family: 'butler'; */
+/*     src: url('/fonts/butler/butler-free-version-extralight-webfont.woff2') format('woff2'), */
+/*          url('/fonts/butler/butler-free-version-extralight-webfont.woff') format('woff'); */
+/*     font-weight: 200; */
+/*     font-style: normal; */
+/* } */
+/**/
+/* @font-face { */
+/*     font-family: 'butler'; */
+/*     src: url('/fonts/butler/butler-free-version-light-webfont.woff2') format('woff2'), */
+/*          url('/fonts/butler/butler-free-version-light-webfont.woff') format('woff'); */
+/*     font-weight: 300; */
+/*     font-style: normal; */
+/* } */
+/**/
+/* @font-face { */
+/*     font-family: 'butler'; */
+/*     src: url('/fonts/butler/butler-free-version-medium-webfont.woff2') format('woff2'), */
+/*          url('/fonts/butler/butler-free-version-medium-webfont.woff') format('woff'); */
+/*     font-weight: 500; */
+/*     font-style: normal; */
+/* } */
+/**/
+/* @font-face { */
+/*     font-family: 'butler'; */
+/*     src: url('/fonts/butler/butler-free-version-regular-webfont.woff2') format('woff2'), */
+/*          url('/fonts/butler/butler-free-version-regular-webfont.woff') format('woff'); */
+/*     font-weight: 400; */
+/*     font-style: normal; */
+/* } */
+/**/
+/* @font-face { */
+/*     font-family: 'butler'; */
+/*     src: url('/fonts/butler/butler-free-version-semibold-webfont.woff2') format('woff2'), */
+/*          url('/fonts/butler/butler-free-version-semibold-webfont.woff') format('woff'); */
+/*     font-weight: 600; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-black-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-black-webfont.woff') format('woff'); */
+/*     font-weight: 800; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-bold-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-bold-webfont.woff') format('woff'); */
+/*     font-weight: 700; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-heavy-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-heavy-webfont.woff') format('woff'); */
+/*     font-weight: 900; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-light-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-light-webfont.woff') format('woff'); */
+/*     font-weight: 300; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-medium-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-medium-webfont.woff') format('woff'); */
+/*     font-weight: 500; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-regular-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-regular-webfont.woff') format('woff'); */
+/*     font-weight: 400; */
+/*     font-style: normal; */
+/* } */
+
+/* @font-face { */
+/*     font-family: 'baskerville'; */
+/*     src: url('/fonts/baskerville/baskerville_serial-xbold-webfont.woff2') format('woff2'), */
+/*          url('/fonts/baskerville/baskerville_serial-xbold-webfont.woff') format('woff'); */
+/*     font-weight: 500; */
+/*     font-style: normal; */
+/* } */

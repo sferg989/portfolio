@@ -1,0 +1,20 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+// import Projects from "../components/Projects.astro";
+import ProjectsField from "../components/WebGL/ProjectsField.svelte";
+import CenteredText from "../components/rows/CenteredText.astro";
+import Highlight from "../components/text/Highlight.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<MainLayout>
+    <Hero slot="hero" id="hello" />
+
+    <CenteredText>
+        My career journey has been anything but traditional, shaping my ability to solve complex problems and adapt to diverse challenges. I hold a Master's in Music Performance and an MBA in Finance. I began my career in the finance department of a large aerospace and defense company, where I first started programming—writing PHP to automate tasks and eliminate wasted time. Next, I managed a 4,000-acre rice farm for four years. After that, I fully transitioned into technology, working my way up to <Highlight>Tech Lead in Software Engineering</Highlight>. This unique path has honed my leadership, strategic thinking, and technical expertise.
+    </CenteredText>
+
+    <!-- <ProjectsField client:only /> -->
+    <Projects id="projects" />
+</MainLayout>

@@ -1,0 +1,84 @@
+---
+import Button from "./Button.astro";
+---
+
+<style>
+    .footer-row-1 h3 {
+        all: unset;
+
+        font-family: var(--fontSerif);
+        font-weight: var(--fontWeightLg);
+        font-size: var(--fontSizeXl);
+
+        &:hover .hidden {
+            opacity: 0.25;
+        }
+    }
+
+    .footer-spacer {
+        height: 1px;
+
+        background-color: var(--colorLine);
+
+        margin-top: var(--spacingLg);
+        margin-bottom: var(--spacingLg);
+    }
+
+    .footer {
+        padding-left: var(--spacingMd);
+        padding-right: var(--spacingMd);
+
+        padding-bottom: var(--spacingLg);
+    }
+
+    .footer-row-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hidden {
+        transition-duration: var(--transitionDuration);
+        transition-timing-function: var(--transitionTimingFunction);
+
+        opacity: 0;
+
+        padding-left: 0.125em;
+    }
+
+    .button {
+        font-family: var(--fontMono);
+    }
+</style>
+
+<section class="footer">
+    <div class="footer-spacer"></div>
+
+    <div class="footer-row-1">
+        <a href="mailto:sferg989@gmail.com">
+            <h3>
+                Say Hi<span class="hidden">Hiii!</span>
+            </h3>
+        </a>
+
+        <div>
+            _
+            <Button
+                class="button"
+                href="https://www.linkedin.com/in/stephen-ferguson-964a7b57/"
+                target="_blank"
+            >
+                linkedin
+            </Button>
+             /
+            <Button
+                class="button"
+                href="https://github.com/sferg989"
+                target="_blank"
+            >
+                github
+            </Button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+---
+const { class: cls, ...props } = Astro.props;
+---
+
+<style>
+    .highlight {
+        display: inline;
+
+        font-family: var(--fontSerif);
+        font-weight: var(--fontWeightLg);
+        font-size: 1.15em;
+    }
+</style>
+
+<span class:list={["highlight", cls]} , {...props}>
+    <slot />
+</span>

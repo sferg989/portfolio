@@ -1,0 +1,84 @@
+---
+import Sprites from "../components/Sprites.svelte";
+import Row from "./rows/Row.astro";
+import Highlight from "./text/Highlight.astro";
+
+const props = Astro.props;
+---
+
+<style>
+    .hero-row {
+        height: 100vh;
+        box-sizing: border-box;
+
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero-container {
+        grid-column: 3 / -1;
+        grid-row: 2 / -1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+
+        font-size: clamp(1em, -0.875rem + 8.75vw, var(--fontSizeLg));
+        font-weight: var(--fontWeightSm);
+    }
+
+    .light {
+        opacity: var(--opacityLight);
+    }
+
+    .line {
+        transform-origin: bottom center;
+        animation: move-up 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    }
+
+    @keyframes move-up {
+        0% {
+            opacity: 0;
+            transform: translateY(25%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .hero-container {
+            grid-column: 1 / -1;
+        }
+    }
+</style>
+
+<Row class="hero-row" {...props}>
+    <Sprites client:only />
+
+    <div class="hero-container">
+        <div class="line" style={{ animationDelay: "0.4s" }}>
+            <span class="light">I'm</span><span style={{ paddingLeft: "36px" }}
+                >Steve Ferguson</span
+            >
+        </div>
+
+        <div style="height: 1em;"></div>
+
+        <div class="line" style={{ animationDelay: "0.6s" }}>
+            <span class="light" style={{ paddingLeft: "29px" }}>a</span><span
+                style={{ paddingLeft: "25px" }}
+                >devoted <Highlight>maker</Highlight></span
+            >
+        </div>
+
+        <div class="line" style={{ animationDelay: "0.8s" }}>
+            &<span class="light" style={{ paddingLeft: "10px" }}>an</span><span
+                style={{ paddingLeft: "10px" }}
+                >enthusiastic <Highlight>tech leader</Highlight></span
+            >
+        </div>
+    </div>
+</Row>

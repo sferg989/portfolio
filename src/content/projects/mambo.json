@@ -1,0 +1,10 @@
+{
+  "title": "MAMBO",
+  "year": 2021,
+  "category": "product",
+  "subtitle": "World's first 3d printed fiberglass boat",
+  "cover": "../../assets/projects/mambo/mambo-cover.jpg",
+  "order": 0,
+  "heroMesh": "/meshes/boat.obj",
+  "projectMesh": "/meshes/boat.obj"
+}

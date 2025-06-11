@@ -1,0 +1,22 @@
+.projects-label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-label-title {
+    font-family: var(--fontSerif);
+    font-size: calc(var(--fontSizeLg) * 4);
+    white-space: nowrap;
+
+    color: var(--colorText);
+}
+
+.projects-label-category {
+    font-family: var(--fontMono);
+    font-size: calc(var(--fontSizeSm) * 4);
+
+    text-transform: uppercase;
+
+    color: var(--colorProjectsCategory);
+}

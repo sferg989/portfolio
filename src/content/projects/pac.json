@@ -1,0 +1,10 @@
+{
+  "title": "Perelman Arts Center",
+  "year": 2014,
+  "category": "architecture",
+  "subtitle": "A glowing marble cube at the World Trade Center",
+  "cover": "../../assets/projects/pac/pac-cover.jpg",
+  "order": 6,
+  "heroMesh": "/meshes/pac.obj",
+  "projectMesh": "/meshes/pac.obj"
+}

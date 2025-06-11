@@ -1,0 +1,10 @@
+{
+  "title": "The Diving King",
+  "year": 2015,
+  "category": "architecture",
+  "subtitle": "Master Thesis Project",
+  "cover": "../../assets/projects/the-diving-king/tdk-cover.jpg",
+  "order": 5,
+  "heroMesh": "/meshes/the-diving-king.obj",
+  "projectMesh": "/meshes/the-diving-king.obj"
+}

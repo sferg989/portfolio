@@ -1,0 +1,265 @@
+---
+import { getEntry } from "astro:content";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import ColsLeft from "../../components/rows/ColsLeft.astro";
+import ColsRight from "../../components/rows/ColsRight.astro";
+import Centered from "../../components/rows/Centered.astro";
+import { Image } from "astro:assets";
+import CustomImage from "../../components/CustomImage.astro";
+import Flex from "../../components/rows/Flex.astro";
+
+const project = await getEntry("projects", "solar-lhub");
+---
+
+<ProjectLayout>
+    <ProjectHero
+        title={project.data.title}
+        year={project.data.year}
+        subtitle={project.data.subtitle}
+        category={project.data.category}
+        cover={project.data.cover}
+    />
+
+    <Centered>
+        <p slot="pre">Made in collaboration with</p>
+
+        <Image
+            class="logo"
+            src={import("../../assets/projects/solar-lhub/eni-logo.png")}
+            alt="Autodesk logo"
+            width={100}
+            height={100}
+        />
+    </Centered>
+
+    <ColsLeft title="the exhibition">
+        <div slot="col1">
+            <h3>Showcasing solar energy</h3>
+
+            <p>
+                Solar Hub was one of the three projects that <strong>ENI</strong
+                >, an Italian multinational oil and gas company, commissioned
+                +LAB to design and present at the 2016 edition of the European
+                MakerFaire in Rome. The aim was to showcase two emerging
+                technologies that ENI was developing at the time through its
+                newly formed division focused on solar energy: OPV (Organic
+                Photovoltaics) and LSC (Luminescent Solar Concentrators).
+            </p>
+
+            <p>
+                Organic Photovoltaics (OPV) is a type of solar technology that
+                utilizes organic electronics to convert solar energy into
+                electricity. These materials can be more flexible and
+                potentially less expensive than traditional silicon-based solar
+                cells, allowing for a wider range of applications, such as
+                integration into building materials or consumer products.
+                Luminescent Solar Concentrators (LSC) are designed to absorb
+                sunlight over a large area, re-emit it at a different
+                wavelength, and direct it towards a smaller, high-efficiency
+                solar cell. The technology behind LSCs often involves the use of
+                fluorescent materials and can be applied in situations where
+                traditional solar panels are not practical, for example, in
+                transparent windows that can still produce electricity.
+            </p>
+
+            <p>
+                The presence of these projects at Maker Faire 2016 was not just
+                a demonstration of technological innovation but also served as
+                an educational platform to engage a broader and younger audience
+                in discussions about the potential and significance of renewable
+                energy technologies.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col2"
+            src={import(
+                "../../assets/projects/solar-lhub/solar-lhub-building-mf-2.jpg"
+            )}
+            alt="Solar LHub model displayed at MakerFaire 2016"
+            width={1920}
+            height={875}
+        />
+
+        <Flex slot="col2">
+            <CustomImage
+                src={import(
+                    "../../assets/projects/solar-lhub/solar-lhub-building-mf.jpg"
+                )}
+                alt="Solar LHub model displayed at MakerFaire 2016"
+                width={1700}
+                height={1920}
+            />
+
+            <CustomImage
+                src={import(
+                    "../../assets/projects/solar-lhub/solar-lhub-detail-mf.jpg"
+                )}
+                alt="Solar LHub model detail displayed at MakerFaire 2016"
+                width={1280}
+                height={1920}
+            />
+        </Flex>
+
+        <CustomImage
+            slot="col2"
+            blend
+            src={import(
+                "../../assets/projects/solar-lhub/solar-lhub-opv-lsc.jpg"
+            )}
+            alt="LSC and OPV technologies exhamples"
+            width={1920}
+            height={920}
+        />
+    </ColsLeft>
+
+    <ColsRight title="the models">
+        <div slot="col2">
+            <h3>Interactive architecture display</h3>
+
+            <p>
+                We took the initiative to highlight the benefits and
+                possibilities offered by two emerging technologies by designing
+                and creating models for a conceptual recreation center,
+                envisioned on a plot owned by ENI in South America.
+            </p>
+
+            <p>
+                We crafted two separate models: one representing the entire
+                building and another focusing specifically on the facade. These
+                models were designed to be interactive, featuring a 3D plan that
+                allows viewers to toggle the interior lighting on and off,
+                providing a dynamic way to engage with the design. These models
+                were constructed using digital tools provided by +LAB and the
+                resources of nearby fablabs.
+            </p>
+
+            <p>
+                Currently, these models are on display at ENI's headquarters in
+                Milan.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col1"
+            src={import(
+                "../../assets/projects/solar-lhub/solar-lhub-controller.jpg"
+            )}
+            alt="LSC and OPV technologies exhamples"
+            width={1920}
+            height={1080}
+        />
+
+        <CustomImage
+            slot="col1"
+            src={import(
+                "../../assets/projects/solar-lhub/solar-lhub-building-zoom.jpg"
+            )}
+            alt="LSC and OPV technologies exhamples"
+            width={1920}
+            height={920}
+        />
+
+        <Flex slot="col1">
+            <CustomImage
+                src={import(
+                    "../../assets/projects/solar-lhub/solar-lhub-building-zoom-2.jpg"
+                )}
+                alt="Solar LHub model displayed at MakerFaire 2016"
+                width={1280}
+                height={1920}
+            />
+
+            <CustomImage
+                src={import(
+                    "../../assets/projects/solar-lhub/solar-lhub-building-zoom-3.jpg"
+                )}
+                alt="Solar LHub model detail displayed at MakerFaire 2016"
+                width={1440}
+                height={1920}
+            />
+        </Flex>
+    </ColsRight>
+
+    <ColsLeft title="the design">
+        <div slot="col1">
+            <h3>Solar energy integration</h3>
+
+            <p>
+                The design of the building features a series of arches and
+                reverse arches that define its spaces and functions without the
+                need for physical barriers. This unique design ensures that from
+                ground level, the building's shape creates a rhythmic visual
+                experience, enhanced by the play of light and color. This effect
+                is achieved through the use of OPV panels on the roof and LSC
+                panels along the sides.
+            </p>
+
+            <p>
+                The roof's undulating form is made possible by these OPVs, which
+                serve to expand or contract the space below to suit various
+                activities. The angled roof not only captures light more
+                efficiently but also is sloped to collect rainwater into pipes
+                and storage tanks for later use. OPV panels are made from
+                organic materials deposited in layers, creating a flexible
+                alternative to conventional rigid silicon solar cells. This
+                flexibility arises from a novel blend of polymeric materials.
+            </p>
+
+            <p>
+                On the other hand, the facade's design incorporates both
+                thermoformed and flat LSC sheets, which help to facilitate
+                natural air circulation through the created openings. LSCs are
+                innovative components that allow light to be concentrated at the
+                edges, where it is then collected by solar cells. This mechanism
+                enables the building to harness sunlight across its extensive
+                facade, boosting electricity generation without increasing the
+                size of the solar cells themselves.
+            </p>
+        </div>
+
+        <Flex slot="col2">
+            <CustomImage
+                blend
+                src={import(
+                    "../../assets/projects/solar-lhub/solar-lhub-energy-diagram.jpg"
+                )}
+                alt="Solar LHub energy devices explained in diagram"
+                width={1920}
+                height={1600}
+            />
+
+            <CustomImage
+                src={import(
+                    "../../assets/projects/solar-lhub/solar-lhub-energy-model.jpg"
+                )}
+                alt="Solar LHub energy devices explained in model"
+                width={1440}
+                height={1500}
+            />
+        </Flex>
+
+        <CustomImage
+            blend
+            invertOnDark
+            slot="col2"
+            src={import(
+                "../../assets/projects/solar-lhub/solar-lhub-diagram.jpg"
+            )}
+            alt="Solar LHub sustainable diagrams"
+            width={1920}
+            height={820}
+        />
+
+        <CustomImage
+            blend
+            invertOnDark
+            slot="col2"
+            src={import("../../assets/projects/solar-lhub/solar-lhub-plan.jpg")}
+            alt="Solar LHub plan"
+            width={1920}
+            height={830}
+        />
+    </ColsLeft>
+</ProjectLayout>

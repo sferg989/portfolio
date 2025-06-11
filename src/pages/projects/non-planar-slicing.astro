@@ -1,0 +1,119 @@
+---
+import { getEntry } from "astro:content";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import ColsLeft from "../../components/rows/ColsLeft.astro";
+import CustomImage from "../../components/CustomImage.astro";
+import ColsRight from "../../components/rows/ColsRight.astro";
+import Video from "../../components/Video.astro";
+import Flex from "../../components/rows/Flex.astro";
+
+const project = await getEntry("projects", "non-planar-slicing");
+---
+
+<ProjectLayout>
+    <ProjectHero
+        title={project.data.title}
+        year={project.data.year}
+        subtitle={project.data.subtitle}
+        category={project.data.category}
+        cover={project.data.cover}
+    />
+
+    <ColsLeft title="freeform slicing">
+        <div slot="col1">
+            <h3>Taking Full Control</h3>
+
+            <p>
+                With the introduction of Grasshopper and the advancement of 3D
+                modeling software such as Rhinoceros, the generation of codes
+                for print head movements (GCode) is no longer exclusive to
+                slicing software such as Cura or Slic3r.
+            </p>
+
+            <p>
+                Modifications to the geometry composing the object, such as
+                infill, perimeters, and closing surfaces, substantially affect
+                the mechanical behavior. The combination of different geometries
+                and materials opens up many new possibilities.
+            </p>
+
+            <p>
+                I designed a <strong>new three-dimensional infill</strong> that
+                reduces the weight of the object while maintaining the span
+                between supports for the top and bottom surfaces unchanged. The
+                object has also shown an elastic response, which is tunable by
+                controlling the geometric parameters.
+            </p>
+        </div>
+
+        <Flex slot="col2">
+            <CustomImage
+                src={import("../../assets/projects/nls/infill-print.jpg")}
+                alt="Non planar 3D printed infill"
+                width={1280}
+                height={1700}
+                blend
+            />
+
+            <CustomImage
+                src={import(
+                    "../../assets/projects/nls/infill-print-sequence.gif"
+                )}
+                alt="Non planar 3D printed infill"
+                width={800}
+                height={676}
+                blend
+            />
+        </Flex>
+
+        <Flex slot="col2">
+            <Video
+                blend
+                autoplay
+                loop
+                src="/assets/projects/nls/3d-printing.mp4"
+            />
+        </Flex>
+    </ColsLeft>
+
+    <ColsRight title="applications">
+        <div slot="col2">
+            <h3>Textiles</h3>
+
+            <p>
+                This algorithm is also useful for the creation of fabrics, with
+                the possibility of using a continuous filament, as the warp and
+                weft effect in the final geometry is typical of the weaving
+                process.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/nls/textile-1.jpg")}
+            alt="Non planar 3D printed fabric"
+            width={1280}
+            height={960}
+            blend
+        />
+
+        <Flex slot="col1">
+            <CustomImage
+                src={import("../../assets/projects/nls/textile-3.jpg")}
+                alt="Non planar 3D printed fabric"
+                width={1280}
+                height={1604}
+                blend
+            />
+
+            <CustomImage
+                src={import("../../assets/projects/nls/textile-2.jpg")}
+                alt="Non planar 3D printed fabric"
+                width={1280}
+                height={854}
+                blend
+            />
+        </Flex>
+    </ColsRight>
+</ProjectLayout>

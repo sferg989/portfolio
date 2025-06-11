@@ -1,0 +1,102 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+    title: string;
+    description?: string;
+    url?: string;
+    date?: string;
+    location?: string;
+}
+
+const {
+    title,
+    description,
+    url,
+    date,
+    location,
+    class: cls,
+    ...props
+} = Astro.props;
+---
+
+<style>
+    .about-line-wrapper {
+        width: 100%;
+    }
+
+    .about-line-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: space-between;
+        align-items: center;
+    }
+
+    .about-line-title {
+        font-weight: var(--fontWeightLg);
+    }
+
+    .about-line-main {
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: var(--spacingSm);
+    }
+
+    .about-line-description {
+        color: var(--colorTextSecondary);
+    }
+
+    .about-line-location {
+        color: var(--colorTextSecondary);
+        font-size: var(--fontSizeSm);
+        align-self: flex-end;
+    }
+
+    .about-line-date {
+        color: var(--colorTextSecondary);
+        font-size: var(--fontSizeSm);
+        min-width: 25%;
+        text-align: right;
+    }
+
+    .about-line-link {
+        color: var(--colorTextSecondary);
+        text-decoration: underline;
+    }
+</style>
+
+<div class:list={[cls, "about-line-wrapper"]} {...props}>
+    <div class="about-line-container">
+        <div class="about-line-main">
+            <span class="about-line-title">{title}</span>
+
+            {
+                description ? (
+                    url ? (
+                        <a class="about-line-link" href={url} target="_blank">
+                            {description}
+                        </a>
+                    ) : (
+                        <span class="about-line-description">
+                            {description}
+                        </span>
+                    )
+                ) : null
+            }
+
+            {
+                location ? (
+                    <span class="about-line-location">_ {location}</span>
+                ) : null
+            }
+        </div>
+
+        {date ? <span class="about-line-date">{date}</span> : null}
+    </div>
+
+    <slot />
+</div>

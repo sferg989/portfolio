@@ -1,0 +1,24 @@
+---
+import Button from "./Button.astro";
+---
+
+<style>
+    .menu {
+        font-weight: 300;
+        padding: 0 var(--spacingSm) 0 var(--spacingSm); 
+        z-index: 1;
+    }
+
+    .btn {
+        font-family: var(--fontMono);
+    }
+</style>
+
+<section class="menu">
+    _
+    <Button class="btn" href="/#hello">hello</Button>
+     //
+    <Button class="btn" href="/#projects">projects</Button>
+     //
+    <Button class="btn" href="/about">about</Button>
+</section>

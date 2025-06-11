@@ -1,0 +1,10 @@
+{
+  "title": "Hi-Design",
+  "year": 2020,
+  "category": "software",
+  "subtitle": "A state-of-the-art design software for dental frameworks",
+  "cover": "../../assets/projects/hi-design/hi-design-cover.png",
+  "order": 2,
+  "heroMesh": "/meshes/hi-design.obj",
+  "projectMesh": "/meshes/hi-design.obj"
+}

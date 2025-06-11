@@ -1,0 +1,10 @@
+{
+  "title": "Non Planar Slicing",
+  "year": 2016,
+  "category": "research",
+  "subtitle": "Exploring novel slicing algorithms for 3D printing",
+  "cover": "../../assets/projects/nls/nls-cover.jpg",
+  "order": 98,
+  "heroMesh": "",
+  "projectMesh": "/meshes/nls.obj"
+}

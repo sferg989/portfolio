@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+    direction?: "horizontail" | "vertical";
+    justify?: "start" | "end" | "space-between" | "space-evenly";
+    align?: "start" | "end" | "stretch";
+}
+
+let {
+    direction = "horizontal",
+    justify = "space-evenly",
+    align = "center",
+    ...props
+} = Astro.props;
+
+direction = direction === "horizontal" ? "row" : "column";
+---
+
+<style define:vars={{ direction, justify, align }}>
+    div {
+        max-width: 100%;
+
+        display: flex;
+        flex-direction: var(--direction);
+        justify-content: var(--justify);
+        align-items: var(--align);
+
+        gap: var(--spacingLg);
+    }
+
+    @media only screen and (max-width: 600px) {
+        div {
+            gap: var(--spacingMd);
+        }
+
+</style>
+
+<div {...props}>
+    <slot />
+</div>

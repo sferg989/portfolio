@@ -1,0 +1,86 @@
+---
+interface Props {
+    title?: string;
+}
+
+import Row from "../rows/Row.astro";
+import SectionTitle from "../text/SectionTitle.astro";
+
+const { title } = Astro.props;
+---
+
+<style>
+    .cols-right {
+        gap: var(--spacingLg);
+    }
+
+    .col1 {
+        grid-column: 1 / 6;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: start;
+        align-items: center;
+
+        gap: var(--spacingLg);
+    }
+
+    .col2 {
+        grid-column: 6 / -1;
+    }
+
+    .cols-right-stick {
+        top: var(--stickyTopOffset);
+        position: sticky;
+    }
+
+    .cols-right-title {
+        text-align: right;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .col1 {
+            grid-column: 1 / -1;
+            order: 1;
+            gap: var(--spacingMd);
+        }
+
+        .col2 {
+            grid-column: 1 / -1;
+            order: -1;
+        }
+
+        .cols-right-title {
+            grid-column: 1 / -1;
+            transform: none;
+
+            padding-left: var(--spacingMd);
+            padding-right: var(--spacingMd);
+        }
+
+        .cols-right-stick {
+            top: 0;
+            position: relative;
+        }
+    }
+</style>
+
+<Row class="cols-right">
+    <section class="cols-right col1">
+        <slot name="col1" />
+    </section>
+
+    <section class="cols-right col2">
+        <div class="cols-right-stick">
+            {
+                title ? (
+                    <SectionTitle rotate={false} class="cols-right-title">
+                        {title}
+                    </SectionTitle>
+                ) : null
+            }
+            <slot name="col2" />
+        </div>
+    </section>
+</Row>

@@ -1,0 +1,81 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+    rotate?: boolean;
+}
+
+const { class: cls, rotate = true, ...props } = Astro.props;
+const angle = rotate ? "90deg" : "0deg";
+---
+
+<style define:vars={{ angle }}>
+    .section-title-wrapper {
+        transform-origin: bottom left;
+        transform: rotate(var(--angle));
+    }
+
+    .section-title {
+        font-family: var(--fontMono);
+        font-weight: var(--fontWeightSm);
+        font-size: var(--fontSizeMd);
+
+        text-transform: lowercase;
+
+        color: var(--colorSectionTitle);
+
+        &::before {
+            content: "[ ";
+            display: inline-block;
+            animation: shift-left 5s ease-in-out infinite;
+        }
+
+        &::after {
+            content: " ]";
+            display: inline-block;
+            animation: shift-right 5s ease-in-out infinite;
+        }
+    }
+
+    @keyframes shift-left {
+        0% {
+            transform: translateX(0px);
+        }
+
+        50% {
+            transform: translateX(-6px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes shift-right {
+        0% {
+            transform: translateX(0px);
+        }
+
+        50% {
+            transform: translateX(6px);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .section-title-wrapper {
+            transform: none;
+        }
+    }
+</style>
+
+<div class={cls}>
+    <div class="section-title-wrapper">
+        <span class="section-title" , {...props}>
+            <slot />
+        </span>
+    </div>
+</div>

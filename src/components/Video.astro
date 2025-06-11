@@ -1,0 +1,33 @@
+---
+import { type HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"video"> {
+    blend?: boolean;
+    invertOnDark?: boolean;
+}
+
+const { blend, invertOnDark, ...props } = Astro.props;
+
+const vars = {
+    blend: blend ? "multiply" : "normal",
+    darkBlend: blend && invertOnDark ? "screen" : "normal",
+};
+---
+
+<style define:vars={vars}>
+    video {
+        border-radius: var(--radiusMd);
+        mix-blend-mode: var(--blend);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        video {
+            filter: var(--darkFilter);
+            mix-blend-mode: var(--darkBlend);
+        }
+    }
+</style>
+
+<div>
+    <video {...props}></video>
+</div>

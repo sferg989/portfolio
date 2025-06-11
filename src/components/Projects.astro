@@ -1,0 +1,20 @@
+---
+const { class: cls, ...props } = Astro.props;
+
+import Row from "./rows/Row.astro";
+import SectionTitle from "./text/SectionTitle.astro";
+import ProjectsField from "./WebGL/ProjectsField.svelte";
+---
+
+<style>
+    .projects {
+        grid-column: 1 / -1;
+    }
+</style>
+
+<Row {...props}>
+    <section class="projects">
+        <SectionTitle>things I made</SectionTitle>
+        <ProjectsField client:only />
+    </section>
+</Row>

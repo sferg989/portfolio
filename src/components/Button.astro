@@ -1,0 +1,44 @@
+---
+const { class: cls, ...props } = Astro.props;
+---
+
+<style>
+    a {
+        all: unset;
+    }
+
+    .button {
+        all: unset;
+
+        cursor: pointer;
+
+        padding-left: var(--spacingSm);
+        padding-right: var(--spacingSm);
+
+        padding-top: var(--spacingSm);
+        padding-bottom: var(--spacingSm);
+
+        border-radius: var(--radiusMd);
+
+        transition-duration: var(--transitionDuration);
+        transition-timing-function: var(--transitionTimingFunction);
+
+        &:hover {
+            background-color: var(--colorWhite);
+        }
+
+        &[data-active] {
+            background-color: var(--colorWhite);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .button {
+            font-size: var(--fontSizeSm);
+        }
+    }
+</style>
+
+<a class:list={["button", cls]} {...props}>
+    <slot />
+</a>
