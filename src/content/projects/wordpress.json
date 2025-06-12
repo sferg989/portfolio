@@ -2,9 +2,9 @@
   "title": "Hi-Design",
   "year": 2020,
   "category": "software",
-  "subtitle": "A state-of-the-art design software for dental frameworks",
+  "subtitle": "WordPress Development and E-commerce",
   "cover": "../../assets/projects/hi-design/hi-design-cover.png",
-  "order": 2,
+  "order": 3,
   "heroMesh": "/meshes/hi-design.obj",
   "projectMesh": "/meshes/hi-design.obj"
-}
+} 

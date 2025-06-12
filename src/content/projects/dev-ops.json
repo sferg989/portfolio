@@ -1,0 +1,10 @@
+{
+  "title": "Dev Ops",
+  "year": 2023,
+  "category": "architecture",
+  "subtitle": "DevOps and Infrastructure Management",
+  "cover": "../../assets/projects/hi-design/hi-design-cover.png",
+  "order": 8,
+  "heroMesh": "/meshes/hi-design.obj",
+  "projectMesh": "/meshes/hi-design.obj"
+} 

@@ -1,10 +1,10 @@
 {
-  "title": "Hi-Fiber",
-  "year": 2021,
-  "category": "product",
-  "subtitle": "The new generation of dental reinforcements",
+  "title": "Wire Frame",
+  "year": 2023,
+  "category": "software",
+  "subtitle": "Package Development and Tool Creation",
   "cover": "../../assets/projects/hi-fiber/hi-fiber-cover.jpg",
-  "order": 1,
+  "order": 4,
   "heroMesh": "/meshes/hi-fiber.obj",
   "projectMesh": "/meshes/hi-fiber.obj"
-}
+} 

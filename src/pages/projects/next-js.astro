@@ -1,0 +1,182 @@
+---
+import { getEntry } from "astro:content";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import ColsLeft from "../../components/rows/ColsLeft.astro";
+import CustomImage from "../../components/CustomImage.astro";
+import Flex from "../../components/rows/Flex.astro";
+import ColsRight from "../../components/rows/ColsRight.astro";
+
+const project = await getEntry("projects", "next-js");
+---
+
+<ProjectLayout>
+    <ProjectHero
+        title={project.data.title}
+        year={project.data.year}
+        subtitle={project.data.subtitle}
+        category={project.data.category}
+        cover={project.data.cover}
+    />
+
+    <ColsLeft title="next.js applications">
+        <div slot="col1">
+            <h3>Modern React Architecture</h3>
+
+            <p>
+                Built scalable Next.js applications using server components and granular client components. Leveraged Next.js server rendering capabilities from the beginning with <code>getServerSideProps</code> and modern server actions.
+            </p>
+
+            <p>
+                <strong>Key Projects:</strong>
+            </p>
+            <ul>
+                <li><strong>Academy</strong> - Server-first architecture with optimized performance</li>
+                <li><strong>MyUscca</strong> - User management and authentication system</li>
+                <li><strong>Email Preference Center</strong> - Built with server actions</li>
+                <li><strong>Invoices</strong> - Saved company $60k/month by removing 3rd party vendor</li>
+                <li><strong>Reciprocity UI</strong> - Headless app using platform API</li>
+            </ul>
+        </div>
+
+        <CustomImage
+            slot="col2"
+            src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+            alt="Next.js Development"
+            width={1920}
+            height={1200}
+        />
+
+        <Flex slot="col2">
+            <CustomImage
+                src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+                alt="Server Components"
+                width={1920}
+                height={1200}
+            />
+
+            <CustomImage
+                src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+                alt="Client Components"
+                width={1920}
+                height={1200}
+            />
+        </Flex>
+    </ColsLeft>
+
+    <ColsRight title="checkout refactor">
+        <div slot="col2">
+            <h3>From Chaos to Order</h3>
+
+            <p>
+                Transformed a disastrous Create React App checkout system into a streamlined Next.js application. The original system had a Context file over 1,000 lines long with poor maintainability.
+            </p>
+
+            <p>
+                <strong>Transformation Results:</strong>
+            </p>
+            <ul>
+                <li>Migrated from Create React App to Next.js</li>
+                <li>Reduced 1k+ line Context file to modular architecture</li>
+                <li>Implemented over 500 comprehensive tests</li>
+                <li>Dramatically improved code maintainability</li>
+                <li>Enhanced performance and user experience</li>
+                <li>Established testing best practices</li>
+            </ul>
+
+            <p>
+                This refactor became a model for how to approach legacy system modernization, with comprehensive testing ensuring reliability throughout the migration process.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+            alt="Checkout Refactor Before/After"
+            width={1920}
+            height={1200}
+        />
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+            alt="Testing Coverage"
+            width={1920}
+            height={1200}
+        />
+    </ColsRight>
+
+    <ColsLeft title="migration strategies">
+        <div slot="col1">
+            <h3>Incremental Modernization</h3>
+
+            <p>
+                Led multiple migration projects from legacy systems to modern Next.js applications, always prioritizing incremental improvements and maintaining system stability.
+            </p>
+
+            <p>
+                <strong>Migration Approach:</strong>
+            </p>
+            <ul>
+                <li><strong>TypeScript Migration</strong> - Bit by bit conversion ensuring type safety</li>
+                <li><strong>Form Modernization</strong> - Migrating from Formik to native forms</li>
+                <li><strong>Architecture Refactoring</strong> - Breaking down monolithic components</li>
+                <li><strong>Testing Implementation</strong> - Adding comprehensive test coverage</li>
+                <li><strong>Performance Optimization</strong> - Leveraging Next.js features</li>
+            </ul>
+
+            <p>
+                Each migration was carefully planned to minimize disruption while maximizing the benefits of modern React and Next.js patterns.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col2"
+            src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+            alt="Migration Process"
+            width={1920}
+            height={1200}
+        />
+    </ColsLeft>
+
+    <ColsRight title="deployment & gatsby">
+        <div slot="col2">
+            <h3>Modern Deployment Strategies</h3>
+
+            <p>
+                Implemented cutting-edge deployment solutions using OpenNext and Cloudflare Workers, along with Gatsby for static site generation and headless WordPress blogs.
+            </p>
+
+            <p>
+                <strong>Deployment Technologies:</strong>
+            </p>
+            <ul>
+                <li><strong>OpenNext</strong> - Cloudflare Workers deployment</li>
+                <li><strong>Next on Cloudflare Pages</strong> - Edge optimization</li>
+                <li><strong>Gatsby</strong> - Headless WordPress blog implementation</li>
+                <li><strong>Static Generation</strong> - Performance optimization</li>
+                <li><strong>Edge Computing</strong> - Global content delivery</li>
+            </ul>
+
+            <p>
+                These deployment strategies ensured optimal performance, scalability, and cost-effectiveness across all applications.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+            alt="Deployment Architecture"
+            width={1920}
+            height={1200}
+        />
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/mambo/mambo-cover.jpg")}
+            alt="Cloudflare Integration"
+            width={1920}
+            height={1200}
+        />
+    </ColsRight>
+</ProjectLayout> 

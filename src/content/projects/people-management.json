@@ -1,10 +1,10 @@
 {
   "title": "Perelman Arts Center",
-  "year": 2014,
-  "category": "architecture",
-  "subtitle": "A glowing marble cube at the World Trade Center",
+  "year": 2023,
+  "category": "research",
+  "subtitle": "People Management and Team Leadership",
   "cover": "../../assets/projects/pac/pac-cover.jpg",
-  "order": 6,
+  "order": 7,
   "heroMesh": "/meshes/pac.obj",
   "projectMesh": "/meshes/pac.obj"
-}
+} 

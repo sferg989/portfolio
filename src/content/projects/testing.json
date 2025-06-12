@@ -1,0 +1,10 @@
+{
+  "title": "Necklace Residence",
+  "year": 2023,
+  "category": "software",
+  "subtitle": "Testing and Quality Assurance",
+  "cover": "../../assets/projects/necklace-residence/necklace-residence-cover.jpg",
+  "order": 6,
+  "heroMesh": "/meshes/pac.obj",
+  "projectMesh": "/meshes/pac.obj"
+} 

@@ -1,0 +1,184 @@
+---
+import { getEntry } from "astro:content";
+import ProjectHero from "../../components/ProjectHero.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import ColsLeft from "../../components/rows/ColsLeft.astro";
+import CustomImage from "../../components/CustomImage.astro";
+import Flex from "../../components/rows/Flex.astro";
+import ColsRight from "../../components/rows/ColsRight.astro";
+
+const project = await getEntry("projects", "wordpress");
+---
+
+<ProjectLayout>
+    <ProjectHero
+        title={project.data.title}
+        year={project.data.year}
+        subtitle={project.data.subtitle}
+        category={project.data.category}
+        cover={project.data.cover}
+    />
+
+    <ColsLeft title="organic site">
+        <div slot="col1">
+            <h3>High-Traffic WordPress Platform</h3>
+
+            <p>
+                Built and managed an organic site serving over 2 million users per month. This greenfield project utilized headless WordPress with static generation using Gatsby for optimal performance and SEO.
+            </p>
+
+            <p>
+                <strong>Key Achievements:</strong>
+            </p>
+            <ul>
+                <li>Managed self-hosting infrastructure for 2M+ monthly users</li>
+                <li>Implemented headless WordPress blog with static generation</li>
+                <li>Built Boast review project with JSON import and CI/CD automation</li>
+                <li>Developed custom Elementor widgets with complex data retrieval</li>
+                <li>Implemented WpGraphQL with sophisticated data transformation</li>
+            </ul>
+        </div>
+
+        <CustomImage
+            slot="col2"
+            src={import("../../assets/projects/hi-design/hi-design-cover.png")}
+            alt="WordPress Development"
+            width={1920}
+            height={1200}
+        />
+
+        <Flex slot="col2">
+            <CustomImage
+                src={import("../../assets/projects/hi-design/hi-design-main-window.jpg")}
+                alt="Headless WordPress"
+                width={1920}
+                height={1200}
+            />
+
+            <CustomImage
+                src={import("../../assets/projects/hi-design/cloud-infrastructure.svg")}
+                alt="Custom Elementor Widgets"
+                width={1920}
+                height={1200}
+            />
+        </Flex>
+    </ColsLeft>
+
+    <ColsRight title="e-commerce site">
+        <div slot="col2">
+            <h3>Multi-Million Dollar E-commerce</h3>
+
+            <p>
+                Managed a high-performance e-commerce site generating over $2M in sales. Implemented headless WooCommerce architecture using WooGraphQL for optimal performance and user experience.
+            </p>
+
+            <p>
+                <strong>E-commerce Achievements:</strong>
+            </p>
+            <ul>
+                <li>Managed $2M+ in annual sales volume</li>
+                <li>Implemented headless WooCommerce with WooGraphQL</li>
+                <li>Set up robust 3rd party hosting infrastructure</li>
+                <li>Implemented HPOS (High Performance Order Storage)</li>
+                <li>Dramatically improved order search performance</li>
+                <li>Optimized user search on 2M+ user database</li>
+            </ul>
+
+            <p>
+                The headless architecture provided superior performance, scalability, and developer experience while maintaining all the powerful e-commerce features of WooCommerce.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/hi-design/hi-design-cover.png")}
+            alt="WooCommerce E-commerce"
+            width={1920}
+            height={1200}
+        />
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/hi-design/hi-design-main-window.jpg")}
+            alt="Order Management System"
+            width={1920}
+            height={1200}
+        />
+    </ColsRight>
+
+    <ColsLeft title="technical implementation">
+        <div slot="col1">
+            <h3>Advanced WordPress Architecture</h3>
+
+            <p>
+                Implemented cutting-edge WordPress solutions using modern development practices, GraphQL, and automated deployment processes.
+            </p>
+
+            <p>
+                <strong>Technical Solutions:</strong>
+            </p>
+            <ul>
+                <li><strong>WpGraphQL Integration</strong> - Complex data transformation and resolvers</li>
+                <li><strong>Custom Elementor Widgets</strong> - Advanced data retrieval and display</li>
+                <li><strong>Puppeteer Automation</strong> - Review import and CI/CD processes</li>
+                <li><strong>Performance Optimization</strong> - Handling millions of monthly pageviews</li>
+                <li><strong>Database Optimization</strong> - Search improvements on large datasets</li>
+                <li><strong>HPOS Implementation</strong> - Modern WooCommerce architecture</li>
+            </ul>
+
+            <p>
+                These implementations enabled both the organic content site and e-commerce platform to scale efficiently while maintaining excellent performance and user experience.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col2"
+            src={import("../../assets/projects/hi-design/hi-design-main-window.jpg")}
+            alt="GraphQL Implementation"
+            width={1920}
+            height={1200}
+        />
+    </ColsLeft>
+
+    <ColsRight title="infrastructure & hosting">
+        <div slot="col2">
+            <h3>Scalable Infrastructure Management</h3>
+
+            <p>
+                Managed comprehensive hosting infrastructure supporting millions of users and high-value e-commerce transactions with reliability and performance optimization.
+            </p>
+
+            <p>
+                <strong>Infrastructure Highlights:</strong>
+            </p>
+            <ul>
+                <li>Self-managed hosting for high-traffic sites</li>
+                <li>Third-party hosting implementation for e-commerce</li>
+                <li>Performance monitoring and optimization</li>
+                <li>Automated backup and deployment systems</li>
+                <li>Security implementation for financial transactions</li>
+                <li>Scalable architecture supporting growth</li>
+            </ul>
+
+            <p>
+                The infrastructure successfully supported both organic growth to 2M+ monthly users and e-commerce growth to $2M+ in annual sales.
+            </p>
+        </div>
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/hi-design/cloud-infrastructure.svg")}
+            alt="Infrastructure Architecture"
+            width={1920}
+            height={1200}
+        />
+
+        <CustomImage
+            slot="col1"
+            src={import("../../assets/projects/hi-design/hi-design-cover.png")}
+            alt="Performance Monitoring"
+            width={1920}
+            height={1200}
+        />
+    </ColsRight>
+</ProjectLayout>

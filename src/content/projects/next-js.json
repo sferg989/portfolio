@@ -1,10 +1,10 @@
 {
   "title": "MAMBO",
-  "year": 2021,
-  "category": "product",
-  "subtitle": "World's first 3d printed fiberglass boat",
+  "year": 2022,
+  "category": "software",
+  "subtitle": "Next.js and React Applications",
   "cover": "../../assets/projects/mambo/mambo-cover.jpg",
-  "order": 0,
+  "order": 2,
   "heroMesh": "/meshes/boat.obj",
   "projectMesh": "/meshes/boat.obj"
-}
+} 
