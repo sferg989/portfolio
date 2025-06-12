@@ -1,0 +1,21 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "command": "export NVM_DIR=\"$HOME/.nvm\" && source \"$NVM_DIR/nvm.sh\" && nvm use && npm run lint && npm run astro:check && npm run build",
+      "problemMatcher": [],
+      "label": "Run Lint and Check and Build",
+      "detail": "Runs lint, astro:check, and build"
+    },
+    {
+      "type": "shell",
+      "command": "export NVM_DIR=\"$HOME/.nvm\" && source \"$NVM_DIR/nvm.sh\" && nvm use && npm run lint && npm run astro:check && npm run build && git add . && git commit --amend --no-edit && git push origin $(git branch --show-current) --force",
+      "problemMatcher": [],
+      "label": "Run Checks and Force Push",
+      "detail": "Formats code, runs linting, checks, builds, then amends the current commit and force pushes"
+    }
+  ]
+}

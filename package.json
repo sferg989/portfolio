@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+    "lint": "eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro, svelte}\"",
     "astro:check": "astro check",
     "astro": "astro"
   },
@@ -20,8 +20,7 @@
     "astro": "^3.5.3",
     "nanostores": "^0.9.5",
     "svelte": "^4.2.3",
-    "three": "^0.158.0",
-    "typescript": "^5.8.3"
+    "three": "^0.158.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
