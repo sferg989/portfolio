@@ -1,139 +1,139 @@
 ---
-import { getEntry } from "astro:content";
-import ProjectHero from "../../components/ProjectHero.astro";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
-import ColsLeft from "../../components/rows/ColsLeft.astro";
-import CustomImage from "../../components/CustomImage.astro";
-import Flex from "../../components/rows/Flex.astro";
-import ColsRight from "../../components/rows/ColsRight.astro";
+import { getEntry } from 'astro:content';
+import ProjectHero from '../../components/ProjectHero.astro';
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+import ColsLeft from '../../components/rows/ColsLeft.astro';
+import CustomImage from '../../components/CustomImage.astro';
+import Flex from '../../components/rows/Flex.astro';
+import ColsRight from '../../components/rows/ColsRight.astro';
 
-const project = await getEntry("projects", "php-laravel");
+const project = await getEntry('projects', 'php-laravel');
 ---
 
 <ProjectLayout>
-    <ProjectHero
-        title={project.data.title}
-        year={project.data.year}
-        subtitle={project.data.subtitle}
-        category={project.data.category}
-        cover={project.data.cover}
+  <ProjectHero
+    title={project.data.title}
+    year={project.data.year}
+    subtitle={project.data.subtitle}
+    category={project.data.category}
+    cover={project.data.cover}
+  />
+
+  <ColsLeft title="php and laravel">
+    <div slot="col1">
+      <h3>Marketing Sales Platform</h3>
+
+      <p>
+                Managed the Marketing sales pages for a high-growth company that scaled from $65M to $300M+ in revenue. Built a comprehensive platform handling hundreds of sales pages and complex scheduling systems.
+      </p>
+
+      <p>
+        <strong>Key Achievements:</strong>
+      </p>
+      <ul>
+        <li>Created new APIs and middleware for scalable architecture</li>
+        <li>Implemented comprehensive unit tests on all new classes</li>
+        <li>Built Custom Funnel Management System handling hundreds of sales pages</li>
+        <li>Developed Funnel Promo Schedule system that revolutionized business operations</li>
+      </ul>
+    </div>
+
+    <CustomImage
+      slot="col2"
+      src={import('../../assets/projects/hi-fiber/hi-fiber-croc-top.jpg')}
+      alt="PHP Laravel Development"
+      width={1920}
+      height={1200}
     />
 
-    <ColsLeft title="php and laravel">
-        <div slot="col1">
-            <h3>Marketing Sales Platform</h3>
+    <Flex slot="col2">
+      <CustomImage
+        src={import('../../assets/projects/hi-fiber/hi-fiber-croc-front.jpg')}
+        alt="API Development"
+        width={1920}
+        height={1200}
+      />
 
-            <p>
-                Managed the Marketing sales pages for a high-growth company that scaled from $65M to $300M+ in revenue. Built a comprehensive platform handling hundreds of sales pages and complex scheduling systems.
-            </p>
+      <CustomImage
+        src={import('../../assets/projects/hi-fiber/hi-fiber-falling-multiple.jpg')}
+        alt="Middleware Implementation"
+        width={1920}
+        height={1200}
+      />
+    </Flex>
+  </ColsLeft>
 
-            <p>
-                <strong>Key Achievements:</strong>
-            </p>
-            <ul>
-                <li>Created new APIs and middleware for scalable architecture</li>
-                <li>Implemented comprehensive unit tests on all new classes</li>
-                <li>Built Custom Funnel Management System handling hundreds of sales pages</li>
-                <li>Developed Funnel Promo Schedule system that revolutionized business operations</li>
-            </ul>
-        </div>
+  <ColsRight title="funnel management system">
+    <div slot="col2">
+      <h3>Revolutionary Scheduling System</h3>
 
-        <CustomImage
-            slot="col2"
-            src={import("../../assets/projects/hi-fiber/hi-fiber-croc-top.jpg")}
-            alt="PHP Laravel Development"
-            width={1920}
-            height={1200}
-        />
-
-        <Flex slot="col2">
-            <CustomImage
-                src={import("../../assets/projects/hi-fiber/hi-fiber-croc-front.jpg")}
-                alt="API Development"
-                width={1920}
-                height={1200}
-            />
-
-            <CustomImage
-                src={import("../../assets/projects/hi-fiber/hi-fiber-falling-multiple.jpg")}
-                alt="Middleware Implementation"
-                width={1920}
-                height={1200}
-            />
-        </Flex>
-    </ColsLeft>
-
-    <ColsRight title="funnel management system">
-        <div slot="col2">
-            <h3>Revolutionary Scheduling System</h3>
-
-            <p>
+      <p>
                 The Funnel Promo Schedule was a game-changing innovation that transformed how the business handled giveaways and promotional campaigns. Previously, giveaways required manual hard coding multiple times per month.
-            </p>
+      </p>
 
-            <p>
-                <strong>Business Impact:</strong>
-            </p>
-            <ul>
-                <li>Eliminated manual coding of promotional campaigns</li>
-                <li>Enabled automated scheduling of giveaways</li>
-                <li>Provided business teams with self-service capabilities</li>
-                <li>Significantly reduced development overhead</li>
-                <li>Improved campaign deployment speed and reliability</li>
-            </ul>
+      <p>
+        <strong>Business Impact:</strong>
+      </p>
+      <ul>
+        <li>Eliminated manual coding of promotional campaigns</li>
+        <li>Enabled automated scheduling of giveaways</li>
+        <li>Provided business teams with self-service capabilities</li>
+        <li>Significantly reduced development overhead</li>
+        <li>Improved campaign deployment speed and reliability</li>
+      </ul>
 
-            <p>
+      <p>
                 This system handled hundreds of sales pages and their complex scheduling requirements, providing a robust foundation for the company's marketing operations.
-            </p>
-        </div>
+      </p>
+    </div>
 
-        <CustomImage
-            slot="col1"
-            src={import("../../assets/projects/hi-fiber/hi-fiber-jello.jpg")}
-            alt="Funnel Management Interface"
-            width={1920}
-            height={1200}
-        />
+    <CustomImage
+      slot="col1"
+      src={import('../../assets/projects/hi-fiber/hi-fiber-jello.jpg')}
+      alt="Funnel Management Interface"
+      width={1920}
+      height={1200}
+    />
 
-        <CustomImage
-            slot="col1"
-            src={import("../../assets/projects/hi-fiber/hi-fiber-product-line.jpg")}
-            alt="Scheduling System"
-            width={1920}
-            height={1200}
-        />
-    </ColsRight>
+    <CustomImage
+      slot="col1"
+      src={import('../../assets/projects/hi-fiber/hi-fiber-product-line.jpg')}
+      alt="Scheduling System"
+      width={1920}
+      height={1200}
+    />
+  </ColsRight>
 
-    <ColsLeft title="technical excellence">
-        <div slot="col1">
-            <h3>Quality-Driven Development</h3>
+  <ColsLeft title="technical excellence">
+    <div slot="col1">
+      <h3>Quality-Driven Development</h3>
 
-            <p>
+      <p>
                 Every aspect of the platform was built with quality and maintainability in mind. Implemented comprehensive testing strategies and modern development practices.
-            </p>
+      </p>
 
-            <p>
-                <strong>Technical Practices:</strong>
-            </p>
-            <ul>
-                <li>Unit testing on all new classes for reliability</li>
-                <li>Custom API development with proper middleware</li>
-                <li>Scalable architecture supporting high-traffic loads</li>
-                <li>Clean code practices and documentation</li>
-                <li>Performance optimization for marketing page delivery</li>
-            </ul>
+      <p>
+        <strong>Technical Practices:</strong>
+      </p>
+      <ul>
+        <li>Unit testing on all new classes for reliability</li>
+        <li>Custom API development with proper middleware</li>
+        <li>Scalable architecture supporting high-traffic loads</li>
+        <li>Clean code practices and documentation</li>
+        <li>Performance optimization for marketing page delivery</li>
+      </ul>
 
-            <p>
+      <p>
                 The platform successfully supported the company's growth from $65M to over $300M in revenue, handling massive traffic and complex business logic with reliability and performance.
-            </p>
-        </div>
+      </p>
+    </div>
 
-        <CustomImage
-            slot="col2"
-            src={import("../../assets/projects/hi-fiber/hi-fiber-cad.jpg")}
-            alt="Code Quality and Testing"
-            width={1920}
-            height={1200}
-        />
-    </ColsLeft>
-</ProjectLayout> 
+    <CustomImage
+      slot="col2"
+      src={import('../../assets/projects/hi-fiber/hi-fiber-cad.jpg')}
+      alt="Code Quality and Testing"
+      width={1920}
+      height={1200}
+    />
+  </ColsLeft>
+</ProjectLayout>

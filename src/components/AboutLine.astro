@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"div"> {
+interface Props extends HTMLAttributes<'div'> {
     title: string;
     description?: string;
     url?: string;
@@ -10,13 +10,13 @@ interface Props extends HTMLAttributes<"div"> {
 }
 
 const {
-    title,
-    description,
-    url,
-    date,
-    location,
-    class: cls,
-    ...props
+  title,
+  description,
+  url,
+  date,
+  location,
+  class: cls,
+  ...props
 } = Astro.props;
 ---
 
@@ -69,34 +69,34 @@ const {
     }
 </style>
 
-<div class:list={[cls, "about-line-wrapper"]} {...props}>
-    <div class="about-line-container">
-        <div class="about-line-main">
-            <span class="about-line-title">{title}</span>
+<div class:list={[cls, 'about-line-wrapper']} {...props}>
+  <div class="about-line-container">
+    <div class="about-line-main">
+      <span class="about-line-title">{title}</span>
 
-            {
-                description ? (
-                    url ? (
-                        <a class="about-line-link" href={url} target="_blank">
-                            {description}
-                        </a>
-                    ) : (
-                        <span class="about-line-description">
-                            {description}
-                        </span>
-                    )
-                ) : null
-            }
+      {
+        description ? (
+          url ? (
+            <a class="about-line-link" href={url} target="_blank">
+              {description}
+            </a>
+          ) : (
+            <span class="about-line-description">
+              {description}
+            </span>
+          )
+        ) : null
+      }
 
-            {
-                location ? (
-                    <span class="about-line-location">_ {location}</span>
-                ) : null
-            }
-        </div>
-
-        {date ? <span class="about-line-date">{date}</span> : null}
+      {
+        location ? (
+          <span class="about-line-location">_ {location}</span>
+        ) : null
+      }
     </div>
 
-    <slot />
+    {date ? <span class="about-line-date">{date}</span> : null}
+  </div>
+
+  <slot />
 </div>

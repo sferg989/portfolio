@@ -1,7 +1,7 @@
 ---
-import Sprites from "../components/Sprites.svelte";
-import Row from "./rows/Row.astro";
-import Highlight from "./text/Highlight.astro";
+import Sprites from '../components/Sprites.svelte';
+import Row from './rows/Row.astro';
+import Highlight from './text/Highlight.astro';
 
 const props = Astro.props;
 ---
@@ -56,29 +56,29 @@ const props = Astro.props;
 </style>
 
 <Row class="hero-row" {...props}>
-    <Sprites client:only />
+  <Sprites client:only />
 
-    <div class="hero-container">
-        <div class="line" style={{ animationDelay: "0.4s" }}>
-            <span class="light">I'm</span><span style={{ paddingLeft: "36px" }}
-                >Steve Ferguson</span
-            >
-        </div>
-
-        <div style="height: 1em;"></div>
-
-        <div class="line" style={{ animationDelay: "0.6s" }}>
-            <span class="light" style={{ paddingLeft: "29px" }}>a</span><span
-                style={{ paddingLeft: "25px" }}
-                >devoted <Highlight>maker</Highlight></span
-            >
-        </div>
-
-        <div class="line" style={{ animationDelay: "0.8s" }}>
-            &<span class="light" style={{ paddingLeft: "10px" }}>an</span><span
-                style={{ paddingLeft: "10px" }}
-                >enthusiastic <Highlight>tech leader</Highlight></span
-            >
-        </div>
+  <div class="hero-container">
+    <div class="line" style={{ animationDelay: '0.4s' }}>
+      <span class="light">I'm</span><span style={{ paddingLeft: '36px' }}
+      >Steve Ferguson</span
+      >
     </div>
+
+    <div style="height: 1em;"></div>
+
+    <div class="line" style={{ animationDelay: '0.6s' }}>
+      <span class="light" style={{ paddingLeft: '29px' }}>a</span><span
+        style={{ paddingLeft: '25px' }}
+      >devoted <Highlight>maker</Highlight></span
+      >
+    </div>
+
+    <div class="line" style={{ animationDelay: '0.8s' }}>
+            &<span class="light" style={{ paddingLeft: '10px' }}>an</span><span
+        style={{ paddingLeft: '10px' }}
+      >enthusiastic <Highlight>tech leader</Highlight></span
+      >
+    </div>
+  </div>
 </Row>

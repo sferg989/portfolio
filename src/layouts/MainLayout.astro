@@ -1,10 +1,10 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
-import "../style/vars.css";
-import "../style/fontFace.css";
-import "../style/global.css";
+import '../style/vars.css';
+import '../style/fontFace.css';
+import '../style/global.css';
 
 import '@fontsource-variable/stix-two-text';
 ---
@@ -22,22 +22,22 @@ import '@fontsource-variable/stix-two-text';
 </style>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
 
-        <link
-            rel="icon"
-            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍩</text></svg>"
-        />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍩</text></svg>"
+    />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content="I'm a software engineer with a passion for building things."
-        />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="I'm a software engineer with a passion for building things."
+    />
 
-        <title>Hi! I am Steve Ferguson</title>
+    <title>Hi! I am Steve Ferguson</title>
 
         <!-- Google tag (gtag.js) -->
         <!-- <script
@@ -54,14 +54,14 @@ import '@fontsource-variable/stix-two-text';
 
             gtag("config", "G-B4K743GG25");
         </script> -->
-    </head>
+  </head>
 
-    <body>
-        <main>
-            <slot name="hero" />
-            <Navbar />
-            <slot />
-            <Footer />
-        </main>
-    </body>
+  <body>
+    <main>
+      <slot name="hero" />
+      <Navbar />
+      <slot />
+      <Footer />
+    </main>
+  </body>
 </html>

@@ -3,8 +3,8 @@ interface Props {
     title?: string;
 }
 
-import Row from "../rows/Row.astro";
-import SectionTitle from "../text/SectionTitle.astro";
+import Row from '../rows/Row.astro';
+import SectionTitle from '../text/SectionTitle.astro';
 
 const { title } = Astro.props;
 ---
@@ -67,20 +67,20 @@ const { title } = Astro.props;
 </style>
 
 <Row class="cols-right">
-    <section class="cols-right col1">
-        <slot name="col1" />
-    </section>
+  <section class="cols-right col1">
+    <slot name="col1" />
+  </section>
 
-    <section class="cols-right col2">
-        <div class="cols-right-stick">
-            {
-                title ? (
-                    <SectionTitle rotate={false} class="cols-right-title">
-                        {title}
-                    </SectionTitle>
-                ) : null
-            }
-            <slot name="col2" />
-        </div>
-    </section>
+  <section class="cols-right col2">
+    <div class="cols-right-stick">
+      {
+        title ? (
+          <SectionTitle rotate={false} class="cols-right-title">
+            {title}
+          </SectionTitle>
+        ) : null
+      }
+      <slot name="col2" />
+    </div>
+  </section>
 </Row>

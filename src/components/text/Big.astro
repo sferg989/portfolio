@@ -1,5 +1,5 @@
 ---
-import P from "./P.astro";
+import P from './P.astro';
 
 const { class: cls, ...props } = Astro.props;
 ---
@@ -11,6 +11,6 @@ const { class: cls, ...props } = Astro.props;
     }
 </style>
 
-<P class:list={["big", cls]} {...props}>
-    <slot />
+<P class:list={['big', cls]} {...props}>
+  <slot />
 </P>

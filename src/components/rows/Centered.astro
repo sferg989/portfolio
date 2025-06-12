@@ -1,11 +1,11 @@
 ---
-import Row from "./Row.astro";
+import Row from './Row.astro';
 
 const { class: cls, full, ...props } = Astro.props;
 
 const vars = {
-    cols: full ? "1 / -1" : "3 / 7"
-}
+  cols: full ? '1 / -1' : '3 / 7'
+};
 ---
 
 <style define:vars={vars}>
@@ -45,13 +45,13 @@ const vars = {
 </style>
 
 <Row>
-    <section class="centered-container">
-        <slot name="pre" />
+  <section class="centered-container">
+    <slot name="pre" />
 
-        <section class:list={["centered", cls]} {...props}>
-            <slot />
-        </section>
-
-        <slot name="post" />
+    <section class:list={['centered', cls]} {...props}>
+      <slot />
     </section>
+
+    <slot name="post" />
+  </section>
 </Row>

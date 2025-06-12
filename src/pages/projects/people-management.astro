@@ -1,143 +1,143 @@
 ---
-import { getEntry } from "astro:content";
-import ProjectHero from "../../components/ProjectHero.astro";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
-import ColsLeft from "../../components/rows/ColsLeft.astro";
-import CustomImage from "../../components/CustomImage.astro";
-import Flex from "../../components/rows/Flex.astro";
-import ColsRight from "../../components/rows/ColsRight.astro";
+import { getEntry } from 'astro:content';
+import ProjectHero from '../../components/ProjectHero.astro';
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+import ColsLeft from '../../components/rows/ColsLeft.astro';
+import CustomImage from '../../components/CustomImage.astro';
+import Flex from '../../components/rows/Flex.astro';
+import ColsRight from '../../components/rows/ColsRight.astro';
 
-const project = await getEntry("projects", "people-management");
+const project = await getEntry('projects', 'people-management');
 ---
 
 <ProjectLayout>
-    <ProjectHero
-        title={project.data.title}
-        year={project.data.year}
-        subtitle={project.data.subtitle}
-        category={project.data.category}
-        cover={project.data.cover}
+  <ProjectHero
+    title={project.data.title}
+    year={project.data.year}
+    subtitle={project.data.subtitle}
+    category={project.data.category}
+    cover={project.data.cover}
+  />
+
+  <ColsLeft title="team management">
+    <div slot="col1">
+      <h3>Leadership & Development</h3>
+
+      <p>
+                Led comprehensive team management and development initiatives, overseeing hiring, performance reviews, and fostering professional growth for engineering teams in a high-growth environment.
+      </p>
+
+      <p>
+        <strong>Management Responsibilities:</strong>
+      </p>
+      <ul>
+        <li><strong>Team Oversight</strong> - Hiring, performance reviews, and team coordination</li>
+        <li><strong>Mentoring & Guidance</strong> - Professional growth and technical skill advancement</li>
+        <li><strong>Interview Process</strong> - Implemented new code interview process to effectively narrow candidates</li>
+        <li><strong>Job Descriptions</strong> - Overhauled engineering job descriptions with clear expectations</li>
+        <li><strong>Skills Matrix</strong> - Created career roadmaps for professional development</li>
+        <li><strong>High-Performing Teams</strong> - Built cohesive, productive engineering culture</li>
+      </ul>
+    </div>
+
+    <CustomImage
+      slot="col2"
+      src={import('../../assets/projects/pac/pac-cover.jpg')}
+      alt="Team Leadership"
+      width={1920}
+      height={1200}
     />
 
-    <ColsLeft title="team management">
-        <div slot="col1">
-            <h3>Leadership & Development</h3>
+    <Flex slot="col2">
+      <CustomImage
+        src={import('../../assets/projects/pac/pac-cover.jpg')}
+        alt="Performance Reviews"
+        width={1920}
+        height={1200}
+      />
 
-            <p>
-                Led comprehensive team management and development initiatives, overseeing hiring, performance reviews, and fostering professional growth for engineering teams in a high-growth environment.
-            </p>
+      <CustomImage
+        src={import('../../assets/projects/pac/pac-cover.jpg')}
+        alt="Team Development"
+        width={1920}
+        height={1200}
+      />
+    </Flex>
+  </ColsLeft>
 
-            <p>
-                <strong>Management Responsibilities:</strong>
-            </p>
-            <ul>
-                <li><strong>Team Oversight</strong> - Hiring, performance reviews, and team coordination</li>
-                <li><strong>Mentoring & Guidance</strong> - Professional growth and technical skill advancement</li>
-                <li><strong>Interview Process</strong> - Implemented new code interview process to effectively narrow candidates</li>
-                <li><strong>Job Descriptions</strong> - Overhauled engineering job descriptions with clear expectations</li>
-                <li><strong>Skills Matrix</strong> - Created career roadmaps for professional development</li>
-                <li><strong>High-Performing Teams</strong> - Built cohesive, productive engineering culture</li>
-            </ul>
-        </div>
+  <ColsRight title="mentoring success">
+    <div slot="col2">
+      <h3>Guided Growth & Impact</h3>
 
-        <CustomImage
-            slot="col2"
-            src={import("../../assets/projects/pac/pac-cover.jpg")}
-            alt="Team Leadership"
-            width={1920}
-            height={1200}
-        />
-
-        <Flex slot="col2">
-            <CustomImage
-                src={import("../../assets/projects/pac/pac-cover.jpg")}
-                alt="Performance Reviews"
-                width={1920}
-                height={1200}
-            />
-
-            <CustomImage
-                src={import("../../assets/projects/pac/pac-cover.jpg")}
-                alt="Team Development"
-                width={1920}
-                height={1200}
-            />
-        </Flex>
-    </ColsLeft>
-
-    <ColsRight title="mentoring success">
-        <div slot="col2">
-            <h3>Guided Growth & Impact</h3>
-
-            <p>
+      <p>
                 One of my proudest mentoring achievements was guiding a recent hire through the creation of a shared utilities library. This project consolidated reusable functions duplicated across dozens of projects while providing comprehensive learning opportunities.
-            </p>
+      </p>
 
-            <p>
-                <strong>Mentoring Approach:</strong>
-            </p>
-            <ul>
-                <li><strong>Hands-on Exposure</strong> - Broad codebase experience from legacy to modern apps</li>
-                <li><strong>Weekly 1:1s</strong> - Consistent coaching and guidance</li>
-                <li><strong>Real Problem Solving</strong> - Technical challenges with business impact</li>
-                <li><strong>Integration & Deployment</strong> - End-to-end project ownership</li>
-                <li><strong>Confidence Building</strong> - From onboarding to key contributor</li>
-                <li><strong>Ownership Development</strong> - Identifying refactoring opportunities independently</li>
-            </ul>
+      <p>
+        <strong>Mentoring Approach:</strong>
+      </p>
+      <ul>
+        <li><strong>Hands-on Exposure</strong> - Broad codebase experience from legacy to modern apps</li>
+        <li><strong>Weekly 1:1s</strong> - Consistent coaching and guidance</li>
+        <li><strong>Real Problem Solving</strong> - Technical challenges with business impact</li>
+        <li><strong>Integration & Deployment</strong> - End-to-end project ownership</li>
+        <li><strong>Confidence Building</strong> - From onboarding to key contributor</li>
+        <li><strong>Ownership Development</strong> - Identifying refactoring opportunities independently</li>
+      </ul>
 
-            <p>
+      <p>
                 This mentoring approach helped the engineer grow from a new hire to a confident contributor who could identify and execute improvement opportunities across multiple applications.
-            </p>
-        </div>
+      </p>
+    </div>
 
-        <CustomImage
-            slot="col1"
-            src={import("../../assets/projects/pac/pac-cover.jpg")}
-            alt="Mentoring Process"
-            width={1920}
-            height={1200}
-        />
+    <CustomImage
+      slot="col1"
+      src={import('../../assets/projects/pac/pac-cover.jpg')}
+      alt="Mentoring Process"
+      width={1920}
+      height={1200}
+    />
 
-        <CustomImage
-            slot="col1"
-            src={import("../../assets/projects/pac/pac-cover.jpg")}
-            alt="Career Development"
-            width={1920}
-            height={1200}
-        />
-    </ColsRight>
+    <CustomImage
+      slot="col1"
+      src={import('../../assets/projects/pac/pac-cover.jpg')}
+      alt="Career Development"
+      width={1920}
+      height={1200}
+    />
+  </ColsRight>
 
-    <ColsLeft title="structured processes">
-        <div slot="col1">
-            <h3>Regular Review & Communication</h3>
+  <ColsLeft title="structured processes">
+    <div slot="col1">
+      <h3>Regular Review & Communication</h3>
 
-            <p>
+      <p>
                 Established comprehensive review and communication processes to ensure consistent feedback, goal alignment, and career development opportunities for all team members.
-            </p>
+      </p>
 
-            <p>
-                <strong>Communication Framework:</strong>
-            </p>
-            <ul>
-                <li><strong>Weekly 1:1s</strong> - Regular check-ins with all direct reports</li>
-                <li><strong>Quarterly Reviews</strong> - Highlights, improvements, and goal setting</li>
-                <li><strong>Career Goals Discussion</strong> - Professional development planning</li>
-                <li><strong>Skills Assessment</strong> - Technical and soft skill evaluation</li>
-                <li><strong>Feedback Loops</strong> - Continuous improvement culture</li>
-                <li><strong>Growth Planning</strong> - Clear pathways for advancement</li>
-            </ul>
+      <p>
+        <strong>Communication Framework:</strong>
+      </p>
+      <ul>
+        <li><strong>Weekly 1:1s</strong> - Regular check-ins with all direct reports</li>
+        <li><strong>Quarterly Reviews</strong> - Highlights, improvements, and goal setting</li>
+        <li><strong>Career Goals Discussion</strong> - Professional development planning</li>
+        <li><strong>Skills Assessment</strong> - Technical and soft skill evaluation</li>
+        <li><strong>Feedback Loops</strong> - Continuous improvement culture</li>
+        <li><strong>Growth Planning</strong> - Clear pathways for advancement</li>
+      </ul>
 
-            <p>
+      <p>
                 This structured approach ensured every team member had clear understanding of their progress, areas for improvement, and paths for professional growth within the organization.
-            </p>
-        </div>
+      </p>
+    </div>
 
-        <CustomImage
-            slot="col2"
-            src={import("../../assets/projects/pac/pac-cover.jpg")}
-            alt="Review Process"
-            width={1920}
-            height={1200}
-        />
-    </ColsLeft>
-</ProjectLayout> 
+    <CustomImage
+      slot="col2"
+      src={import('../../assets/projects/pac/pac-cover.jpg')}
+      alt="Review Process"
+      width={1920}
+      height={1200}
+    />
+  </ColsLeft>
+</ProjectLayout>

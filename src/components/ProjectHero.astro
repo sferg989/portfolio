@@ -7,10 +7,10 @@ interface Props {
     year?: number;
 }
 
-import { Image, type RemoteImageProps } from "astro:assets";
-import Row from "./rows/Row.astro";
-import SectionTitle from "./text/SectionTitle.astro";
-import type { LocalImageProps } from "astro/assets";
+import { Image, type RemoteImageProps } from 'astro:assets';
+import Row from './rows/Row.astro';
+import SectionTitle from './text/SectionTitle.astro';
+import type { LocalImageProps } from 'astro/assets';
 
 const props = Astro.props;
 ---
@@ -142,31 +142,31 @@ const props = Astro.props;
 <section class="project-header-bg"></section>
 
 <Row class="project-hero-row">
-    <section class="project-title-container">
-        <span class="year">_ {props.year} _</span>
-        <h1 class="title">
-            {props.title}
-        </h1>
-    </section>
+  <section class="project-title-container">
+    <span class="year">_ {props.year} _</span>
+    <h1 class="title">
+      {props.title}
+    </h1>
+  </section>
 
-    <section class="project-subtitle-container">
-        <h2 class="subtitle">
-            <span id="bar">/</span>
-            {props.subtitle}
-        </h2>
-    </section>
+  <section class="project-subtitle-container">
+    <h2 class="subtitle">
+      <span id="bar">/</span>
+      {props.subtitle}
+    </h2>
+  </section>
 
-    <section class="project-category-container">
-        <SectionTitle>{props.category}</SectionTitle>
-    </section>
+  <section class="project-category-container">
+    <SectionTitle>{props.category}</SectionTitle>
+  </section>
 </Row>
 
 <Row>
-    <Image
-        class="project-image"
-        src={props.cover}
-        width={1920}
-        alt={`${props.title} cover image`}
-        quality="max"
-    />
+  <Image
+    class="project-image"
+    src={props.cover}
+    width={1920}
+    alt={`${props.title} cover image`}
+    quality="max"
+  />
 </Row>

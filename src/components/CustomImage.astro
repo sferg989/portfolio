@@ -1,7 +1,7 @@
 ---
-import { Image as AstroImage } from "astro:assets";
+import { Image as AstroImage } from 'astro:assets';
 
-import { type LocalImageProps, type RemoteImageProps } from "astro:assets";
+import { type LocalImageProps, type RemoteImageProps } from 'astro:assets';
 
 type Props = (RemoteImageProps | LocalImageProps) & {
     caption?: string;
@@ -13,11 +13,11 @@ const { src, width, height, caption, blend, invertOnDark, ...props } =
     Astro.props;
 
 const vars = {
-    blend: blend ? "multiply" : "normal",
-    darkBlend: blend && invertOnDark ? "screen" : "normal",
+  blend: blend ? 'multiply' : 'normal',
+  darkBlend: blend && invertOnDark ? 'screen' : 'normal',
 
-    filter: blend ? "none" : "drop-shadow(0 25px 25px rgb(0 0 0 / 0.05))",
-    darkFilter: invertOnDark ? "invert()" : "none",
+  filter: blend ? 'none' : 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.05))',
+  darkFilter: invertOnDark ? 'invert()' : 'none',
 };
 ---
 

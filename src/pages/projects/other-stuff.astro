@@ -1,144 +1,144 @@
 ---
-import { getEntry } from "astro:content";
-import ProjectHero from "../../components/ProjectHero.astro";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
-import ColsLeft from "../../components/rows/ColsLeft.astro";
-import CustomImage from "../../components/CustomImage.astro";
-import Flex from "../../components/rows/Flex.astro";
-import ColsRight from "../../components/rows/ColsRight.astro";
+import { getEntry } from 'astro:content';
+import ProjectHero from '../../components/ProjectHero.astro';
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+import ColsLeft from '../../components/rows/ColsLeft.astro';
+import CustomImage from '../../components/CustomImage.astro';
+import Flex from '../../components/rows/Flex.astro';
+import ColsRight from '../../components/rows/ColsRight.astro';
 
-const project = await getEntry("projects", "other-stuff");
+const project = await getEntry('projects', 'other-stuff');
 ---
 
 <ProjectLayout>
-    <ProjectHero
-        title={project.data.title}
-        year={project.data.year}
-        subtitle={project.data.subtitle}
-        category={project.data.category}
-        cover={project.data.cover}
-    />
+  <ProjectHero
+    title={project.data.title}
+    year={project.data.year}
+    subtitle={project.data.subtitle}
+    category={project.data.category}
+    cover={project.data.cover}
+  />
 
-    <ColsLeft title="analytics & search">
-        <div slot="col1">
-            <h3>Advanced Integration Solutions</h3>
+  <ColsLeft title="analytics & search">
+    <div slot="col1">
+      <h3>Advanced Integration Solutions</h3>
 
-            <p>
+      <p>
                 Implemented cutting-edge analytics and search solutions using modern platforms like Segment Analytics, Braze SDK, and Algolia Search for high-performance user experiences.
-            </p>
+      </p>
 
-            <p>
-                <strong>Key Integrations:</strong>
-            </p>
-            <ul>
-                <li><strong>Segment Analytics</strong> - Comprehensive user tracking and data pipeline</li>
-                <li><strong>Braze SDK</strong> - Customer engagement and messaging platform</li>
-                <li><strong>Algolia Search</strong> - Super fast search with multiple indexes</li>
-                <li>Enhanced user search capabilities across large datasets</li>
-                <li>Real-time analytics and user behavior tracking</li>
-            </ul>
-        </div>
+      <p>
+        <strong>Key Integrations:</strong>
+      </p>
+      <ul>
+        <li><strong>Segment Analytics</strong> - Comprehensive user tracking and data pipeline</li>
+        <li><strong>Braze SDK</strong> - Customer engagement and messaging platform</li>
+        <li><strong>Algolia Search</strong> - Super fast search with multiple indexes</li>
+        <li>Enhanced user search capabilities across large datasets</li>
+        <li>Real-time analytics and user behavior tracking</li>
+      </ul>
+    </div>
 
-        <CustomImage
-            slot="col2"
-            src={import("../../assets/projects/atropos/atropos-cover.jpg")}
-            alt="Analytics Integration"
-            width={1920}
-            height={1200}
-        />
-    </ColsLeft>
+    <CustomImage
+      slot="col2"
+      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
+      alt="Analytics Integration"
+      width={1920}
+      height={1200}
+    />
+  </ColsLeft>
 
-    <ColsRight title="modern frameworks">
-        <div slot="col2">
-            <h3>Experimental & Production Systems</h3>
+  <ColsRight title="modern frameworks">
+    <div slot="col2">
+      <h3>Experimental & Production Systems</h3>
 
-            <p>
+      <p>
                 Led discovery and implementation of modern technologies including new CMS platforms, video streaming applications, and experimental architectures.
-            </p>
+      </p>
 
-            <p>
-                <strong>Technology Implementations:</strong>
-            </p>
-            <ul>
-                <li><strong>Payload CMS</strong> - Discovery and implementation of new content management</li>
-                <li><strong>ROKU App (COP)</strong> - Video experience implementation</li>
-                <li><strong>Astro</strong> - Modern static site generator for aging project replacement</li>
-                <li><strong>Zephyr Cloud</strong> - Micro frontends with Module Federation</li>
-                <li>React Native mobile development</li>
-                <li>Node.js and Deno server-side applications</li>
-            </ul>
-        </div>
+      <p>
+        <strong>Technology Implementations:</strong>
+      </p>
+      <ul>
+        <li><strong>Payload CMS</strong> - Discovery and implementation of new content management</li>
+        <li><strong>ROKU App (COP)</strong> - Video experience implementation</li>
+        <li><strong>Astro</strong> - Modern static site generator for aging project replacement</li>
+        <li><strong>Zephyr Cloud</strong> - Micro frontends with Module Federation</li>
+        <li>React Native mobile development</li>
+        <li>Node.js and Deno server-side applications</li>
+      </ul>
+    </div>
 
-        <CustomImage
-            slot="col1"
-            src={import("../../assets/projects/atropos/atropos-cover.jpg")}
-            alt="Modern Framework Implementation"
-            width={1920}
-            height={1200}
-        />
-    </ColsRight>
+    <CustomImage
+      slot="col1"
+      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
+      alt="Modern Framework Implementation"
+      width={1920}
+      height={1200}
+    />
+  </ColsRight>
 
-    <ColsLeft title="cloudflare ecosystem">
-        <div slot="col1">
-            <h3>Edge Computing & Workflows</h3>
+  <ColsLeft title="cloudflare ecosystem">
+    <div slot="col1">
+      <h3>Edge Computing & Workflows</h3>
 
-            <p>
+      <p>
                 Leveraged the full Cloudflare ecosystem including Workers, Pages, and Workflows for scalable, performant applications with global edge distribution.
-            </p>
+      </p>
 
-            <p>
-                <strong>Cloudflare Solutions:</strong>
-            </p>
-            <ul>
-                <li><strong>Cloudflare Workers</strong> - Edge computing and API endpoints</li>
-                <li><strong>Cloudflare Pages</strong> - Static site hosting with edge optimization</li>
-                <li><strong>Cloudflare Workflows</strong> - Automated process management</li>
-                <li><strong>Application Routing</strong> - Multiple projects on same domain</li>
-                <li>Caddy File configuration for application routing</li>
-                <li>Global content delivery and performance optimization</li>
-            </ul>
-        </div>
+      <p>
+        <strong>Cloudflare Solutions:</strong>
+      </p>
+      <ul>
+        <li><strong>Cloudflare Workers</strong> - Edge computing and API endpoints</li>
+        <li><strong>Cloudflare Pages</strong> - Static site hosting with edge optimization</li>
+        <li><strong>Cloudflare Workflows</strong> - Automated process management</li>
+        <li><strong>Application Routing</strong> - Multiple projects on same domain</li>
+        <li>Caddy File configuration for application routing</li>
+        <li>Global content delivery and performance optimization</li>
+      </ul>
+    </div>
 
-        <CustomImage
-            slot="col2"
-            src={import("../../assets/projects/atropos/atropos-cover.jpg")}
-            alt="Cloudflare Architecture"
-            width={1920}
-            height={1200}
-        />
-    </ColsLeft>
+    <CustomImage
+      slot="col2"
+      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
+      alt="Cloudflare Architecture"
+      width={1920}
+      height={1200}
+    />
+  </ColsLeft>
 
-    <ColsRight title="integration architecture">
-        <div slot="col2">
-            <h3>AIL & Data Workflows</h3>
+  <ColsRight title="integration architecture">
+    <div slot="col2">
+      <h3>AIL & Data Workflows</h3>
 
-            <p>
+      <p>
                 Developed sophisticated integration systems including Application Integration Layer (AIL) and comprehensive data workflow solutions using Tray and GraphQL MESH.
-            </p>
+      </p>
 
-            <p>
-                <strong>Architecture Solutions:</strong>
-            </p>
-            <ul>
-                <li><strong>AIL (Application Integration Layer)</strong> - Mono repo with Worker and SDK</li>
-                <li><strong>Domain-driven architecture</strong> - Modular, scalable system design</li>
-                <li><strong>MESH with GraphQL</strong> - Multiple API interaction and query management</li>
-                <li><strong>Tray Workflows</strong> - Data synchronization and Algolia index population</li>
-                <li><strong>Reciprocity Scraper</strong> - WordPress data migration to new API</li>
-                <li>Type-safe query building with classes and types</li>
-            </ul>
+      <p>
+        <strong>Architecture Solutions:</strong>
+      </p>
+      <ul>
+        <li><strong>AIL (Application Integration Layer)</strong> - Mono repo with Worker and SDK</li>
+        <li><strong>Domain-driven architecture</strong> - Modular, scalable system design</li>
+        <li><strong>MESH with GraphQL</strong> - Multiple API interaction and query management</li>
+        <li><strong>Tray Workflows</strong> - Data synchronization and Algolia index population</li>
+        <li><strong>Reciprocity Scraper</strong> - WordPress data migration to new API</li>
+        <li>Type-safe query building with classes and types</li>
+      </ul>
 
-            <p>
+      <p>
                 These systems provided robust, type-safe integration between multiple services while maintaining clean separation of concerns and enabling rapid development.
-            </p>
-        </div>
+      </p>
+    </div>
 
-        <CustomImage
-            slot="col1"
-            src={import("../../assets/projects/atropos/atropos-cover.jpg")}
-            alt="Integration Architecture"
-            width={1920}
-            height={1200}
-        />
-    </ColsRight>
-</ProjectLayout> 
+    <CustomImage
+      slot="col1"
+      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
+      alt="Integration Architecture"
+      width={1920}
+      height={1200}
+    />
+  </ColsRight>
+</ProjectLayout>

@@ -1,9 +1,9 @@
 ---
 const { class: cls, ...props } = Astro.props;
 
-import Row from "./rows/Row.astro";
-import SectionTitle from "./text/SectionTitle.astro";
-import ProjectsField from "./WebGL/ProjectsField.svelte";
+import Row from './rows/Row.astro';
+import SectionTitle from './text/SectionTitle.astro';
+import ProjectsField from './WebGL/ProjectsField.svelte';
 ---
 
 <style>
@@ -13,8 +13,8 @@ import ProjectsField from "./WebGL/ProjectsField.svelte";
 </style>
 
 <Row {...props}>
-    <section class="projects">
-        <SectionTitle>things I made</SectionTitle>
-        <ProjectsField client:only />
-    </section>
+  <section class="projects">
+    <SectionTitle>things I made</SectionTitle>
+    <ProjectsField client:only />
+  </section>
 </Row>

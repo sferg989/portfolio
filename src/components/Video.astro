@@ -1,7 +1,7 @@
 ---
-import { type HTMLAttributes } from "astro/types";
+import { type HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"video"> {
+interface Props extends HTMLAttributes<'video'> {
     blend?: boolean;
     invertOnDark?: boolean;
 }
@@ -9,8 +9,8 @@ interface Props extends HTMLAttributes<"video"> {
 const { blend, invertOnDark, ...props } = Astro.props;
 
 const vars = {
-    blend: blend ? "multiply" : "normal",
-    darkBlend: blend && invertOnDark ? "screen" : "normal",
+  blend: blend ? 'multiply' : 'normal',
+  darkBlend: blend && invertOnDark ? 'screen' : 'normal',
 };
 ---
 
@@ -29,5 +29,5 @@ const vars = {
 </style>
 
 <div>
-    <video {...props}></video>
+  <video {...props}></video>
 </div>

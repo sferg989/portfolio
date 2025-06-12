@@ -1,20 +1,20 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends HTMLAttributes<"div"> {
-    direction?: "horizontail" | "vertical";
-    justify?: "start" | "end" | "space-between" | "space-evenly";
-    align?: "start" | "end" | "stretch";
+interface Props extends HTMLAttributes<'div'> {
+    direction?: 'horizontail' | 'vertical';
+    justify?: 'start' | 'end' | 'space-between' | 'space-evenly';
+    align?: 'start' | 'end' | 'stretch';
 }
 
 let {
-    direction = "horizontal",
-    justify = "space-evenly",
-    align = "center",
-    ...props
+  direction = 'horizontal',
+  justify = 'space-evenly',
+  align = 'center',
+  ...props
 } = Astro.props;
 
-direction = direction === "horizontal" ? "row" : "column";
+direction = direction === 'horizontal' ? 'row' : 'column';
 ---
 
 <style define:vars={{ direction, justify, align }}>
@@ -37,5 +37,5 @@ direction = direction === "horizontal" ? "row" : "column";
 </style>
 
 <div {...props}>
-    <slot />
+  <slot />
 </div>

@@ -1,5 +1,5 @@
 ---
-import Row from "../rows/Row.astro";
+import Row from '../rows/Row.astro';
 
 const props = Astro.props;
 ---
@@ -33,13 +33,13 @@ const props = Astro.props;
 </style>
 
 <Row {...props}>
-    <section class="centered-text-container">
-        <slot name="pre" />
+  <section class="centered-text-container">
+    <slot name="pre" />
 
-        <section class="centered-text">
-            <slot />
-        </section>
-
-        <slot name="post" />
+    <section class="centered-text">
+      <slot />
     </section>
+
+    <slot name="post" />
+  </section>
 </Row>
