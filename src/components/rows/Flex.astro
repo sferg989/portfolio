@@ -7,12 +7,13 @@ interface Props extends HTMLAttributes<'div'> {
     align?: 'start' | 'end' | 'stretch';
 }
 
-let {
-  direction = 'horizontal',
+const {
   justify = 'space-evenly',
   align = 'center',
   ...props
 } = Astro.props;
+
+let direction = Astro.props.direction ?? 'horizontal';
 
 direction = direction === 'horizontal' ? 'row' : 'column';
 ---

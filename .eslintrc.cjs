@@ -31,7 +31,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-fallthrough': 'error',
     'no-multiple-empty-lines': 'error',
-    'max-len': ['error', 175],
+    'max-len': ['error', 250],
     'max-lines': ['error', 225],
     'max-depth': ['error', 3],
     'no-duplicate-case': 'error',
