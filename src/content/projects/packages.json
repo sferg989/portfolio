@@ -3,7 +3,7 @@
   "year": 2023,
   "category": "software",
   "subtitle": "Package Development and Tool Creation",
-  "cover": "../../assets/projects/hi-fiber/hi-fiber-cover.jpg",
+  "cover": "../../assets/library.jpg",
   "order": 4,
   "heroMesh": "/meshes/hi-fiber.obj",
   "projectMesh": "/meshes/hi-fiber.obj"
