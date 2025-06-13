@@ -43,6 +43,37 @@ const project = await getEntry('projects', 'packages');
       <AboutLine title="All Company Modal" description="Custom element for consistent UX" />
       <AboutLine title="Multi Site Worker" description="Different domains serving same codebase" />
     </div>
+
+    <div slot="col1" class="impact-showcase">
+      <div class="showcase-header">
+        <h4>Package Impact</h4>
+        <p>Reusable architecture across entire portfolio</p>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🧩</div>
+          <div class="feature-text">
+            <strong>Custom Elements</strong>
+            <span>Cross-platform web components</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚛️</div>
+          <div class="feature-text">
+            <strong>React Components</strong>
+            <span>Reusable UI component library</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🪝</div>
+          <div class="feature-text">
+            <strong>Custom Hooks</strong>
+            <span>Shared functionality patterns</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </ColsRight>
 
   <ColsLeft title="analytics & monitoring">
@@ -51,6 +82,37 @@ const project = await getEntry('projects', 'packages');
       <AboutLine title="Analytics Worker" description="Server-side tracking when client blocked" />
       <AboutLine title="Uptime Bot" description="Slack bot monitoring all properties" />
       <AboutLine title="Smoke Test Bot" description="On-demand testing via Slack" />
+    </div>
+
+    <div slot="col2" class="monitoring-overview">
+      <div class="overview-header">
+        <h4>Comprehensive Monitoring</h4>
+        <p>Proactive alerts and real-time insights</p>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-text">
+            <strong>24/7 Uptime Monitoring</strong>
+            <span>Continuous health checks</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <strong>Real-time Slack Alerts</strong>
+            <span>Instant notifications</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🧪</div>
+          <div class="feature-text">
+            <strong>On-demand Testing</strong>
+            <span>Slack command integration</span>
+          </div>
+        </div>
+      </div>
     </div>
   </ColsLeft>
 
@@ -62,13 +124,74 @@ const project = await getEntry('projects', 'packages');
       <AboutLine title="Address Validation Client" description="Component for address validation" />
       <AboutLine title="Launch Darkly Integration" description="Unified feature flag implementation" />
     </div>
+
+    <div slot="col1" class="tech-spotlight">
+      <div class="spotlight-header">
+        <h4>Enterprise Technologies</h4>
+        <p>Production-ready cloud services</p>
+      </div>
+
+      <div class="tech-list">
+        <div class="tech-item cloudflare">
+          <span class="tech-name">Cloudflare Workers</span>
+          <span class="tech-desc">Edge computing</span>
+        </div>
+        <div class="tech-item launchdarkly">
+          <span class="tech-name">LaunchDarkly SDK</span>
+          <span class="tech-desc">Feature flags</span>
+        </div>
+        <div class="tech-item caching">
+          <span class="tech-name">Redis Caching</span>
+          <span class="tech-desc">Performance layer</span>
+        </div>
+        <div class="tech-item geo">
+          <span class="tech-name">Geo APIs</span>
+          <span class="tech-desc">Location services</span>
+        </div>
+      </div>
+    </div>
   </ColsRight>
 </ProjectLayout>
 
 <style>
-  .packages-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacingMd);
+  .impact-showcase, .monitoring-overview, .tech-spotlight {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
   }
+  .showcase-header, .overview-header, .spotlight-header { margin-bottom: var(--spacingXL); text-align: center; }
+  .showcase-header h4, .overview-header h4, .spotlight-header h4 {
+    font-size: var(--fontSizeLg); margin-bottom: var(--spacingSm); color: var(--colorTextPrimary);
+  }
+  .showcase-header p, .overview-header p, .spotlight-header p {
+    color: var(--colorTextSecondary); font-size: var(--fontSizeSm);
+  }
+  .metrics-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacingLg); }
+  .metric {
+    display: flex; align-items: center; justify-content: space-between; padding: var(--spacingMd) var(--spacingLg);
+    background: linear-gradient(135deg, var(--colorBgSecondary) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: var(--borderRadius); border-left: 3px solid var(--colorAccent);
+  }
+  .metric-value { font-size: var(--fontSizeXL); font-weight: var(--fontWeightBold); color: var(--colorAccent); }
+  .metric-label { font-size: var(--fontSizeMd); color: var(--colorTextSecondary); text-align: right; }
+  .features-list { display: flex; flex-direction: column; gap: var(--spacingLg); }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: var(--spacingMd); padding: var(--spacingMd);
+    background: rgba(255,255,255,0.02); border-radius: var(--borderRadius); transition: background 0.2s ease;
+  }
+  .feature-item:hover { background: rgba(255,255,255,0.05); }
+  .feature-icon { font-size: var(--fontSizeLg); min-width: 2rem; }
+  .feature-text { display: flex; flex-direction: column; gap: var(--spacingXs); }
+  .feature-text strong { color: var(--colorTextPrimary); font-size: var(--fontSizeMd); }
+  .feature-text span { color: var(--colorTextSecondary); font-size: var(--fontSizeSm); }
+  .tech-list { display: flex; flex-direction: column; gap: var(--spacingMd); }
+  .tech-item {
+    display: flex; flex-direction: column; padding: var(--spacingMd) var(--spacingLg);
+    border-radius: var(--borderRadius); border-left: 3px solid; transition: transform 0.2s ease;
+  }
+  .tech-item:hover { transform: translateX(4px); }
+  .tech-item.cloudflare { border-left-color: #f38020; background: rgba(243, 128, 32, 0.1); }
+  .tech-item.launchdarkly { border-left-color: #3dd6f0; background: rgba(61, 214, 240, 0.1); }
+  .tech-item.caching { border-left-color: #dc382d; background: rgba(220, 56, 45, 0.1); }
+  .tech-item.geo { border-left-color: #4caf50; background: rgba(76, 175, 80, 0.1); }
+  .tech-name { font-weight: var(--fontWeightMd); color: var(--colorTextPrimary); margin-bottom: var(--spacingXs); }
+  .tech-desc { font-size: var(--fontSizeSm); color: var(--colorTextSecondary); }
 </style>
