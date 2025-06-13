@@ -4,8 +4,8 @@ import ProjectHero from '../../components/ProjectHero.astro';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
-
 import ColsRight from '../../components/rows/ColsRight.astro';
+import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'other-stuff');
 ---
@@ -19,126 +19,141 @@ const project = await getEntry('projects', 'other-stuff');
     cover={project.data.cover}
   />
 
-  <ColsLeft title="analytics & search">
+  <ColsLeft title="modern frameworks & cms">
     <div slot="col1">
-      <h3>Advanced Integration Solutions</h3>
-
-      <p>
-                Implemented cutting-edge analytics and search solutions using modern platforms like Segment Analytics, Braze SDK, and Algolia Search for high-performance user experiences.
-      </p>
-
-      <p>
-        <strong>Key Integrations:</strong>
-      </p>
-      <ul>
-        <li><strong>Segment Analytics</strong> - Comprehensive user tracking and data pipeline</li>
-        <li><strong>Braze SDK</strong> - Customer engagement and messaging platform</li>
-        <li><strong>Algolia Search</strong> - Super fast search with multiple indexes</li>
-        <li>Enhanced user search capabilities across large datasets</li>
-        <li>Real-time analytics and user behavior tracking</li>
-      </ul>
+      <AboutLine title="Payload CMS" description="Discovery and implementation of new content management system" />
+      <AboutLine title="COP - ROKU App" description="Video experience implementation for streaming platform" />
+      <AboutLine title="Astro" description="Modern static site generator replacing aging projects" />
+      <AboutLine title="Zephyr Cloud" description="Experimental micro frontends with Module Federation" />
+      <AboutLine title="React Native" description="Mobile application development" />
+      <AboutLine title="Supabase Auth" description="Authentication implementation in travelferguson.com" />
     </div>
 
     <CustomImage
       slot="col2"
-      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
-      alt="Analytics Integration"
+      src={import('../../assets/code.jpg')}
+      alt="Modern Framework Development"
       width={1920}
       height={1200}
     />
   </ColsLeft>
 
-  <ColsRight title="modern frameworks">
+  <ColsRight title="integrations & apis">
     <div slot="col2">
-      <h3>Experimental & Production Systems</h3>
-
-      <p>
-                Led discovery and implementation of modern technologies including new CMS platforms, video streaming applications, and experimental architectures.
-      </p>
-
-      <p>
-        <strong>Technology Implementations:</strong>
-      </p>
-      <ul>
-        <li><strong>Payload CMS</strong> - Discovery and implementation of new content management</li>
-        <li><strong>ROKU App (COP)</strong> - Video experience implementation</li>
-        <li><strong>Astro</strong> - Modern static site generator for aging project replacement</li>
-        <li><strong>Zephyr Cloud</strong> - Micro frontends with Module Federation</li>
-        <li>React Native mobile development</li>
-        <li>Node.js and Deno server-side applications</li>
-      </ul>
+      <AboutLine title="Segment Analytics" description="Frontend analytics implementation" />
+      <AboutLine title="Braze SDK" description="Customer engagement platform integration" />
+      <AboutLine title="Algolia Search" description="Super fast search with multiple indexes" />
+      <AboutLine title="Tray Workflows" description="Data sync automation and Algolia population" />
+      <AboutLine title="Reciprocity Scraper" description="WordPress data migration to new API" />
+      <AboutLine title="Finance Options Score" description="fergfo.com scoring system" />
+      <AboutLine title="Hygraph CMS" description="Headless CMS integration in side projects" />
     </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
-      alt="Modern Framework Implementation"
-      width={1920}
-      height={1200}
-    />
+    <div slot="col1" class="integrations-showcase">
+      <div class="showcase-header">
+        <h4>Platform Integrations</h4>
+        <p>Third-party services and APIs</p>
+      </div>
+
+      <div class="tech-list">
+        <div class="tech-item segment">
+          <span class="tech-name">Segment Analytics</span>
+          <span class="tech-desc">User tracking & data pipeline</span>
+        </div>
+        <div class="tech-item algolia">
+          <span class="tech-name">Algolia Search</span>
+          <span class="tech-desc">Fast search implementation</span>
+        </div>
+        <div class="tech-item braze">
+          <span class="tech-name">Braze SDK</span>
+          <span class="tech-desc">Customer engagement</span>
+        </div>
+        <div class="tech-item cloudflare">
+          <span class="tech-name">Cloudflare Stack</span>
+          <span class="tech-desc">Workers, Pages, Workflows</span>
+        </div>
+      </div>
+    </div>
   </ColsRight>
 
-  <ColsLeft title="cloudflare ecosystem">
+  <ColsLeft title="architecture & workflows">
     <div slot="col1">
-      <h3>Edge Computing & Workflows</h3>
-
-      <p>
-                Leveraged the full Cloudflare ecosystem including Workers, Pages, and Workflows for scalable, performant applications with global edge distribution.
-      </p>
-
-      <p>
-        <strong>Cloudflare Solutions:</strong>
-      </p>
-      <ul>
-        <li><strong>Cloudflare Workers</strong> - Edge computing and API endpoints</li>
-        <li><strong>Cloudflare Pages</strong> - Static site hosting with edge optimization</li>
-        <li><strong>Cloudflare Workflows</strong> - Automated process management</li>
-        <li><strong>Application Routing</strong> - Multiple projects on same domain</li>
-        <li>Caddy File configuration for application routing</li>
-        <li>Global content delivery and performance optimization</li>
-      </ul>
+      <AboutLine title="AIL - Application Integration Layer" description="Mono repo with Worker and SDK architecture" />
+      <AboutLine title="MESH with GraphQL" description="Multiple API interaction with typed queries" />
+      <AboutLine title="Cloudflare Workers" description="Edge computing and API endpoints" />
+      <AboutLine title="Cloudflare Pages" description="Static site hosting with optimization" />
+      <AboutLine title="Cloudflare Workflows" description="Automated process management" />
+      <AboutLine title="LMS - Learndash" description="Achievement tracking and gamification" />
+      <AboutLine title="Caddy File Routing" description="Application routing for multiple projects" />
     </div>
 
-    <CustomImage
-      slot="col2"
-      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
-      alt="Cloudflare Architecture"
-      width={1920}
-      height={1200}
-    />
+    <div slot="col2" class="architecture-overview">
+      <div class="overview-header">
+        <h4>System Architecture</h4>
+        <p>Domain-driven design and integration patterns</p>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🏗️</div>
+          <div class="feature-text">
+            <strong>AIL Architecture</strong>
+            <span>Domain-driven mono repo design</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔗</div>
+          <div class="feature-text">
+            <strong>GraphQL MESH</strong>
+            <span>Type-safe API interactions</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <strong>Edge Computing</strong>
+            <span>Cloudflare Workers ecosystem</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </ColsLeft>
-
-  <ColsRight title="integration architecture">
-    <div slot="col2">
-      <h3>AIL & Data Workflows</h3>
-
-      <p>
-                Developed sophisticated integration systems including Application Integration Layer (AIL) and comprehensive data workflow solutions using Tray and GraphQL MESH.
-      </p>
-
-      <p>
-        <strong>Architecture Solutions:</strong>
-      </p>
-      <ul>
-        <li><strong>AIL (Application Integration Layer)</strong> - Mono repo with Worker and SDK</li>
-        <li><strong>Domain-driven architecture</strong> - Modular, scalable system design</li>
-        <li><strong>MESH with GraphQL</strong> - Multiple API interaction and query management</li>
-        <li><strong>Tray Workflows</strong> - Data synchronization and Algolia index population</li>
-        <li><strong>Reciprocity Scraper</strong> - WordPress data migration to new API</li>
-        <li>Type-safe query building with classes and types</li>
-      </ul>
-
-      <p>
-                These systems provided robust, type-safe integration between multiple services while maintaining clean separation of concerns and enabling rapid development.
-      </p>
-    </div>
-
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/atropos/atropos-cover.jpg')}
-      alt="Integration Architecture"
-      width={1920}
-      height={1200}
-    />
-  </ColsRight>
 </ProjectLayout>
+
+<style>
+  .integrations-showcase {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
+  }
+  .showcase-header, .overview-header { margin-bottom: var(--spacingXL); text-align: center; }
+  .showcase-header h4, .overview-header h4 {
+    font-size: var(--fontSizeLg); margin-bottom: var(--spacingSm); color: var(--colorTextPrimary);
+  }
+  .showcase-header p, .overview-header p {
+    color: var(--colorTextSecondary); font-size: var(--fontSizeSm);
+  }
+  .tech-list { display: flex; flex-direction: column; gap: var(--spacingMd); }
+  .tech-item {
+    display: flex; flex-direction: column; padding: var(--spacingMd) var(--spacingLg);
+    border-radius: var(--borderRadius); border-left: 3px solid; transition: transform 0.2s ease;
+  }
+  .tech-item:hover { transform: translateX(4px); }
+  .tech-item.segment { border-left-color: #52bd95; background: rgba(82, 189, 149, 0.1); }
+  .tech-item.algolia { border-left-color: #5468ff; background: rgba(84, 104, 255, 0.1); }
+  .tech-item.braze { border-left-color: #ff6b35; background: rgba(255, 107, 53, 0.1); }
+  .tech-item.cloudflare { border-left-color: #f38020; background: rgba(243, 128, 32, 0.1); }
+  .tech-name { font-weight: var(--fontWeightMd); color: var(--colorTextPrimary); margin-bottom: var(--spacingXs); }
+  .tech-desc { font-size: var(--fontSizeSm); color: var(--colorTextSecondary); }
+  .architecture-overview {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
+  }
+  .features-list { display: flex; flex-direction: column; gap: var(--spacingLg); }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: var(--spacingMd); padding: var(--spacingMd);
+    background: rgba(255,255,255,0.02); border-radius: var(--borderRadius); transition: background 0.2s ease;
+  }
+  .feature-item:hover { background: rgba(255,255,255,0.05); }
+  .feature-icon { font-size: var(--fontSizeLg); min-width: 2rem; }
+  .feature-text { display: flex; flex-direction: column; gap: var(--spacingXs); }
+  .feature-text strong { color: var(--colorTextPrimary); font-size: var(--fontSizeMd); }
+  .feature-text span { color: var(--colorTextSecondary); font-size: var(--fontSizeSm); }
+</style>

@@ -6,6 +6,7 @@ import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
+import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'testing');
 ---
@@ -19,125 +20,87 @@ const project = await getEntry('projects', 'testing');
     cover={project.data.cover}
   />
 
-  <ColsLeft title="e2e testing">
+  <ColsLeft title="store checkout testing">
     <div slot="col1">
-      <h3>End-to-End Test Automation</h3>
-
-      <p>
-                Developed comprehensive end-to-end testing solutions using Puppeteer to provide critical safety nets for business operations, particularly focusing on the checkout process and deployment validation.
-      </p>
-
-      <p>
-        <strong>Testing Achievements:</strong>
-      </p>
-      <ul>
-        <li><strong>Store Checkout Testing</strong> - Comprehensive e2e test coverage</li>
-        <li><strong>Puppeteer Scripts</strong> - Automated browser testing and validation</li>
-        <li><strong>Deployment Safety Nets</strong> - Automated validation for all deployments</li>
-        <li><strong>Sanity Checks</strong> - Pre-deployment verification processes</li>
-        <li>Business-critical functionality protection</li>
-        <li>Automated regression testing</li>
-      </ul>
+      <AboutLine title="End-to-End Tests" description="Puppeteer script for comprehensive checkout testing" />
+      <AboutLine title="Business Safety Nets" description="Created safety nets for all deployments" />
+      <AboutLine title="Sanity Checks" description="Provides deployment validation for business" />
     </div>
 
     <CustomImage
       slot="col2"
-      src={import('../../assets/projects/necklace-residence/necklace-residence-cover.jpg')}
-      alt="E2E Testing Architecture"
+      src={import('../../assets/code.jpg')}
+      alt="Test Automation Development"
       width={1920}
       height={1200}
     />
-
-    <Flex slot="col2">
-      <CustomImage
-        src={import('../../assets/projects/necklace-residence/necklace-residence-cover.jpg')}
-        alt="Puppeteer Testing"
-        width={1920}
-        height={1200}
-      />
-
-      <CustomImage
-        src={import('../../assets/projects/necklace-residence/necklace-residence-cover.jpg')}
-        alt="Checkout Validation"
-        width={1920}
-        height={1200}
-      />
-    </Flex>
   </ColsLeft>
 
-  <ColsRight title="business impact">
+  <ColsRight title="testing impact">
     <div slot="col2">
-      <h3>Critical Safety Nets</h3>
-
-      <p>
-                The testing infrastructure provided essential protection for business operations, ensuring that critical functionality like checkout processes remained stable across all deployments and updates.
-      </p>
-
-      <p>
-        <strong>Safety Net Benefits:</strong>
-      </p>
-      <ul>
-        <li>Prevented revenue-impacting checkout issues</li>
-        <li>Automated detection of breaking changes</li>
-        <li>Confidence in deployment processes</li>
-        <li>Reduced manual testing overhead</li>
-        <li>Faster deployment cycles with safety assurance</li>
-        <li>Protection of business-critical workflows</li>
-      </ul>
-
-      <p>
-                These automated tests became an essential part of the deployment pipeline, providing immediate feedback on the health of critical business processes and preventing costly issues from reaching production.
-      </p>
+      <div class="testing-summary">
+        <h4>Testing Excellence</h4>
+        <p>Comprehensive end-to-end validation ensuring business continuity</p>
+      </div>
     </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/necklace-residence/necklace-residence-cover.jpg')}
-      alt="Testing Dashboard"
-      width={1920}
-      height={1200}
-    />
+    <div slot="col1" class="testing-showcase">
+      <div class="showcase-header">
+        <h4>Testing Strategy</h4>
+        <p>Automated validation and safety</p>
+      </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/necklace-residence/necklace-residence-cover.jpg')}
-      alt="Deployment Validation"
-      width={1920}
-      height={1200}
-    />
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🧪</div>
+          <div class="feature-text">
+            <strong>Puppeteer E2E</strong>
+            <span>Automated browser testing</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-text">
+            <strong>Safety Nets</strong>
+            <span>Business-critical protection</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">✅</div>
+          <div class="feature-text">
+            <strong>Sanity Checks</strong>
+            <span>Deployment validation</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </ColsRight>
-
-  <ColsLeft title="automation strategy">
-    <div slot="col1">
-      <h3>Comprehensive Test Coverage</h3>
-
-      <p>
-                Implemented a holistic approach to testing that covered the entire user journey, from product discovery through checkout completion, ensuring every critical touchpoint was validated.
-      </p>
-
-      <p>
-        <strong>Test Coverage Areas:</strong>
-      </p>
-      <ul>
-        <li><strong>User Flow Testing</strong> - Complete customer journey validation</li>
-        <li><strong>Payment Processing</strong> - Critical financial transaction testing</li>
-        <li><strong>Form Validation</strong> - Input validation and error handling</li>
-        <li><strong>Cross-browser Testing</strong> - Compatibility across platforms</li>
-        <li><strong>Performance Testing</strong> - Load time and responsiveness validation</li>
-        <li><strong>Mobile Testing</strong> - Responsive design and mobile-specific flows</li>
-      </ul>
-
-      <p>
-                This comprehensive testing strategy provided confidence in code deployments and protected the business from costly errors in production environments.
-      </p>
-    </div>
-
-    <CustomImage
-      slot="col2"
-      src={import('../../assets/projects/necklace-residence/necklace-residence-cover.jpg')}
-      alt="Test Automation Pipeline"
-      width={1920}
-      height={1200}
-    />
-  </ColsLeft>
 </ProjectLayout>
+
+<style>
+  .testing-showcase {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
+  }
+  .showcase-header { margin-bottom: var(--spacingXL); text-align: center; }
+  .showcase-header h4 {
+    font-size: var(--fontSizeLg); margin-bottom: var(--spacingSm); color: var(--colorTextPrimary);
+  }
+  .showcase-header p {
+    color: var(--colorTextSecondary); font-size: var(--fontSizeSm);
+  }
+  .features-list { display: flex; flex-direction: column; gap: var(--spacingLg); }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: var(--spacingMd); padding: var(--spacingMd);
+    background: rgba(255,255,255,0.02); border-radius: var(--borderRadius); transition: background 0.2s ease;
+  }
+  .feature-item:hover { background: rgba(255,255,255,0.05); }
+  .feature-icon { font-size: var(--fontSizeLg); min-width: 2rem; }
+  .feature-text { display: flex; flex-direction: column; gap: var(--spacingXs); }
+  .feature-text strong { color: var(--colorTextPrimary); font-size: var(--fontSizeMd); }
+  .feature-text span { color: var(--colorTextSecondary); font-size: var(--fontSizeSm); }
+  .testing-summary {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: center;
+  }
+  .testing-summary h4 { font-size: var(--fontSizeXL); margin-bottom: var(--spacingMd); color: var(--colorTextPrimary); }
+  .testing-summary p { color: var(--colorTextSecondary); font-size: var(--fontSizeLg); }
+</style>

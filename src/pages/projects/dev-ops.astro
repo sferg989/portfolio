@@ -4,8 +4,8 @@ import ProjectHero from '../../components/ProjectHero.astro';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
-import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
+import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'dev-ops');
 ---
@@ -21,164 +21,79 @@ const project = await getEntry('projects', 'dev-ops');
 
   <ColsLeft title="ci/cd pipelines">
     <div slot="col1">
-      <h3>Automated Development Operations</h3>
-
-      <p>
-                Built comprehensive CI/CD pipelines and development automation that streamlined deployment processes, improved code quality, and enhanced developer productivity across multiple projects.
-      </p>
-
-      <p>
-        <strong>Pipeline Achievements:</strong>
-      </p>
-      <ul>
-        <li><strong>Store Pipeline</strong> - Comprehensive test runner with code coverage</li>
-        <li><strong>Local Development Automation</strong> - One-command WordPress setup</li>
-        <li><strong>Scheduled Pipelines</strong> - Automated review import processes</li>
-        <li><strong>Database Management</strong> - Backup, restore, and import automation</li>
-        <li><strong>Dependency Management</strong> - Automated installation and configuration</li>
-      </ul>
+      <AboutLine title="Store Pipeline" description="Ran all tests and code coverage with comprehensive validation" />
+      <AboutLine title="Store Local Development" description="One-command setup: backup, delete, import, dependencies installed" />
+      <AboutLine title="Schedule Pipelines" description="Automated Boast reviews project with scheduled execution" />
+      <AboutLine title="All Local Dev Setup" description="Complete WordPress environment automation" />
     </div>
 
     <CustomImage
       slot="col2"
-      src={import('../../assets/projects/hi-design/hi-design-cover.png')}
-      alt="CI/CD Pipeline Architecture"
-      width={1920}
-      height={1200}
-    />
-
-    <Flex slot="col2">
-      <CustomImage
-        src={import('../../assets/projects/hi-design/hi-design-main-window.jpg')}
-        alt="Automated Testing"
-        width={1920}
-        height={1200}
-      />
-
-      <CustomImage
-        src={import('../../assets/projects/hi-design/cloud-infrastructure.svg')}
-        alt="Code Coverage Reports"
-        width={1920}
-        height={1200}
-      />
-    </Flex>
-  </ColsLeft>
-
-  <ColsRight title="local development">
-    <div slot="col2">
-      <h3>One-Command Setup</h3>
-
-      <p>
-                Created a revolutionary local development setup that automated the entire WordPress project initialization process, dramatically reducing setup time from hours to minutes.
-      </p>
-
-      <p>
-        <strong>Automation Features:</strong>
-      </p>
-      <ul>
-        <li><strong>Database Management</strong> - Automated pull of recent backups</li>
-        <li><strong>Data Refresh</strong> - Clean local data deletion and import</li>
-        <li><strong>Dependency Installation</strong> - Automated package management</li>
-        <li><strong>Configuration Setup</strong> - Environment-specific settings</li>
-        <li><strong>Single Command</strong> - Complete WordPress project ready to work</li>
-        <li><strong>Developer Experience</strong> - Eliminated manual setup complexity</li>
-      </ul>
-
-      <p>
-                This automation transformed the developer onboarding experience and made switching between projects seamless and efficient.
-      </p>
-    </div>
-
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-design/hi-design-cover.png')}
-      alt="Local Development Setup"
-      width={1920}
-      height={1200}
-    />
-
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-design/hi-design-main-window.jpg')}
-      alt="WordPress Automation"
-      width={1920}
-      height={1200}
-    />
-  </ColsRight>
-
-  <ColsLeft title="containerization">
-    <div slot="col1">
-      <h3>Docker & Database Optimization</h3>
-
-      <p>
-                Implemented comprehensive containerization strategies and database optimization techniques to ensure consistent development environments and optimal performance.
-      </p>
-
-      <p>
-        <strong>Infrastructure Solutions:</strong>
-      </p>
-      <ul>
-        <li><strong>Docker Containers</strong> - MERN apps and WordPress instances</li>
-        <li><strong>MySQL Optimization</strong> - Views, stored procedures, and indexing</li>
-        <li><strong>Environment Consistency</strong> - Containerized development setups</li>
-        <li><strong>Performance Tuning</strong> - Database query optimization</li>
-        <li><strong>Scalable Architecture</strong> - Multi-project container orchestration</li>
-        <li><strong>Development Standardization</strong> - Consistent tooling across teams</li>
-      </ul>
-
-      <p>
-                These containerization and optimization strategies provided reliable, performant development environments that could be easily replicated and maintained across the entire engineering team.
-      </p>
-    </div>
-
-    <CustomImage
-      slot="col2"
-      src={import('../../assets/projects/hi-design/cloud-infrastructure.svg')}
-      alt="Docker Containerization"
+      src={import('../../assets/code.jpg')}
+      alt="CI/CD Pipeline Development"
       width={1920}
       height={1200}
     />
   </ColsLeft>
 
-  <ColsRight title="automation impact">
+  <ColsRight title="containerization & database">
     <div slot="col2">
-      <h3>Development Efficiency Revolution</h3>
-
-      <p>
-                The DevOps automation initiatives fundamentally transformed the development workflow, eliminating manual processes and enabling developers to focus on building features rather than managing infrastructure.
-      </p>
-
-      <p>
-        <strong>Business Impact:</strong>
-      </p>
-      <ul>
-        <li>Reduced project setup time from hours to minutes</li>
-        <li>Eliminated manual database management overhead</li>
-        <li>Increased deployment confidence through automated testing</li>
-        <li>Standardized development environments across all projects</li>
-        <li>Improved code quality through automated pipeline checks</li>
-        <li>Enhanced developer productivity and satisfaction</li>
-      </ul>
-
-      <p>
-                This comprehensive DevOps approach created a foundation for rapid, reliable software development and deployment across the entire organization.
-      </p>
+      <AboutLine title="Docker" description="Created numerous MERN Apps and WordPress instances setups" />
+      <AboutLine title="MySQL" description="Views, stored procedures, and indexing optimization" />
     </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-design/hi-design-cover.png')}
-      alt="DevOps Impact Metrics"
-      width={1920}
-      height={1200}
-    />
+    <div slot="col1" class="devops-showcase">
+      <div class="showcase-header">
+        <h4>DevOps Impact</h4>
+        <p>Infrastructure automation and optimization</p>
+      </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-design/hi-design-main-window.jpg')}
-      alt="Development Efficiency"
-      width={1920}
-      height={1200}
-    />
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">🐳</div>
+          <div class="feature-text">
+            <strong>Docker Containers</strong>
+            <span>MERN & WordPress instances</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🗄️</div>
+          <div class="feature-text">
+            <strong>MySQL Optimization</strong>
+            <span>Views, procedures, indexing</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-text">
+            <strong>One-Command Setup</strong>
+            <span>Complete automation workflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </ColsRight>
 </ProjectLayout>
+
+<style>
+  .devops-showcase {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
+  }
+  .showcase-header { margin-bottom: var(--spacingXL); text-align: center; }
+  .showcase-header h4 {
+    font-size: var(--fontSizeLg); margin-bottom: var(--spacingSm); color: var(--colorTextPrimary);
+  }
+  .showcase-header p {
+    color: var(--colorTextSecondary); font-size: var(--fontSizeSm);
+  }
+  .features-list { display: flex; flex-direction: column; gap: var(--spacingLg); }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: var(--spacingMd); padding: var(--spacingMd);
+    background: rgba(255,255,255,0.02); border-radius: var(--borderRadius); transition: background 0.2s ease;
+  }
+  .feature-item:hover { background: rgba(255,255,255,0.05); }
+  .feature-icon { font-size: var(--fontSizeLg); min-width: 2rem; }
+  .feature-text { display: flex; flex-direction: column; gap: var(--spacingXs); }
+  .feature-text strong { color: var(--colorTextPrimary); font-size: var(--fontSizeMd); }
+  .feature-text span { color: var(--colorTextSecondary); font-size: var(--fontSizeSm); }
+</style>

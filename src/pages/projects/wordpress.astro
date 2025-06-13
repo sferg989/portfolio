@@ -6,6 +6,7 @@ import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
+import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'wordpress');
 ---
@@ -21,27 +22,17 @@ const project = await getEntry('projects', 'wordpress');
 
   <ColsLeft title="organic site">
     <div slot="col1">
-      <h3>High-Traffic WordPress Platform</h3>
-
-      <p>
-                Built and managed an organic site serving over 2 million users per month. This greenfield project utilized headless WordPress with static generation using Gatsby for optimal performance and SEO.
-      </p>
-
-      <p>
-        <strong>Key Achievements:</strong>
-      </p>
-      <ul>
-        <li>Managed self-hosting infrastructure for 2M+ monthly users</li>
-        <li>Implemented headless WordPress blog with static generation</li>
-        <li>Built Boast review project with JSON import and CI/CD automation</li>
-        <li>Developed custom Elementor widgets with complex data retrieval</li>
-        <li>Implemented WpGraphQL with sophisticated data transformation</li>
-      </ul>
+      <AboutLine title="Organic Site" description="Over 2M users per month with self-hosting management" />
+      <AboutLine title="Headless WP Blog" description="Static generation using Gatsby greenfield project" />
+      <AboutLine title="Advanced Custom Fields" description="Service architecture for dozens of ACF in version control" />
+      <AboutLine title="Boast Review Project" description="JSON import with Puppeteer and CI/CD automation" />
+      <AboutLine title="Custom Elementor Widgets" description="Complex data retrieval and display systems" />
+      <AboutLine title="WpGraphQL" description="Complicated data transformation and model resolvers" />
     </div>
 
     <CustomImage
       slot="col2"
-      src={import('../../assets/projects/hi-design/hi-design-cover.png')}
+      src={import('../../assets/code.jpg')}
       alt="WordPress Development"
       width={1920}
       height={1200}
@@ -66,27 +57,43 @@ const project = await getEntry('projects', 'wordpress');
 
   <ColsRight title="e-commerce site">
     <div slot="col2">
-      <h3>Multi-Million Dollar E-commerce</h3>
+      <AboutLine title="Woo GraphQL" description="Headless WooCommerce implementation with WooGraphQL" />
+      <AboutLine title="Ecommerce Management" description="Over $2M in sales with 3rd party hosting" />
+      <AboutLine title="Automated Pantheon Deployment" description="CI/CD deployment automation" />
+      <AboutLine title="HPOS Implementation" description="High Performance Order Storage system" />
+      <AboutLine title="Order Search" description="Dramatically improved search performance" />
+      <AboutLine title="User Search" description="Optimized search on 2M+ user database" />
+    </div>
 
-      <p>
-                Managed a high-performance e-commerce site generating over $2M in sales. Implemented headless WooCommerce architecture using WooGraphQL for optimal performance and user experience.
-      </p>
+    <div slot="col1" class="wordpress-showcase">
+      <div class="showcase-header">
+        <h4>WordPress Scale</h4>
+        <p>High-traffic sites and ecommerce</p>
+      </div>
 
-      <p>
-        <strong>E-commerce Achievements:</strong>
-      </p>
-      <ul>
-        <li>Managed $2M+ in annual sales volume</li>
-        <li>Implemented headless WooCommerce with WooGraphQL</li>
-        <li>Set up robust 3rd party hosting infrastructure</li>
-        <li>Implemented HPOS (High Performance Order Storage)</li>
-        <li>Dramatically improved order search performance</li>
-        <li>Optimized user search on 2M+ user database</li>
-      </ul>
-
-      <p>
-                The headless architecture provided superior performance, scalability, and developer experience while maintaining all the powerful e-commerce features of WooCommerce.
-      </p>
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">👥</div>
+          <div class="feature-text">
+            <strong>2M+ Monthly Users</strong>
+            <span>Organic site traffic</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <div class="feature-text">
+            <strong>$2M+ Sales</strong>
+            <span>WooCommerce revenue</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-text">
+            <strong>2M+ User Search</strong>
+            <span>Database optimization</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <CustomImage
@@ -182,3 +189,26 @@ const project = await getEntry('projects', 'wordpress');
     />
   </ColsRight>
 </ProjectLayout>
+
+<style>
+  .wordpress-showcase {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
+  }
+  .showcase-header { margin-bottom: var(--spacingXL); text-align: center; }
+  .showcase-header h4 {
+    font-size: var(--fontSizeLg); margin-bottom: var(--spacingSm); color: var(--colorTextPrimary);
+  }
+  .showcase-header p {
+    color: var(--colorTextSecondary); font-size: var(--fontSizeSm);
+  }
+  .features-list { display: flex; flex-direction: column; gap: var(--spacingLg); }
+  .feature-item {
+    display: flex; align-items: flex-start; gap: var(--spacingMd); padding: var(--spacingMd);
+    background: rgba(255,255,255,0.02); border-radius: var(--borderRadius); transition: background 0.2s ease;
+  }
+  .feature-item:hover { background: rgba(255,255,255,0.05); }
+  .feature-icon { font-size: var(--fontSizeLg); min-width: 2rem; }
+  .feature-text { display: flex; flex-direction: column; gap: var(--spacingXs); }
+  .feature-text strong { color: var(--colorTextPrimary); font-size: var(--fontSizeMd); }
+  .feature-text span { color: var(--colorTextSecondary); font-size: var(--fontSizeSm); }
+</style>

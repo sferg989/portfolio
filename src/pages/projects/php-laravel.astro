@@ -6,6 +6,7 @@ import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
+import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'php-laravel');
 ---
@@ -19,89 +20,57 @@ const project = await getEntry('projects', 'php-laravel');
     cover={project.data.cover}
   />
 
-  <ColsLeft title="php and laravel">
+  <ColsLeft title="marketing platform">
     <div slot="col1">
-      <h3>Marketing Sales Platform</h3>
-
-      <p>
-                Managed the Marketing sales pages for a high-growth company that scaled from $65M to $300M+ in revenue. Built a comprehensive platform handling hundreds of sales pages and complex scheduling systems.
-      </p>
-
-      <p>
-        <strong>Key Achievements:</strong>
-      </p>
-      <ul>
-        <li>Created new APIs and middleware for scalable architecture</li>
-        <li>Implemented comprehensive unit tests on all new classes</li>
-        <li>Built Custom Funnel Management System handling hundreds of sales pages</li>
-        <li>Developed Funnel Promo Schedule system that revolutionized business operations</li>
-      </ul>
+      <AboutLine title="Marketing Sales Pages" description="Managed sales platform for high-growth company" />
+      <AboutLine title="New APIs & Middleware" description="Created scalable architecture for sales funnel" />
+      <AboutLine title="Unit Tests" description="Implemented unit tests on all new classes" />
+      <AboutLine title="Custom Funnel Management" description="System handling hundreds of sales pages" />
+      <AboutLine title="Funnel Promo Schedule" description="Revolutionized giveaway scheduling system" />
     </div>
 
     <CustomImage
       slot="col2"
-      src={import('../../assets/projects/hi-fiber/hi-fiber-croc-top.jpg')}
+      src={import('../../assets/code.jpg')}
       alt="PHP Laravel Development"
       width={1920}
       height={1200}
     />
-
-    <Flex slot="col2">
-      <CustomImage
-        src={import('../../assets/projects/hi-fiber/hi-fiber-croc-front.jpg')}
-        alt="API Development"
-        width={1920}
-        height={1200}
-      />
-
-      <CustomImage
-        src={import('../../assets/projects/hi-fiber/hi-fiber-falling-multiple.jpg')}
-        alt="Middleware Implementation"
-        width={1920}
-        height={1200}
-      />
-    </Flex>
   </ColsLeft>
 
-  <ColsRight title="funnel management system">
+  <ColsRight title="business impact">
     <div slot="col2">
-      <h3>Revolutionary Scheduling System</h3>
-
-      <p>
-                The Funnel Promo Schedule was a game-changing innovation that transformed how the business handled giveaways and promotional campaigns. Previously, giveaways required manual hard coding multiple times per month.
-      </p>
-
-      <p>
-        <strong>Business Impact:</strong>
-      </p>
-      <ul>
-        <li>Eliminated manual coding of promotional campaigns</li>
-        <li>Enabled automated scheduling of giveaways</li>
-        <li>Provided business teams with self-service capabilities</li>
-        <li>Significantly reduced development overhead</li>
-        <li>Improved campaign deployment speed and reliability</li>
-      </ul>
-
-      <p>
-                This system handled hundreds of sales pages and their complex scheduling requirements, providing a robust foundation for the company's marketing operations.
-      </p>
+      <div class="impact-summary">
+        <h4>Promo Revolution</h4>
+        <p>Transformed manual giveaway process into automated scheduling system</p>
+      </div>
     </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-fiber/hi-fiber-jello.jpg')}
-      alt="Funnel Management Interface"
-      width={1920}
-      height={1200}
-    />
+    <div slot="col1" class="laravel-showcase">
+      <div class="showcase-header">
+        <h4>Laravel Impact</h4>
+        <p>From manual to automated processes</p>
+      </div>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-fiber/hi-fiber-product-line.jpg')}
-      alt="Scheduling System"
-      width={1920}
-      height={1200}
-    />
+      <div class="tech-list">
+        <div class="tech-item laravel">
+          <span class="tech-name">Laravel Framework</span>
+          <span class="tech-desc">API & middleware development</span>
+        </div>
+        <div class="tech-item php">
+          <span class="tech-name">PHP</span>
+          <span class="tech-desc">Custom funnel management</span>
+        </div>
+        <div class="tech-item testing">
+          <span class="tech-name">Unit Testing</span>
+          <span class="tech-desc">Comprehensive test coverage</span>
+        </div>
+        <div class="tech-item automation">
+          <span class="tech-name">Promo Automation</span>
+          <span class="tech-desc">Eliminated manual coding</span>
+        </div>
+      </div>
+    </div>
   </ColsRight>
 
   <ColsLeft title="technical excellence">
@@ -137,3 +106,33 @@ const project = await getEntry('projects', 'php-laravel');
     />
   </ColsLeft>
 </ProjectLayout>
+
+<style>
+  .laravel-showcase {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center;
+  }
+  .showcase-header { margin-bottom: var(--spacingXL); text-align: center; }
+  .showcase-header h4 {
+    font-size: var(--fontSizeLg); margin-bottom: var(--spacingSm); color: var(--colorTextPrimary);
+  }
+  .showcase-header p {
+    color: var(--colorTextSecondary); font-size: var(--fontSizeSm);
+  }
+  .tech-list { display: flex; flex-direction: column; gap: var(--spacingMd); }
+  .tech-item {
+    display: flex; flex-direction: column; padding: var(--spacingMd) var(--spacingLg);
+    border-radius: var(--borderRadius); border-left: 3px solid; transition: transform 0.2s ease;
+  }
+  .tech-item:hover { transform: translateX(4px); }
+  .tech-item.laravel { border-left-color: #ff2d20; background: rgba(255, 45, 32, 0.1); }
+  .tech-item.php { border-left-color: #777bb4; background: rgba(119, 123, 180, 0.1); }
+  .tech-item.testing { border-left-color: #4caf50; background: rgba(76, 175, 80, 0.1); }
+  .tech-item.automation { border-left-color: #f39c12; background: rgba(243, 156, 18, 0.1); }
+  .tech-name { font-weight: var(--fontWeightMd); color: var(--colorTextPrimary); margin-bottom: var(--spacingXs); }
+  .tech-desc { font-size: var(--fontSizeSm); color: var(--colorTextSecondary); }
+  .impact-summary {
+    padding: var(--spacingXL); height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: center;
+  }
+  .impact-summary h4 { font-size: var(--fontSizeXL); margin-bottom: var(--spacingMd); color: var(--colorTextPrimary); }
+  .impact-summary p { color: var(--colorTextSecondary); font-size: var(--fontSizeLg); }
+</style>
