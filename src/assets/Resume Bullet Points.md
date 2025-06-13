@@ -5,7 +5,8 @@
 - Organic Site that had over 2 M users per month  
 - Managed the self hosting  
 - Greenfield project.  Headless WP Blog using static generation.  Gatsby.  
-- Boast review project. JSON Import, to table import using puppeteer and CI/CD   
+- Advanced Custom Fields \- Created a Service architecture to handle dozens of ACF in easily and in Version Control.  
+- Boast review project. JSON Import, to table import using puppeteer and CI/CD. And PHP endpoint,   
 - Custom Elementor Widgets : very complex data retrieval and display.  
 - WpGraphql. \- complicated data transformation and data model in to build resolvers
 
@@ -15,6 +16,7 @@
 - Managed the e commerce site with over 2M in sales  
 - Implemented a headless woo commerce Site using woographql  
 - Implemented 3rd party hosting.  
+- Automated Pantheon deployment. Using CI/CD  
 - Implemented HPOS  
 - Dramatically improved Order search  
 - Dramatically improved User Search.  On a users table with over 2M users.
@@ -30,7 +32,9 @@
 ## Next JS
 
 - Academy \- Start with large server components, with Granular client components.  NExt has Given us server rendering from the beginning with *getServerSideProps.*  
-- MyUscca  
+- User Dashboard.  
+  - pulled data from dozens of different sources that allowed users to easily interact will all of there user data,  
+  - Used   
 - Email Preference Center \- server actions  
 - Invoices.  \- saved the company over 60k per month in the removal of a 3rd party vendor.  Member Retention,.  
 - Checkout Refactor \- went from a create react app to a next app.  A disastrous Context file over 1k lines long to a stream lined product with over 500 tests.  
@@ -74,6 +78,8 @@
   - CLI Boilerplate \- a base project that the CLI library would consume to easily architect new projects or components.   
 - React Hooks Package \-   
   - Created re usable hooks across multiple projects  
+  - Branding hook.  Same project completely different domains, different styles.  Same code, same   
+- Multi Site worker \- allowed different domain to return the same code.  
 - React component Library \-   
   - Created re usable react components across to be reusable across project  
 - Delta Scripts Container.  \- Simplified normally a very strenuous process to become very trivial.  
@@ -87,8 +93,9 @@
 
 ## Other Stuff 
 
-- Segment Analytics  
+- Segment Analytics \- Frontne  
 - Braze SDK \-   
+- Familiar with Tauri \-   
 - Algolia Search implementation   
   - Created new indexes, and interacted with multiple indexes to enhance user Search.  Super Fast.    
 - Did Discovery and implementation of a new CMS Payload.  
@@ -103,11 +110,14 @@
 - NodeJS  
 - Deno  
 - ReactNative  
--   
+- Supabase Auth \- in [Travelferguson.com](http://Travelferguson.com)  
+- Automate Pantheon Deployment  
+- LMS \- Learndash.  The ability to track Achievements and gamification to increase user interaction  
 - Cloudflare Pages  
 - Caddy File to handle application Routing  
 - Used Cloudflare to implement Application Routing multiple projects on the same domain.  
--   
+- Finance Options Score \- [fergfo.com](http://fergfo.com)  
+- Hygraph Headless CMS in side projects  
 - Reciprocity Scraper. \- scraped current WP data in order to move to a new API.  
 - AIL \- Application Integration Layer   
   - A Mono repo with a Worker and SDK in 1\!  
@@ -150,21 +160,6 @@ What excites me most about this role is the 50/50 split between engineering and 
 
 I’m also drawn to your emphasis on bias for action over bias for any particular tech stack. Over the past 15 years, I’ve worked across PHP, React (12 years), TypeScript, Node, and a wide range of frontend frameworks and libraries. I enjoy the pace of change in frontend development and the opportunity to keep learning.
 
-Some recent projects I’ve especially enjoyed include:
-
-* A CLI tool to scaffold new TypeScript libraries, Cloudflare Workers, and web components
-
-* Migrating legacy apps to modern frameworks like Next.js
-
-* Building CI/CD pipelines for coding standards
-
-* Launching a headless WooCommerce \+ GraphQL storefront
-
-* Creating smoke tests for e-commerce checkout flows
-
-
-  
-
 #### Conflict Resolution \- 
 
 - Being Vulnerable with people.  Be willing to share what you think.    
@@ -179,6 +174,16 @@ Some recent projects I’ve especially enjoyed include:
   - *People have to hear something 7 times, before everyone hears it.*    
   - *I WIll continue to remind you of these things.  Beat the same drum.*    
 - ***Disagreement with another manager*** about how to use AI.  He believed all use of AI in code should be documented.  I completely disagreed.  It was very important that we met until we gained consensus.  Both parties need to come to the issue with a *Help me Understand Attitude.*
+
+*What’s one consumer-facing web product you’ve built end-to-end or played a major role in? What did you own, and what impact did it have on users?*
+
+One consumer-facing web product I led end-to-end was an online learning academy—a training platform that allowed users to stream individual videos or take structured courses behind a tiered membership paywall. It was built using Next.js and TypeScript, deployed on Cloudflare.
+
+As the tech lead, I owned the full architecture and technical direction of the platform. I broke down the product vision into actionable engineering tasks, created the roadmap, and led a team of engineers through execution. At the same time, I was hands-on in the development process, building core features like state management, authentication, gated content delivery, and API interactions.
+
+I also implemented development best practices like enforcing minimum 80% unit test coverage and coordinated with QA to build out a comprehensive automated testing suite.
+
+The impact on users was immediate and measurable: the platform supported thousands of daily users, and created a seamless user experience that encouraged higher engagement and subscription upgrades. It became a key revenue driver for the business and was the foundation for future educational product launches.
 
 #### Learning & development
 

@@ -4,8 +4,8 @@ import ProjectHero from '../../components/ProjectHero.astro';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
-import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
+import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'packages');
 ---
@@ -21,127 +21,54 @@ const project = await getEntry('projects', 'packages');
 
   <ColsLeft title="developer tools">
     <div slot="col1">
-      <h3>CLI and Automation Tools</h3>
-
-      <p>
-                Built comprehensive CLI tools and automation systems that dramatically improved developer productivity and standardized development processes across multiple projects.
-      </p>
-
-      <p>
-        <strong>CLI Achievements:</strong>
-      </p>
-      <ul>
-        <li><strong>CLI Library</strong> - Quickly create components, packages, projects, custom elements from boilerplates</li>
-        <li><strong>CLI Boilerplate</strong> - Base project architecture for new projects and components</li>
-        <li><strong>Delta Scripts Container</strong> - Simplified complex deployment processes</li>
-        <li><strong>S3 Deploy</strong> - Automated script deployment to S3</li>
-        <li>Significantly increased developer experience and productivity</li>
-      </ul>
-    </div>
-
-  </ColsLeft>
-
-  <ColsRight title="reusable packages">
-    <div slot="col2">
-      <h3>Component Libraries & Analytics</h3>
-
-      <p>
-                Developed comprehensive package ecosystem including React components, hooks, analytics, and monitoring solutions used across multiple company projects.
-      </p>
-
-      <p>
-        <strong>Package Ecosystem:</strong>
-      </p>
-      <ul>
-        <li><strong>React Component Library</strong> - Reusable components across projects</li>
-        <li><strong>React Hooks Package</strong> - Custom hooks for common functionality</li>
-        <li><strong>Analytics Package</strong> - Unified tracking and identify calls</li>
-        <li><strong>All Company Modal</strong> - Custom element for consistent UX</li>
-        <li><strong>Launch Darkly Integration</strong> - Unified feature flag implementation</li>
-        <li><strong>Address Validation</strong> - Complete validation system with caching</li>
-      </ul>
-
-      <p>
-                These packages ensured consistency, reduced duplication, and enabled rapid development across the entire application portfolio.
-      </p>
-    </div>
-
-
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-fiber/hi-fiber-ig.jpg')}
-      alt="Analytics Package"
-      width={1920}
-      height={1200}
-    />
-  </ColsRight>
-
-  <ColsLeft title="automation & monitoring">
-    <div slot="col1">
-      <h3>Slack Bots & Geo Location</h3>
-
-      <p>
-                Built intelligent automation systems including Slack bots for monitoring and testing, plus geo-location services for enhanced user experience.
-      </p>
-
-      <p>
-        <strong>Automation Solutions:</strong>
-      </p>
-      <ul>
-        <li><strong>Uptime Bot</strong> - Monitored all properties and notified on downtime</li>
-        <li><strong>Smoke Test Bot</strong> - On-demand testing via Slack commands</li>
-        <li><strong>Geo Location Banner</strong> - Cloud Worker for location-based UI</li>
-        <li><strong>Analytics Worker</strong> - Server-side tracking when client tracking blocked</li>
-        <li>Scheduled monitoring with proactive alerting</li>
-        <li>Custom UI based on user location</li>
-      </ul>
-
-      <p>
-                These automation tools provided essential monitoring capabilities and enhanced user experience through intelligent location-based features.
-      </p>
+      <AboutLine title="CLI Library" description="Quickly create components, packages, projects from boilerplates" />
+      <AboutLine title="CLI Boilerplate" description="Base project architecture for new projects and components" />
+      <AboutLine title="Delta Scripts Container" description="Simplified complex deployment processes" />
+      <AboutLine title="S3 Deploy" description="Automated script deployment to S3" />
     </div>
 
     <CustomImage
       slot="col2"
-      src={import('../../assets/projects/hi-fiber/hi-fiber-jello.jpg')}
-      alt="Slack Bot Integration"
+      src={import('../../assets/code.jpg')}
+      alt="Developer Tools and CLI"
       width={1920}
       height={1200}
     />
   </ColsLeft>
 
-  <ColsRight title="deployment systems">
+  <ColsRight title="component libraries">
     <div slot="col2">
-      <h3>Simplified Complex Processes</h3>
-
-      <p>
-                The Delta Scripts Container revolutionized deployment processes, transforming typically strenuous operations into trivial, automated workflows.
-      </p>
-
-      <p>
-        <strong>Deployment Innovation:</strong>
-      </p>
-      <ul>
-        <li><strong>"Deploy X everywhere"</strong> - Single command deployment</li>
-        <li><strong>"Deploy Y everywhere, but... A, B, C"</strong> - Conditional deployments</li>
-        <li>Automated S3 deployment processes</li>
-        <li>Simplified complex multi-environment workflows</li>
-        <li>Reduced deployment time from hours to minutes</li>
-        <li>Eliminated human error in deployment processes</li>
-      </ul>
-
-      <p>
-                This system enabled developers to deploy changes across multiple environments and applications with simple, declarative commands, dramatically improving deployment reliability and speed.
-      </p>
+      <AboutLine title="React Component Library" description="Reusable components across projects" />
+      <AboutLine title="React Hooks Package" description="Custom hooks for common functionality" />
+      <AboutLine title="All Company Modal" description="Custom element for consistent UX" />
+      <AboutLine title="Multi Site Worker" description="Different domains serving same codebase" />
     </div>
+  </ColsRight>
 
+  <ColsLeft title="analytics & monitoring">
+    <div slot="col1">
+      <AboutLine title="Analytics Package" description="Unified tracking and identify calls" />
+      <AboutLine title="Analytics Worker" description="Server-side tracking when client blocked" />
+      <AboutLine title="Uptime Bot" description="Slack bot monitoring all properties" />
+      <AboutLine title="Smoke Test Bot" description="On-demand testing via Slack" />
+    </div>
+  </ColsLeft>
 
-    <CustomImage
-      slot="col1"
-      src={import('../../assets/projects/hi-fiber/hi-fiber-falling-multiple.jpg')}
-      alt="Multi-Environment Deployment"
-      width={1920}
-      height={1200}
-    />
+  <ColsRight title="services & workers">
+    <div slot="col2">
+      <AboutLine title="Geo Location Worker" description="Cloudflare Worker for location-based UI" />
+      <AboutLine title="Geo Location Banner" description="Cloud Worker for location-based UI" />
+      <AboutLine title="Address Validation Worker" description="Complete validation system with caching" />
+      <AboutLine title="Address Validation Client" description="Component for address validation" />
+      <AboutLine title="Launch Darkly Integration" description="Unified feature flag implementation" />
+    </div>
   </ColsRight>
 </ProjectLayout>
+
+<style>
+  .packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacingMd);
+  }
+</style>
