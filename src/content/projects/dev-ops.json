@@ -3,7 +3,7 @@
   "year": 2025,
   "category": "architecture",
   "subtitle": "DevOps and Infrastructure Management",
-  "cover": "../../assets/projects/hi-design/hi-design-cover.png",
+  "cover": "../../assets/projects/devopsinscience.png",
   "order": 8,
   "heroMesh": "/meshes/hi-design.obj",
   "projectMesh": "/meshes/hi-design.obj"

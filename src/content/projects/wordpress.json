@@ -3,7 +3,7 @@
   "year": 2020,
   "category": "software",
   "subtitle": "WordPress Development and E-commerce",
-  "cover": "../../assets/projects/hi-design/hi-design-cover.png",
+  "cover": "../../assets/projects/wp.png",
   "order": 3,
   "heroMesh": "/meshes/hi-design.obj",
   "projectMesh": "/meshes/hi-design.obj"

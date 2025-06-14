@@ -3,7 +3,7 @@
   "year": 2022,
   "category": "software",
   "subtitle": "Next.js and React Applications",
-  "cover": "../../assets/projects/mambo/mambo-cover.jpg",
+  "cover": "../../assets/projects/Next.js.png",
   "order": 2,
   "heroMesh": "/meshes/boat.obj",
   "projectMesh": "/meshes/boat.obj"
