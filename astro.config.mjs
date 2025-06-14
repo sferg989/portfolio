@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
 import sitemap from '@astrojs/sitemap';
 
@@ -25,6 +25,12 @@ export default defineConfig({
     site: "https://stephenferguson.info",
     scopedStyleStrategy: "where",
     image: {
-        service: passthroughImageService()
+        // Enable image optimization and modern formats
+        service: {
+            entrypoint: 'astro/assets/services/sharp'
+        },
+        // Configure supported formats (webp, avif for modern browsers)
+        domains: [],
+        remotePatterns: []
     },
 });

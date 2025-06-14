@@ -1,50 +1,70 @@
 ---
-import { Image as AstroImage } from 'astro:assets';
-
+import { Image as AstroImage, Picture } from 'astro:assets';
 import { type LocalImageProps, type RemoteImageProps } from 'astro:assets';
 
 type Props = (RemoteImageProps | LocalImageProps) & {
     caption?: string;
     blend?: boolean;
     invertOnDark?: boolean;
+    sizes?: string;
+    loading?: 'lazy' | 'eager';
+    quality?: number;
+    responsive?: boolean;
 };
 
-const { src, width, height, caption, blend, invertOnDark, ...props } =
-    Astro.props;
+const {
+  src,
+  width,
+  height,
+  caption,
+  blend,
+  invertOnDark,
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  loading = 'lazy',
+  quality = 80,
+  responsive = true,
+  alt = '',
+  ...restProps
+} = Astro.props;
 
 const vars = {
   blend: blend ? 'multiply' : 'normal',
   darkBlend: blend && invertOnDark ? 'screen' : 'normal',
-
   filter: blend ? 'none' : 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.05))',
   darkFilter: invertOnDark ? 'invert()' : 'none',
 };
+
+// Generate responsive widths if responsive is enabled
+const numericWidth = typeof width === 'number' ? width : parseInt(String(width));
+const responsiveWidths = responsive && numericWidth ? [
+  Math.round(numericWidth * 0.25),
+  Math.round(numericWidth * 0.5),
+  Math.round(numericWidth * 0.75),
+  numericWidth
+].filter(w => w >= 200) : undefined;
 ---
 
 <style define:vars={vars}>
-    img {
+    img, picture {
         height: auto;
         width: auto;
-
         max-height: 100%;
         max-width: 100%;
-
         border-radius: var(--radiusMd);
-
         object-fit: contain;
-
         filter: var(--filter);
-
         mix-blend-mode: var(--blend);
     }
 
     .caption {
         font-size: var(--fontSizeSm);
         color: var(--colorTextSecondary);
+        margin-top: var(--spacingSm);
+        text-align: center;
     }
 
     @media (prefers-color-scheme: dark) {
-        img {
+        img, picture {
             filter: var(--darkFilter);
             mix-blend-mode: var(--darkBlend);
         }
@@ -52,7 +72,28 @@ const vars = {
 </style>
 
 <div>
-    <!-- @ts-ignore -->
-    <AstroImage alt="" src={src} width={width} height={height} {...props} />
-    {caption ? <span class="caption">{caption}</span> : null}
+  {responsive && responsiveWidths ? (
+    <Picture
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      widths={responsiveWidths}
+      sizes={sizes}
+      loading={loading}
+      quality={quality}
+      formats={['avif', 'webp', 'jpg']}
+    />
+  ) : (
+    <AstroImage
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      quality={quality}
+      format="webp"
+    />
+  )}
+  {caption && <div class="caption">{caption}</div>}
 </div>
