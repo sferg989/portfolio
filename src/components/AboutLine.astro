@@ -5,6 +5,7 @@ interface Props extends HTMLAttributes<'div'> {
     title: string;
     description?: string;
     url?: string;
+    titleUrl?: string;
     date?: string;
     location?: string;
 }
@@ -13,6 +14,7 @@ const {
   title,
   description,
   url,
+  titleUrl,
   date,
   location,
   class: cls,
@@ -35,6 +37,17 @@ const {
 
     .about-line-title {
         font-weight: var(--fontWeightLg);
+    }
+
+    .about-line-title-link {
+        font-weight: var(--fontWeightLg);
+        color: var(--colorText);
+        text-decoration: underline;
+        text-decoration-color: var(--colorTextSecondary);
+    }
+
+    .about-line-title-link:hover {
+        text-decoration-color: var(--colorText);
     }
 
     .about-line-main {
@@ -72,7 +85,15 @@ const {
 <div class:list={[cls, 'about-line-wrapper']} {...props}>
   <div class="about-line-container">
     <div class="about-line-main">
-      <span class="about-line-title">{title}</span>
+      {
+        titleUrl ? (
+          <a class="about-line-title-link" href={titleUrl} target="_blank">
+            {title}
+          </a>
+        ) : (
+          <span class="about-line-title">{title}</span>
+        )
+      }
 
       {
         description ? (
