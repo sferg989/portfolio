@@ -4,6 +4,106 @@ import CustomImage from '../components/CustomImage.astro';
 import Row from '../components/rows/Row.astro';
 import AboutLayout from '../layouts/AboutLayout.astro';
 import AboutLine from '../components/AboutLine.astro';
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Steve Ferguson',
+  'jobTitle': 'Tech Lead & Full Stack Developer',
+  'description': 'Steve Ferguson is an experienced Tech Lead and Full-Stack Developer with expertise in Next.js, React, TypeScript, PHP, Laravel, WordPress, DevOps, CI/CD, and team leadership.',
+  'url': 'https://stephenferguson.info/about',
+  'image': 'https://stephenferguson.info/assets/MeandBoysGolfing.jpeg',
+  'sameAs': [
+    'https://linkedin.com/in/stephenferguson',
+    'https://github.com/stephenferguson'
+  ],
+  'knowsAbout': [
+    'Next.js Development',
+    'React Development',
+    'TypeScript Programming',
+    'PHP Development',
+    'Laravel Framework',
+    'WordPress Development',
+    'DevOps Engineering',
+    'CI/CD Pipeline Management',
+    'Team Leadership',
+    'Software Architecture',
+    'Cloudflare Workers',
+    'E-commerce Development',
+    'Headless CMS Development',
+    'Docker Containerization',
+    'MySQL Database Management',
+    'Git Version Control',
+    'Agile Methodology',
+    'Code Review Processes',
+    'Performance Optimization'
+  ],
+  'alumniOf': [
+    {
+      '@type': 'EducationalOrganization',
+      'name': "Master's in Music Performance"
+    },
+    {
+      '@type': 'EducationalOrganization',
+      'name': 'MBA in Finance'
+    }
+  ],
+  'workHistory': [
+    {
+      '@type': 'Organization',
+      'name': 'Delta Defense',
+      'jobTitle': 'Tech Lead',
+      'startDate': '2021-08',
+      'endDate': '2025-05',
+      'location': 'West Bend, WI',
+      'description': 'Leading software engineering teams, architecting scalable web applications, implementing DevOps practices, and mentoring developers in modern web technologies.'
+    },
+    {
+      '@type': 'Organization',
+      'name': 'Delta Defense',
+      'jobTitle': 'Software Engineer',
+      'startDate': '2018-04',
+      'endDate': '2021-08',
+      'location': 'West Bend, WI',
+      'description': 'Developed full-stack web applications using Next.js, React, PHP, Laravel, and WordPress. Implemented CI/CD pipelines and DevOps best practices.'
+    },
+    {
+      '@type': 'Organization',
+      'name': 'Marinette Marine',
+      'jobTitle': 'Program Cost Analyst II',
+      'startDate': '2016-11',
+      'endDate': '2018-04',
+      'location': 'Marinette, WI',
+      'description': 'Financial analysis and program management in aerospace and defense industry.'
+    }
+  ],
+  'hasOccupation': {
+    '@type': 'Occupation',
+    'name': 'Tech Lead & Full Stack Developer',
+    'occupationLocation': {
+      '@type': 'Place',
+      'name': 'West Bend, WI'
+    },
+    'skills': [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'PHP',
+      'Laravel',
+      'WordPress',
+      'DevOps',
+      'CI/CD',
+      'Team Leadership',
+      'Software Architecture',
+      'Database Design',
+      'API Development'
+    ]
+  }
+};
+
+const aboutTitle = 'About Steve Ferguson - Tech Lead & Full Stack Developer';
+const aboutDescription = 'Steve Ferguson is a Tech Lead and Full-Stack Developer with expertise in Next.js, React, TypeScript, PHP, Laravel, WordPress, DevOps, CI/CD, and team leadership.';
+const aboutKeywords = 'steve ferguson about, tech lead, full stack developer, next.js, react, typescript, php, laravel, wordpress, devops, ci/cd, team leadership';
 ---
 
 <style>
@@ -121,7 +221,14 @@ import AboutLine from '../components/AboutLine.astro';
     }
 </style>
 
-<AboutLayout>
+<AboutLayout
+  title={aboutTitle}
+  description={aboutDescription}
+  keywords={aboutKeywords}
+  image="/assets/MeandBoysGolfing.jpeg"
+  type="profile"
+  schema={aboutSchema}
+>
   <Row class="row">
     <div class="col col1 crooked">
       <CustomImage

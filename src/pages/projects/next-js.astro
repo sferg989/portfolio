@@ -1,4 +1,5 @@
 ---
+/* eslint-disable max-lines */
 import { getEntry } from 'astro:content';
 import ProjectHero from '../../components/ProjectHero.astro';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
@@ -8,9 +9,60 @@ import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
 
 const project = await getEntry('projects', 'next-js');
+
+const nextjsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  'name': 'Next.js Development Projects by Steve Ferguson',
+  'description': 'Comprehensive Next.js development projects showcasing server components, application refactors, and modern deployment strategies using Cloudflare Workers.',
+  'author': {
+    '@type': 'Person',
+    'name': 'Steve Ferguson',
+    'jobTitle': 'Tech Lead & Full Stack Developer',
+    'url': 'https://stephenferguson.info'
+  },
+  'programmingLanguage': [
+    'TypeScript',
+    'JavaScript',
+    'Next.js',
+    'React'
+  ],
+  'tool': [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Cloudflare Workers',
+    'Cloudflare Pages',
+    'Server Components',
+    'Server Actions'
+  ],
+  'keywords': [
+    'Next.js Development',
+    'React Applications',
+    'Server Components',
+    'TypeScript',
+    'Cloudflare Workers',
+    'Application Refactoring',
+    'Full Stack Development',
+    'Edge Computing'
+  ],
+  'genre': 'Software Development',
+  'dateCreated': '2022',
+  'provider': {
+    '@type': 'Organization',
+    'name': 'Delta Defense'
+  }
+};
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="Next.js Development Projects by Steve Ferguson - React Server Components & TypeScript"
+  description="Steve Ferguson's Next.js development expertise: server components, application refactors, Cloudflare Workers deployment, and modern React patterns. Saved $60k/month through vendor elimination and architecture optimization."
+  keywords="steve ferguson next.js, next.js developer, react server components, typescript development, cloudflare workers, next.js refactoring, server actions, edge computing, full stack developer, react applications"
+  image="/assets/projects/Next.js.png"
+  type="article"
+  schema={nextjsSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}

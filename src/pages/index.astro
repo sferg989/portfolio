@@ -6,13 +6,84 @@ import Hero from '../components/Hero.astro';
 import CenteredText from '../components/rows/CenteredText.astro';
 import Highlight from '../components/text/Highlight.astro';
 import Projects from '../components/Projects.astro';
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Steve Ferguson',
+  'jobTitle': 'Tech Lead & Full Stack Developer',
+  'description': 'Experienced Tech Lead and Full-Stack Developer with unique background spanning aerospace, agriculture, and technology. Expert in Next.js, React, TypeScript, PHP, Laravel, WordPress, DevOps, and team leadership.',
+  'url': 'https://stephenferguson.info',
+  'image': 'https://stephenferguson.info/assets/MeandBoysGolfing.jpeg',
+  'sameAs': [
+    'https://linkedin.com/in/stephenferguson',
+    'https://github.com/stephenferguson'
+  ],
+  'knowsAbout': [
+    'Next.js Development',
+    'React Development',
+    'TypeScript',
+    'PHP Development',
+    'Laravel Framework',
+    'WordPress Development',
+    'DevOps Engineering',
+    'CI/CD Pipelines',
+    'Team Leadership',
+    'Software Architecture',
+    'Web Development',
+    'Cloudflare Workers',
+    'E-commerce Development',
+    'Headless CMS',
+    'Full Stack Development',
+    'Software Engineering Management'
+  ],
+  'alumniOf': [
+    {
+      '@type': 'EducationalOrganization',
+      'name': "Master's in Music Performance"
+    },
+    {
+      '@type': 'EducationalOrganization',
+      'name': 'MBA in Finance'
+    }
+  ],
+  'worksFor': {
+    '@type': 'Organization',
+    'name': 'Delta Defense',
+    'description': 'Leading software engineering teams and developing scalable web applications'
+  },
+  'hasOccupation': {
+    '@type': 'Occupation',
+    'name': 'Tech Lead',
+    'occupationLocation': {
+      '@type': 'Place',
+      'name': 'West Bend, WI'
+    },
+    'skills': [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'PHP',
+      'Laravel',
+      'WordPress',
+      'DevOps',
+      'Team Leadership',
+      'Software Architecture'
+    ]
+  }
+};
 ---
 
-<MainLayout>
+<MainLayout
+  title="Steve Ferguson - Full Stack Developer & Tech Lead | Next.js, React, TypeScript Expert"
+  description="Experienced Tech Lead and Full-Stack Developer with unique background in aerospace, agriculture, and technology. Expert in Next.js, React, TypeScript, PHP, Laravel, WordPress, DevOps, and team leadership. Available for consulting and full-time opportunities."
+  keywords="steve ferguson, full stack developer, tech lead, next.js expert, react developer, typescript, php developer, laravel, wordpress developer, devops engineer, ci/cd, team leadership, software architect, web development, cloudflare workers, ecommerce development, headless cms, software engineering manager, west bend wi, milwaukee developer"
+  schema={homeSchema}
+>
   <Hero slot="hero" id="hello" />
 
   <CenteredText>
-        My career journey has been anything but traditional, shaping my ability to solve complex problems and adapt to diverse challenges. I hold a Master's in Music Performance and an MBA in Finance. I began my career in the finance department of a large aerospace and defense company, where I first started programming—writing PHP to automate tasks and eliminate wasted time. Next, I managed a 4,000-acre rice farm for four years. After that, I fully transitioned into technology, working my way up to <Highlight>Tech Lead in Software Engineering</Highlight>. This unique path has honed my leadership, strategic thinking, and technical expertise.
+        My career journey as a <Highlight>Full Stack Developer</Highlight> and <Highlight>Tech Lead</Highlight> has been anything but traditional, shaping my ability to solve complex problems and adapt to diverse challenges. I hold a Master's in Music Performance and an MBA in Finance. I began my career in the finance department of a large aerospace and defense company, where I first started programming—writing <Highlight>PHP</Highlight> to automate tasks and eliminate wasted time. Next, I managed a 4,000-acre rice farm for four years. After that, I fully transitioned into technology, specializing in <Highlight>Next.js, React, TypeScript, Laravel, and WordPress development</Highlight>, working my way up to <Highlight>Tech Lead in Software Engineering</Highlight>. This unique path has honed my leadership, strategic thinking, and technical expertise in <Highlight>DevOps, CI/CD, and team management</Highlight>.
   </CenteredText>
 
     <!-- <ProjectsField client:only /> -->

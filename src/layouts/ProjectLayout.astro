@@ -1,6 +1,18 @@
 ---
 import '../style/project.css';
 import MainLayout from './MainLayout.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  canonicalUrl?: string;
+  type?: 'website' | 'article' | 'profile';
+  schema?: Record<string, unknown>;
+}
+
+const { title, description, keywords, image, canonicalUrl, type, schema } = Astro.props;
 ---
 
 <style>
@@ -9,6 +21,14 @@ import MainLayout from './MainLayout.astro';
     }
 </style>
 
-<MainLayout>
+<MainLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  image={image}
+  canonicalUrl={canonicalUrl}
+  type={type}
+  schema={schema}
+>
   <slot />
 </MainLayout>

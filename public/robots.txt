@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://stephenferguson.info/sitemap-index.xml
+Sitemap: https://stephenferguson.info/sitemap-0.xml
+
+# Disallow crawling of certain files/directories
+Disallow: /admin/
+Disallow: /*.pdf$
+Disallow: /private/
+
+# Allow crawling of important pages
+Allow: /about
+Allow: /projects/
+Allow: /projects/next-js
+Allow: /projects/php-laravel
+Allow: /projects/wordpress
+Allow: /projects/dev-ops
+Allow: /projects/testing
+Allow: /projects/packages
+Allow: /projects/people-management
+Allow: /projects/other-stuff
+
+# Crawl-delay (optional - helps prevent overwhelming the server)
+Crawl-delay: 1 
