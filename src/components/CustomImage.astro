@@ -2,7 +2,8 @@
 import { Image as AstroImage, Picture } from 'astro:assets';
 import { type LocalImageProps, type RemoteImageProps } from 'astro:assets';
 
-type Props = (RemoteImageProps | LocalImageProps) & {
+type Props = {
+    [key: string]: any;
     caption?: string;
     blend?: boolean;
     invertOnDark?: boolean;
@@ -23,7 +24,7 @@ const {
   loading = 'lazy',
   quality = 80,
   responsive = true,
-  alt = '',
+  alt = '' as string,
   ...restProps
 } = Astro.props;
 
@@ -75,7 +76,7 @@ const responsiveWidths = responsive && numericWidth ? [
   {responsive && responsiveWidths ? (
     <Picture
       src={src}
-      alt={alt}
+      alt={alt || ''}
       width={width}
       height={height}
       widths={responsiveWidths}
