@@ -6,11 +6,45 @@ import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'dev-ops');
+
+// Create SEO schema for DevOps project
+const devopsSchema = SchemaBuilder.createProjectSchema({
+  name: 'DevOps & Infrastructure Projects by Steve Ferguson',
+  description: 'DevOps engineering including CI/CD pipelines, Docker containerization, cloud infrastructure, and automated deployment strategies.',
+  programmingLanguage: ['YAML', 'Bash', 'Python', 'JavaScript'],
+  tools: [
+    'Docker',
+    'GitHub Actions',
+    'Cloudflare',
+    'AWS',
+    'Jenkins',
+    'Kubernetes',
+    'Terraform'
+  ],
+  keywords: [
+    'DevOps Engineering',
+    'CI/CD Pipelines',
+    'Docker Containerization',
+    'Cloud Infrastructure',
+    'Automated Deployment',
+    'Infrastructure as Code',
+    'Container Orchestration'
+  ],
+  dateCreated: '2021'
+});
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="DevOps & Infrastructure Projects by Steve Ferguson - CI/CD & Cloud Engineering"
+  description="Steve Ferguson's DevOps expertise: CI/CD pipelines, Docker containerization, cloud infrastructure management, and automated deployment strategies for scalable applications."
+  keywords="steve ferguson devops, devops engineer, ci/cd pipelines, docker containers, cloud infrastructure, automated deployment, infrastructure as code"
+  image="/assets/projects/DevOps.png"
+  type="article"
+  schema={devopsSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}
@@ -21,10 +55,10 @@ const project = await getEntry('projects', 'dev-ops');
 
   <ColsLeft title="ci/cd pipelines">
     <div slot="col1">
-      <AboutLine title="Store Pipeline" description="Ran all tests and code coverage with comprehensive validation" />
-      <AboutLine title="Store Local Development" description="One-command setup: backup, delete, import, dependencies installed" />
-      <AboutLine title="Schedule Pipelines" description="Automated Boast reviews project with scheduled execution" />
-      <AboutLine title="All Local Dev Setup" description="Complete WordPress environment automation" />
+      <AboutLine title="CI/CD" description="Ran all tests and code coverage with comprehensive validation.  Autodeply Client projects or PHP applications to various hosting services like Pantheon, Cloudflare, AWS..  " />
+      <AboutLine title="Store Local Development" description="One-command setup: For a Ecommerce Wordpress Project.  The ability to backup, delete, import, all data from Pantheon, 3rd Party hosting service." />
+      <AboutLine title="Schedule Pipelines" description="Easily Automate tasks with node, or PHP.  " />
+      <AboutLine title="All Local Dev Setup" description="Complete WordPress environment automation.  Use Docker to create a local environment, and Cloudflare R2 to backup and restore data." />
     </div>
 
     <CustomImage
@@ -38,8 +72,8 @@ const project = await getEntry('projects', 'dev-ops');
 
   <ColsRight title="containerization & database">
     <div slot="col2">
-      <AboutLine title="Docker" description="Created numerous MERN Apps and WordPress instances setups" />
-      <AboutLine title="MySQL" description="Views, stored procedures, and indexing optimization" />
+      <AboutLine title="Docker" description="Created  MERN Apps and WordPress instances setups" />
+      <AboutLine title="MySQL, Postgre, Oracle, MongoDB" description="Over 10 years experience with these databases.  I have worked with 3rd Party hosting services like Atlas, Digital Ocean.   and self hosted services." />
     </div>
 
     <div slot="col1" class="devops-showcase">
@@ -60,7 +94,7 @@ const project = await getEntry('projects', 'dev-ops');
           <div class="feature-icon">🗄️</div>
           <div class="feature-text">
             <strong>MySQL Optimization</strong>
-            <span>Views, procedures, indexing</span>
+            <span>Views, procedures, indexing, and optimization</span>
           </div>
         </div>
         <div class="feature-item">

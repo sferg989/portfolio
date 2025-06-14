@@ -7,11 +7,45 @@ import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'testing');
+
+// Create SEO schema for Testing project
+const testingSchema = SchemaBuilder.createProjectSchema({
+  name: 'Software Testing & QA Projects by Steve Ferguson',
+  description: 'Comprehensive testing strategies including unit testing, integration testing, and automated testing frameworks for web applications.',
+  programmingLanguage: ['JavaScript', 'TypeScript', 'Python'],
+  tools: [
+    'Jest',
+    'Cypress',
+    'Playwright',
+    'PHPUnit',
+    'Testing Library',
+    'Vitest',
+    'Selenium'
+  ],
+  keywords: [
+    'Software Testing',
+    'Unit Testing',
+    'Integration Testing',
+    'Test Automation',
+    'Quality Assurance',
+    'End-to-End Testing',
+    'Test Coverage'
+  ],
+  dateCreated: '2022'
+});
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="Software Testing & QA Projects by Steve Ferguson - Automated Testing & Quality Assurance"
+  description="Steve Ferguson's software testing expertise: comprehensive testing strategies, automated testing frameworks, and quality assurance practices for reliable web applications."
+  keywords="steve ferguson testing, software testing, qa engineer, automated testing, unit testing, integration testing, test automation, quality assurance"
+  image="/assets/projects/Testing.png"
+  type="article"
+  schema={testingSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}

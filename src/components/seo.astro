@@ -1,127 +1,48 @@
 ---
-export interface Props {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  image?: string;
-  imageAlt?: string;
-  canonicalUrl?: string;
-  type?: 'website' | 'article' | 'profile';
-  author?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
-  schema?: Record<string, unknown>;
-}
+import type { SeoMetadata } from '../types/seo';
+import { SeoService } from '../services/seo_service';
+import { seoConfig } from '../services/seo_config';
+import MetaTags from './seo/meta_tags.astro';
+import StructuredData from './seo/structured_data.astro';
+import PerformanceHints from './seo/performance_hints.astro';
 
-const {
-  title = 'Steve Ferguson - Full Stack Developer & Tech Lead | Next.js, React, TypeScript Expert',
-  description = 'Experienced Tech Lead and Full-Stack Developer specializing in Next.js, React, TypeScript, PHP, Laravel, and WordPress. Expert in DevOps, CI/CD, team leadership, and scalable web applications.',
-  keywords = 'steve ferguson, full stack developer, tech lead, next.js, react, typescript, php, laravel, wordpress, devops, ci/cd, team leadership, software engineer, web development, cloudflare workers, ecommerce, headless cms',
-  image = '/assets/steve-ferguson-portrait.jpg',
-  imageAlt = 'Steve Ferguson - Full Stack Developer and Tech Lead',
-  canonicalUrl,
-  type = 'website',
-  author = 'Steve Ferguson',
-  publishedTime,
-  modifiedTime,
-  schema
-} = Astro.props;
+export interface Props extends Partial<SeoMetadata> {}
 
-const siteUrl = 'https://stephenferguson.info';
-const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
-const fullCanonicalUrl = canonicalUrl || `${siteUrl}${Astro.url.pathname}`;
+// Use the service layer to merge and validate SEO data
+const seoData = SeoService.mergeSeoData(Astro.props);
 
-// Default structured data for Steve Ferguson
-const defaultSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Steve Ferguson',
-  'jobTitle': 'Tech Lead & Full Stack Developer',
-  'description': 'Experienced Tech Lead and Full-Stack Developer with expertise in Next.js, React, TypeScript, PHP, Laravel, and team leadership',
-  'url': siteUrl,
-  'image': fullImageUrl,
-  'sameAs': [
-    'https://www.linkedin.com/in/stephen-ferguson-964a7b57',
-    'https://github.com/sferg989'
-  ],
-  'knowsAbout': [
-    'Next.js',
-    'React',
-    'TypeScript',
-    'PHP',
-    'Laravel',
-    'WordPress',
-    'DevOps',
-    'CI/CD',
-    'Team Leadership',
-    'Software Engineering',
-    'Web Development',
-    'Cloudflare Workers',
-    'E-commerce Development',
-    'Headless CMS'
-  ],
-  'alumniOf': [
-    {
-      '@type': 'Organization',
-      'name': "Master's in Music Performance"
-    },
-    {
-      '@type': 'Organization',
-      'name': 'MBA in Finance'
-    }
-  ],
-  'worksFor': {
-    '@type': 'Organization',
-    'name': 'Delta Defense'
+// Get the full image URL
+const fullImageUrl = seoData.image?.startsWith('http')
+  ? seoData.image
+  : `${seoConfig.siteUrl}${seoData.image}`;
+
+// Get the canonical URL, using current page path if not provided
+const fullCanonicalUrl = seoData.canonicalUrl || `${seoConfig.siteUrl}${Astro.url.pathname}`;
+
+// Validate SEO data in development
+if (import.meta.env.DEV) {
+  const validationErrors = SeoService.validateSeoData(seoData);
+  if (validationErrors.length > 0) {
+    console.warn('SEO Validation Issues:', validationErrors);
   }
-};
-
-const finalSchema = schema || defaultSchema;
+}
 ---
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
-<meta name="keywords" content={keywords} />
-<meta name="author" content={author} />
-<meta name="robots" content="index, follow" />
-<meta name="language" content="English" />
-<meta name="revisit-after" content="7 days" />
+<MetaTags
+  title={seoData.title!}
+  description={seoData.description!}
+  keywords={seoData.keywords!}
+  author={seoData.author!}
+  canonicalUrl={fullCanonicalUrl}
+  imageUrl={fullImageUrl}
+  imageAlt={seoData.imageAlt!}
+  type={seoData.type!}
+  publishedTime={seoData.publishedTime}
+  modifiedTime={seoData.modifiedTime}
+  twitterHandle={seoConfig.twitterHandle}
+  siteName={seoConfig.siteName}
+/>
 
-<!-- Canonical URL -->
-<link rel="canonical" href={fullCanonicalUrl} />
+{seoData.schema && <StructuredData schema={seoData.schema} />}
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content={type} />
-<meta property="og:url" content={fullCanonicalUrl} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={fullImageUrl} />
-<meta property="og:image:alt" content={imageAlt} />
-<meta property="og:site_name" content="Steve Ferguson - Full Stack Developer" />
-<meta property="og:locale" content="en_US" />
-
-{publishedTime && <meta property="article:published_time" content={publishedTime} />}
-{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-{author && <meta property="article:author" content={author} />}
-
-<!-- Twitter Cards -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={fullCanonicalUrl} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={fullImageUrl} />
-<meta property="twitter:image:alt" content={imageAlt} />
-<meta property="twitter:creator" content="@stephenferguson" />
-
-<!-- Additional SEO Meta Tags -->
-<meta name="theme-color" content="#000000" />
-<meta name="msapplication-TileColor" content="#000000" />
-
-<!-- Structured Data -->
-<script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
-
-<!-- Preconnect to external domains for performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<PerformanceHints />

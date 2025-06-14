@@ -7,11 +7,45 @@ import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'php-laravel');
+
+// Create SEO schema for PHP Laravel project
+const laravelSchema = SchemaBuilder.createProjectSchema({
+  name: 'PHP Laravel Development Projects by Steve Ferguson',
+  description: 'Enterprise Laravel applications featuring API development, authentication systems, database optimization, and modern PHP development practices.',
+  programmingLanguage: ['PHP', 'JavaScript', 'SQL', 'HTML', 'CSS'],
+  tools: [
+    'Laravel',
+    'PHP',
+    'Eloquent ORM',
+    'MySQL',
+    'Redis',
+    'Composer',
+    'PHPUnit'
+  ],
+  keywords: [
+    'Laravel Development',
+    'PHP Development',
+    'API Development',
+    'Laravel Framework',
+    'Backend Development',
+    'Database Design',
+    'Enterprise Applications'
+  ],
+  dateCreated: '2019'
+});
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="PHP Laravel Development Projects by Steve Ferguson - Enterprise APIs & Applications"
+  description="Steve Ferguson's Laravel development expertise: enterprise applications, RESTful APIs, authentication systems, and database optimization using modern PHP development practices."
+  keywords="steve ferguson laravel, php developer, laravel framework, api development, backend developer, php laravel, enterprise applications, database optimization"
+  image="/assets/projects/PHP-Laravel.png"
+  type="article"
+  schema={laravelSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}

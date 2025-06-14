@@ -1,0 +1,12 @@
+---
+import type { PersonSchema, CreativeWorkSchema } from '../../types/seo';
+
+export interface Props {
+  schema: PersonSchema | CreativeWorkSchema | Record<string, unknown>;
+}
+
+const { schema } = Astro.props;
+---
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

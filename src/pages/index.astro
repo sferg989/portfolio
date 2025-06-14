@@ -2,76 +2,25 @@
 /* eslint-disable max-len */
 import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero.astro';
-
 import CenteredText from '../components/rows/CenteredText.astro';
 import Highlight from '../components/text/Highlight.astro';
 import Projects from '../components/Projects.astro';
+import { SchemaBuilder } from '../services/schema_builder';
 
-const homeSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Steve Ferguson',
-  'jobTitle': 'Tech Lead & Full Stack Developer',
-  'description': 'Experienced Tech Lead and Full-Stack Developer with unique background spanning aerospace, agriculture, and technology. Expert in Next.js, React, TypeScript, PHP, Laravel, WordPress, DevOps, and team leadership.',
-  'url': 'https://stephenferguson.info',
-  'image': 'https://stephenferguson.info/assets/MeandBoysGolfing.jpeg',
-  'sameAs': [
-    'https://linkedin.com/in/stephenferguson',
-    'https://github.com/stephenferguson'
-  ],
-  'knowsAbout': [
-    'Next.js Development',
-    'React Development',
-    'TypeScript',
-    'PHP Development',
-    'Laravel Framework',
-    'WordPress Development',
-    'DevOps Engineering',
-    'CI/CD Pipelines',
-    'Team Leadership',
-    'Software Architecture',
-    'Web Development',
-    'Cloudflare Workers',
-    'E-commerce Development',
-    'Headless CMS',
-    'Full Stack Development',
-    'Software Engineering Management'
-  ],
-  'alumniOf': [
-    {
-      '@type': 'EducationalOrganization',
-      'name': "Master's in Music Performance"
-    },
-    {
-      '@type': 'EducationalOrganization',
-      'name': 'MBA in Finance'
-    }
-  ],
-  'worksFor': {
-    '@type': 'Organization',
-    'name': 'Delta Defense',
-    'description': 'Leading software engineering teams and developing scalable web applications'
-  },
-  'hasOccupation': {
-    '@type': 'Occupation',
-    'name': 'Tech Lead',
-    'occupationLocation': {
-      '@type': 'Place',
-      'name': 'West Bend, WI'
-    },
-    'skills': [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'PHP',
-      'Laravel',
-      'WordPress',
-      'DevOps',
-      'Team Leadership',
-      'Software Architecture'
-    ]
-  }
-};
+// Use the schema builder service instead of manually creating schemas
+const homeSchema = SchemaBuilder.createHomePersonSchema([
+  'Next.js Development',
+  'React Development',
+  'TypeScript Programming',
+  'PHP Development',
+  'Laravel Framework',
+  'WordPress Development',
+  'DevOps Engineering',
+  'CI/CD Pipelines',
+  'Software Architecture',
+  'Full Stack Development',
+  'Software Engineering Management'
+]);
 ---
 
 <MainLayout

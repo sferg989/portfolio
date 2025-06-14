@@ -6,11 +6,43 @@ import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'other-stuff');
+
+// Create SEO schema for Other Stuff project
+const otherSchema = SchemaBuilder.createProjectSchema({
+  name: 'Miscellaneous Development Projects by Steve Ferguson',
+  description: 'Various development projects including experimental technologies, side projects, and innovative solutions across different platforms and frameworks.',
+  programmingLanguage: ['JavaScript', 'TypeScript', 'Python', 'PHP', 'Go'],
+  tools: [
+    'Various Frameworks',
+    'Experimental Technologies',
+    'Cross-platform Development',
+    'API Integration',
+    'Database Systems'
+  ],
+  keywords: [
+    'Full Stack Development',
+    'Experimental Projects',
+    'Side Projects',
+    'Technology Innovation',
+    'Cross-platform Development',
+    'API Integration',
+    'Problem Solving'
+  ],
+  dateCreated: '2023'
+});
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="Miscellaneous Development Projects by Steve Ferguson - Innovation & Experimentation"
+  description="Steve Ferguson's diverse development projects: experimental technologies, innovative solutions, and cross-platform development across various frameworks and platforms."
+  keywords="steve ferguson projects, full stack developer, experimental development, innovative solutions, side projects, cross-platform development, technology innovation"
+  image="/assets/projects/Other.png"
+  type="article"
+  schema={otherSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}

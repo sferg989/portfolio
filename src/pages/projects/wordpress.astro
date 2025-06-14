@@ -7,11 +7,45 @@ import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'wordpress');
+
+// Create SEO schema for WordPress project
+const wordpressSchema = SchemaBuilder.createProjectSchema({
+  name: 'WordPress Development Projects by Steve Ferguson',
+  description: 'Custom WordPress development including headless CMS implementations, e-commerce solutions, and modern theme development using PHP, ACF, and REST API.',
+  programmingLanguage: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+  tools: [
+    'WordPress',
+    'Advanced Custom Fields',
+    'WooCommerce',
+    'PHP',
+    'JavaScript',
+    'REST API',
+    'Headless CMS'
+  ],
+  keywords: [
+    'WordPress Development',
+    'Headless CMS',
+    'PHP Development',
+    'WooCommerce',
+    'Custom Themes',
+    'WordPress API',
+    'E-commerce Development'
+  ],
+  dateCreated: '2020'
+});
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="WordPress Development Projects by Steve Ferguson - Custom Themes & Headless CMS"
+  description="Steve Ferguson's WordPress development expertise: custom themes, headless implementations, WooCommerce solutions, and modern PHP development for scalable content management systems."
+  keywords="steve ferguson wordpress, wordpress developer, headless cms, php developer, woocommerce, custom wordpress themes, wordpress api, wordpress development"
+  image="/assets/projects/WordPress.png"
+  type="article"
+  schema={wordpressSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}

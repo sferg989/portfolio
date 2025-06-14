@@ -7,27 +7,20 @@ import ColsLeft from '../../components/rows/ColsLeft.astro';
 import CustomImage from '../../components/CustomImage.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'next-js');
 
-const nextjsSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'CreativeWork',
-  'name': 'Next.js Development Projects by Steve Ferguson',
-  'description': 'Comprehensive Next.js development projects showcasing server components, application refactors, and modern deployment strategies using Cloudflare Workers.',
-  'author': {
-    '@type': 'Person',
-    'name': 'Steve Ferguson',
-    'jobTitle': 'Tech Lead & Full Stack Developer',
-    'url': 'https://stephenferguson.info'
-  },
-  'programmingLanguage': [
-    'TypeScript',
-    'JavaScript',
-    'Next.js',
-    'React'
-  ],
-  'tool': [
+const academyDescription =
+  'Full-stack learning platform built with Next.js 15, TypeScript, and Server Components. Implemented tiered membership system, video streaming, ' +
+  'and course management with Server Actions. Led technical architecture and development team while maintaining 80% test coverage.';
+
+// Use the schema builder service instead of manually creating schemas
+const nextjsSchema = SchemaBuilder.createProjectSchema({
+  name: 'Next.js Development Projects by Steve Ferguson',
+  description: 'Comprehensive Next.js development projects showcasing server components, application refactors, and modern deployment strategies using Cloudflare Workers.',
+  programmingLanguage: ['TypeScript', 'JavaScript', 'Next.js', 'React'],
+  tools: [
     'Next.js',
     'React',
     'TypeScript',
@@ -36,7 +29,7 @@ const nextjsSchema = {
     'Server Components',
     'Server Actions'
   ],
-  'keywords': [
+  keywords: [
     'Next.js Development',
     'React Applications',
     'Server Components',
@@ -46,13 +39,8 @@ const nextjsSchema = {
     'Full Stack Development',
     'Edge Computing'
   ],
-  'genre': 'Software Development',
-  'dateCreated': '2022',
-  'provider': {
-    '@type': 'Organization',
-    'name': 'Delta Defense'
-  }
-};
+  dateCreated: '2022'
+});
 ---
 
 <ProjectLayout
@@ -73,10 +61,13 @@ const nextjsSchema = {
 
   <ColsLeft title="server & client architecture">
     <div slot="col1">
-      <AboutLine title="Academy" description="Server components with granular client components using getServerSideProps" />
-      <AboutLine title="User Dashboard" description="Data from dozens of sources for comprehensive user interaction" />
-      <AboutLine title="Email Preference Center" description="Built with Next.js server actions" />
-      <AboutLine title="Invoices" description="Saved company $60k/month removing 3rd party vendor" />
+      <AboutLine
+        title="Online Learning Academy"
+        description={academyDescription}
+      />
+      <AboutLine title="User Dashboard" description="Real-time data aggregation with Next.js 15 Server Components and TypeScript" />
+      <AboutLine title="Email Preference Center" description="Server Actions with TypeScript for Brazil API integration and user preferences" />
+      <AboutLine title="User Invoices" description="Custom invoicing system with Next.js replacing $60k/month vendor dependency" />
     </div>
 
     <CustomImage
@@ -90,10 +81,8 @@ const nextjsSchema = {
 
   <ColsRight title="application refactors">
     <div slot="col2">
-      <AboutLine title="Checkout Refactor" description="Create React App to Next.js - 1k line Context to streamlined architecture" />
-      <AboutLine title="Login Portal Refactor" description="Migrated from Create React App with TypeScript bit by bit" />
-      <AboutLine title="Form Migration" description="Migrating from Formik to native forms" />
-      <AboutLine title="Reciprocity UI" description="Headless app using platform API" />
+      <AboutLine title="User Login Portal Refactor" description="Migrated from Create React App with TypeScript bit by bit" />
+      <AboutLine title="Reciprocity UI" description="From a Wordpress site, to a headless app using platform API" />
     </div>
 
     <div slot="col1" class="refactor-showcase">

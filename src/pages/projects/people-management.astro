@@ -8,11 +8,44 @@ import CustomImage from '../../components/CustomImage.astro';
 import Flex from '../../components/rows/Flex.astro';
 import ColsRight from '../../components/rows/ColsRight.astro';
 import AboutLine from '../../components/AboutLine.astro';
+import { SchemaBuilder } from '../../services/schema_builder';
 
 const project = await getEntry('projects', 'people-management');
+
+// Create SEO schema for People Management project
+const managementSchema = SchemaBuilder.createProjectSchema({
+  name: 'Team Leadership & People Management by Steve Ferguson',
+  description: 'Technical leadership and people management including team building, mentoring developers, agile methodologies, and cross-functional collaboration.',
+  tools: [
+    'Agile Methodology',
+    'Scrum',
+    'Team Leadership',
+    'Mentoring',
+    'Code Review',
+    'Performance Management',
+    'Cross-functional Collaboration'
+  ],
+  keywords: [
+    'Tech Lead',
+    'Team Leadership',
+    'People Management',
+    'Developer Mentoring',
+    'Agile Methodology',
+    'Software Engineering Management',
+    'Technical Leadership'
+  ],
+  dateCreated: '2021'
+});
 ---
 
-<ProjectLayout>
+<ProjectLayout
+  title="Team Leadership & People Management by Steve Ferguson - Tech Lead & Mentoring"
+  description="Steve Ferguson's leadership expertise: tech lead responsibilities, developer mentoring, team building, and agile project management in software engineering environments."
+  keywords="steve ferguson tech lead, team leadership, people management, developer mentoring, software engineering manager, agile methodology, technical leadership"
+  image="/assets/projects/People-Management.png"
+  type="article"
+  schema={managementSchema}
+>
   <ProjectHero
     title={project.data.title}
     year={project.data.year}

@@ -1,5 +1,6 @@
 ---
 import MainLayout from './MainLayout.astro';
+import type { PersonSchema, CreativeWorkSchema } from '../types/seo';
 
 export interface Props {
   title?: string;
@@ -8,7 +9,7 @@ export interface Props {
   image?: string;
   canonicalUrl?: string;
   type?: 'website' | 'article' | 'profile';
-  schema?: Record<string, unknown>;
+  schema?: PersonSchema | CreativeWorkSchema | Record<string, unknown>;
 }
 
 const { title, description, keywords, image, canonicalUrl, type, schema } = Astro.props;
