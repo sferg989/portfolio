@@ -18,7 +18,7 @@ const projects = defineCollection({
       cover: image(),
       order: z.number(),
       heroMesh: z.optional(z.string()),
-      projectMesh: z.string(),
+      projectMesh: z.optional(z.string()),
     }),
 });
 

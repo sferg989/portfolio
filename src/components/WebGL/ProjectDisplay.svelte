@@ -15,11 +15,9 @@
 
     import TWEEN from "@tweenjs/tween.js";
 
-    import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
     import { selectedProject } from "../stores/selectedProject";
     import { style } from "../stores/style";
-
-    const loader = new OBJLoader();
+    import { createProjectGeometry } from "../../services/geometry_factory";
     const textureLoader = new TextureLoader();
 
     const morphingTime = 250;
@@ -99,19 +97,18 @@
     }
 
     async function loadModels() {
-        const projects = await getCollection("projects");
+        const projects = (await getCollection("projects")).sort(
+            (a, b) => a.data.order - b.data.order,
+        );
 
-        const shapes = projects.map((project) => project.data.projectMesh);
         const titles = projects.map((project) => project.data.title);
 
-        const geometries = await Promise.all(
-            shapes.map(async (path, i) => {
-                const obj = await loader.loadAsync(path);
-                const geometry = (obj.children[0] as Mesh).geometry;
-                geometry.userData.category = projects[i].data.category;
-                return geometry;
-            })
-        );
+        // Create geometries using the geometry factory
+        const geometries = projects.map((project, i) => {
+            const geometry = createProjectGeometry(i);
+            geometry.userData.category = project.data.category;
+            return geometry;
+        });
 
         const texture = await textureLoader.loadAsync("/textures/gray.png");
 

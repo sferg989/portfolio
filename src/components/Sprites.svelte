@@ -13,11 +13,9 @@
     } from "three";
 
     import TWEEN from "@tweenjs/tween.js";
-    import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
     import { style } from "./stores/style";
     import { getCollection } from "astro:content";
-
-    const loader = new OBJLoader();
+    import { createProjectGeometry } from "../services/geometry_factory";
 
     let container: HTMLAnchorElement | undefined = undefined;
     let camera: PerspectiveCamera;
@@ -133,19 +131,15 @@
 
     async function loadModels() {
         const projects = (await getCollection("projects"))
-            .filter((project) => !!project.data.heroMesh)
+            .sort((a, b) => a.data.order - b.data.order)
             .sort(() => Math.random() - 0.5);
 
-        // prefer async loading of meshes without waiting for the whole array to load
-        // which of course broke everything because now arrays are not synched
-        for (const project of projects) {
-            loader.load(project.data.heroMesh!, (obj) => {
-                const geometry = (obj.children[0] as Mesh).geometry;
-
-                geometry.userData.id = project.id;
-                geometries.push(geometry);
-            });
-        }
+        // Create geometries using the geometry factory
+        projects.forEach((project, index) => {
+            const geometry = createProjectGeometry(index);
+            geometry.userData.id = project.id;
+            geometries.push(geometry);
+        });
     }
 
     function iterate(): void {

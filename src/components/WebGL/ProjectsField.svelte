@@ -28,7 +28,6 @@
 
     import TWEEN from "@tweenjs/tween.js";
 
-    import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
     import { style } from "../stores/style";
     import { fly } from "svelte/transition";
     import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
@@ -36,8 +35,8 @@
         CSS3DObject,
         CSS3DRenderer,
     } from "three/addons/renderers/CSS3DRenderer.js";
+    import { createProjectGeometry } from "../../services/geometry_factory";
 
-    const loader = new OBJLoader();
     const GltfLoader = new GLTFLoader();
     const textureLoader = new TextureLoader();
 
@@ -320,17 +319,14 @@
             (a, b) => a.data.order - b.data.order,
         );
 
-        const shapes = projects.map((project) => project.data.projectMesh);
         const ids = projects.map((project) => project.id);
 
-        const geometries = await Promise.all(
-            shapes.map(async (path) => {
-                const obj = await loader.loadAsync(path);
-                const geometry = (obj.children[0] as Mesh).geometry;
-                geometry.computeBoundingBox();
-                return geometry;
-            }),
-        );
+        // Create geometries using the geometry factory
+        const geometries = projects.map((project, index) => {
+            const geometry = createProjectGeometry(index);
+            geometry.userData.category = project.data.category;
+            return geometry;
+        });
 
         // Calculate total field length
         fieldLength = geometries.length * dx * 2;
